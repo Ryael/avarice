@@ -20,3 +20,8 @@ class Room:
         self.xco = xco
         self.yco = yco
 
+    def intro_text(self):
+        """
+        Information to be displayed when the player moves into this tile.
+        """
+        raise NotImplementedError()
