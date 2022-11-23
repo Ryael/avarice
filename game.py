@@ -7,6 +7,10 @@ This module contains the game-loop and global variables.
 
 """
 
+game = {
+    "name": ""
+}
+
 
 def p_t(text):
     """
@@ -55,14 +59,16 @@ def start_game():
     ██╔══██║╚██╗ ██╔╝██╔══██║██╔══██╗██║██║     ██╔══╝
     ██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║╚██████╗███████╗
     ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝ \033[0m\n""")
-    # Lets the user decide if they want to play the game and requests a name.
+    # Lets the user decide if they want to play the game.
     start_choice = get_str("Investigator, do you accept the task? (Y/N):")
     if start_choice.lower() == "y" or start_choice.lower() == "yes":
         p_t("This task isn't for the faint of hearted,")
         p_t("but we appreciate your help in this matter.")
         p_t("We're sure you're the right person for this job.")
-        name = get_str("Could you please state your name for the contract?")
-        p_t(f"Very well, Inspector {name}. Let's begin.")
+        # Requests a name and saves it in the "game" dictionary.
+        game["name"] = get_str("Could you please state your name again?")
+        p_t(f"Very well, Inspector {game['name']}. Let's begin.")
+        # Lets the user decide if they want to view the intro scene.
         view_intro = False
         while not view_intro:
             intro_choice = get_str("Would you like to see the intro? (Y/N):")
@@ -72,6 +78,7 @@ def start_game():
                 p_t("Their motives, why they approached, who approached them")
                 p_t("and ultimately what their goal is")
                 p_t("This will lead directly to the start of the game.")
+                first_scene()
             elif intro_choice.lower() == "no" or intro_choice.lower() == "n":
                 first_scene()
             else:
