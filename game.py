@@ -17,19 +17,39 @@ def p_t(text):
     print(text)
 
 
+def get_str(question):
+    """Returns a non-empty string, input by the user.
+    Runs a while loop, using the "question" parameter to seek user input.
+    If an empty string is given (i.e. the user just presses ENTER),
+    or if the user inputs only spaces,
+    the loop will print an error message and request input again.
+    Also removes extra whitespace from strings.
+    Adapted from a function by Siobhán Mooney:
+    https://github.com/Estelindis/double-agent
+    """
+    while True:
+        input_str = input(f"{question}\n")
+        input_str = " ".join(input_str.split())
+        if input_str.strip() == "":
+            input_str = ""
+        if not input_str:
+            print("Please input something rather than nothing.")
+        else:
+            return input_str
+
+
 def start_game():
     """
     Starts the game, called at the end of game.py.
-    Prints the game logo.
+    Prints the game title.
     """
-    print("""\033[38;2;150;95;143m
+    p_t("""\033[38;2;150;95;143m
     █████╗ ██╗   ██╗ █████╗ ██████╗ ██╗ ██████╗███████╗
     ██╔══██╗██║   ██║██╔══██╗██╔══██╗██║██╔════╝██╔════╝
     ███████║██║   ██║███████║██████╔╝██║██║     █████╗
     ██╔══██║╚██╗ ██╔╝██╔══██║██╔══██╗██║██║     ██╔══╝
     ██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║╚██████╗███████╗
-    ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝ \n
-    """)
+    ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝ \033[0m\n""")
 
 
 start_game()
