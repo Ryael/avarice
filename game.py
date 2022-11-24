@@ -6,6 +6,9 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the game-loop and global variables.
 """
 
+import world
+from player import Player
+
 game = {
     "name": ""
 }
@@ -77,9 +80,37 @@ def start_game():
                 p_t("Their motives, why they approached, who approached them")
                 p_t("and ultimately what their goal is")
                 p_t("This will lead directly to the start of the game.")
-                first_scene()
+                player = Player()
+                while True:
+                    # Spawns the player in the starting room.
+                    start_room = world.room_at(player.x_coord, player.y_coord)
+                    p_t(start_room.intro_text())
+                    # Assigns movement actions to the player.
+                    action_input = get_player_command()
+                    if action_input in ["go n", "go north"]:
+                        player.move_north()
+                    if action_input in ["go s", "go south"]:
+                        player.move_south()
+                    if action_input in ["go w", "go west"]:
+                        player.move_west()
+                    if action_input in ["go e", "go east"]:
+                        player.move_east()
             elif intro_choice.lower() == "no" or intro_choice.lower() == "n":
-                first_scene()
+                player = Player()
+                while True:
+                    # Spawns the player in the starting room.
+                    start_room = world.room_at(player.x_coord, player.y_coord)
+                    p_t(start_room.intro_text())
+                    # Assigns movement actions to the player.
+                    action_input = get_player_command()
+                    if action_input in ["go n", "go north"]:
+                        player.move_north()
+                    if action_input in ["go s", "go south"]:
+                        player.move_south()
+                    if action_input in ["go w", "go west"]:
+                        player.move_west()
+                    if action_input in ["go e", "go east"]:
+                        player.move_east()
             else:
                 print("Please answer the question, yes or no will suffice.")
     elif start_choice.lower() == "n" or start_choice.lower() == "no":
@@ -94,6 +125,13 @@ def start_game():
         p_t("Farewell, Investigator.")
     else:
         print("Please answer the question, yes or no will suffice.")
+
+
+def get_player_command():
+    """
+    Returns the player's action.
+    """
+    return input("Action: ")
 
 
 start_game()
