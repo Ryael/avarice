@@ -250,3 +250,15 @@ world_map = [
     [Play(0, 3), Contain(1, 3), Sanitate(2, 3), Data(3, 3), Main(4, 3), None],
     [Testing(0, 4), Preserve(1, 4), None, None, Toilets2(4, 4), None]
 ]
+
+
+def room_at(x_coord, y_coord):
+    """
+    Locates the room at a given coordinate.
+    """
+    if x_coord < 0 or y_coord < 0:
+        return None
+    try:
+        return world_map[y_coord][x_coord]
+    except IndexError:
+        return None
