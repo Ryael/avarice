@@ -240,3 +240,12 @@ class Toilets2(Room):
         return """
         The second of the two toilets available in the facility.
         """
+
+
+world_map = [
+    [None, None, Observatory(2, 0), Kitchen(3, 0), None, None],
+    [Gate(0, 1), Foyer(1, 1), Lobby(2, 1), Dorm(3, 1), Toilets1(4, 1), None],
+    [None, Security(1, 2), Common(2, 2), Lab(3, 2), Green(4, 2), Garden(5, 2)],
+    [Play(0, 3), Contain(1, 3), Sanitate(2, 3), Data(3, 3), Main(4, 3), None],
+    [Testing(0, 4), Preserve(1, 4), None, None, Toilets2(4, 4), None]
+]
