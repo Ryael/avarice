@@ -11,14 +11,14 @@ class Room:
     """
     The core class for a room within the world.
     """
-    def __init__(self, xco, yco):
+    def __init__(self, x_coord, y_coord):
         """
         Creates an instance of a new room.
         Parameter xco: the x-coordinate of the room.
         Parameter yco: the y-coordinate of the room.
         """
-        self.xco = xco
-        self.yco = yco
+        self.x_coord = x_coord
+        self.y_coord = y_coord
 
     def intro_text(self):
         """
@@ -242,6 +242,7 @@ class Toilets2(Room):
         """
 
 
+# Grid of the map, where the above classes slot in.
 world_map = [
     [None, None, Observatory(2, 0), Kitchen(3, 0), None, None],
     [Gate(0, 1), Foyer(1, 1), Lobby(2, 1), Dorm(3, 1), Toilets1(4, 1), None],
