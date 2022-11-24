@@ -16,8 +16,8 @@ class Player:
         Creates an instance of the player character and assigns x,y coordinates
         to them to represent their position within the world.
         """
-        self.x_coord = 1
-        self.y_coord = 2
+        self.x_coord = 2
+        self.y_coord = 0
 
     def move(self, dx_coords, dy_coords):
         """
