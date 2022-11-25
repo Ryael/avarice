@@ -33,7 +33,10 @@ class Observatory(Room):
     """
     def intro_text(self):
         return """
-        Starting room, a tall tower with windows on the top.
+        Starting room, a tall tower with windows on the top.\n
+
+        You hear faint noises coming from the south. Perhaps it's worth
+        investigating...
         """
 
 
@@ -44,7 +47,9 @@ class Kitchen(Room):
     def intro_text(self):
         return """
         The kitchen, where the residents eat. Or perhaps it'll be more correct
-        to say this is where they once ate.
+        to say this is where they once ate.\n
+
+        Not much else here, just a dead end.
         """
 
 
@@ -54,7 +59,9 @@ class Gate(Room):
     """
     def intro_text(self):
         return """
-        The main gate. You never thought you'd see the light of day after that
+        The main gate. Once sealed shut, now open.\n
+
+        You never thought you'd see the light of day after that
         harrowing experience, yet here you are.
         """
 
@@ -65,7 +72,12 @@ class Foyer(Room):
     """
     def intro_text(self):
         return """
-        The foyer, one of the first rooms people see.
+        The foyer, one of the first rooms people see.\n
+
+        To the east you see the main entrance for the facility. It looks sealed
+        shut and you realise that you won't be able to leave without find a
+        key. It's never that simple, is it... You hear a faint beeping sound
+        coming from the south.
         """
 
 
@@ -75,7 +87,11 @@ class Lobby(Room):
     """
     def intro_text(self):
         return """
-        The main lobby, the room that connects all of the building together.
+        The main lobby, the room that connects all of the building together.\n
+
+        The noise you heard coming from the south is now much louder. It seems
+        eerily... mechanical. Maybe avoiding that path for now would be for the
+        best. After all, you still do have two other paths you could explore.
         """
 
 
@@ -85,7 +101,10 @@ class Dorm(Room):
     """
     def intro_text(self):
         return """
-        The dormitory, where residents come to turn in for the night.
+        The dormitory, where residents come to turn in for the night.\n
+
+        To the north you see a sign reading "Kitchen" and to the east
+        you see a sign reading "Toilets".
         """
 
 
@@ -95,7 +114,9 @@ class Toilets1(Room):
     """
     def intro_text(self):
         return """
-        The first of two available toilet rooms.
+        The first of two available toilet rooms.\n
+
+        There's nothing else of interest here.
         """
 
 
@@ -106,7 +127,10 @@ class Security(Room):
     def intro_text(self):
         return """
         The security centre, where the guards reside and watch over CCTV
-        footage.
+        footage.\n
+
+        You see a huge metallic two-part door to the south, but much
+        like the entrance is also sealed shut.
         """
 
 
