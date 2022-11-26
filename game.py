@@ -9,10 +9,6 @@ This module contains the game-loop and global variables.
 import world
 from player import Player
 
-game = {
-    "name": ""
-}
-
 
 def p_t(text):
     """
@@ -63,59 +59,43 @@ def start_game():
     ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝ \033[0m\n""")
     # Lets the user decide if they want to play the game.
     start_choice = get_str("Investigator, do you accept the task? (Y/N):")
-    if start_choice.lower() == "y" or start_choice.lower() == "yes":
+    if start_choice.lower()[0] == "y":
         p_t("This task isn't for the faint of hearted,")
         p_t("but we appreciate your help in this matter.")
         p_t("We're sure you're the right person for this job.")
-        # Requests a name and saves it in the "game" dictionary.
-        game["name"] = get_str("Could you please state your name again?")
-        p_t(f"Very well, Inspector {game['name']}. Let's begin.")
+        # Instantiates the player and requests a name and assigns it to
+        # a variable.
+        player = Player()
+        player.name = get_str("Could you please state your name again?")
+        p_t(f"Very well, Inspector {player.name}. Let's begin.")
         # Lets the user decide if they want to view the intro scene.
-        view_intro = False
-        while not view_intro:
-            intro_choice = get_str("Would you like to see the intro? (Y/N):")
-            if intro_choice.lower() == "yes" or intro_choice.lower() == "y":
-                p_t("Play intro scene")
-                p_t("This will describe the back story of the Investigator")
-                p_t("Their motives, why they approached, who approached them")
-                p_t("and ultimately what their goal is")
-                p_t("This will lead directly to the start of the game.")
-                player = Player()
-                while True:
-                    # Spawns the player in the starting room.
-                    current_room = world.room_at(player.x_pos, player.y_pos)
-                    if player.moved:
-                        p_t(current_room.intro_text())
-                    # Assigns movement actions to the player.
-                    action_input = get_player_command()
-                    if action_input in ["go n", "go north"]:
-                        player.move_north()
-                    if action_input in ["go s", "go south"]:
-                        player.move_south()
-                    if action_input in ["go w", "go west"]:
-                        player.move_west()
-                    if action_input in ["go e", "go east"]:
-                        player.move_east()
-            elif intro_choice.lower() == "no" or intro_choice.lower() == "n":
-                player = Player()
-                while True:
-                    # Spawns the player in the starting room.
-                    current_room = world.room_at(player.x_pos, player.y_pos)
-                    if player.moved:
-                        p_t(current_room.intro_text())
-                    # Assigns movement actions to the player.
-                    action_input = get_player_command()
-                    if action_input in ["go n", "go north"]:
-                        player.move_north()
-                    if action_input in ["go s", "go south"]:
-                        player.move_south()
-                    if action_input in ["go w", "go west"]:
-                        player.move_west()
-                    if action_input in ["go e", "go east"]:
-                        player.move_east()
-            else:
-                print("Please answer the question, yes or no will suffice.")
-    elif start_choice.lower() == "n" or start_choice.lower() == "no":
+        intro_choice = get_str("Would you like to see the intro? (Y/N):")
+        if intro_choice.lower()[0] == "y":
+            p_t("Play intro scene")
+            p_t("This will describe the back story of the Investigator")
+            p_t("Their motives, why they approached, who approached them")
+            p_t("and ultimately what their goal is")
+            p_t("This will lead directly to the start of the game.")
+        elif intro_choice.lower()[0] == "n":
+            p_t("We'll get straight to it then...")
+        else:
+            print("Please answer the question, yes or no will suffice.")
+        while True:
+            # Spawns the player in the starting room.
+            current_room = world.room_at(player.x_pos, player.y_pos)
+            if player.moved:
+                p_t(current_room.intro_text())
+            # Assigns movement actions to the player.
+            action_input = get_player_command()
+            if action_input in ["go n", "go north"]:
+                player.move_north()
+            if action_input in ["go s", "go south"]:
+                player.move_south()
+            if action_input in ["go w", "go west"]:
+                player.move_west()
+            if action_input in ["go e", "go east"]:
+                player.move_east()
+    elif start_choice.lower()[0] == "n":
         p_t("""\033[38;2;150;95;143m
     ████████╗██╗  ██╗███████╗    ███████╗███╗   ██╗██████╗
     ╚══██╔══╝██║  ██║██╔════╝    ██╔════╝████╗  ██║██╔══██╗
