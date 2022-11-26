@@ -11,14 +11,14 @@ class Room:
     """
     The core class for a room within the world.
     """
-    def __init__(self, x_coord, y_coord):
+    def __init__(self, x_pos, y_pos):
         """
         Creates an instance of a new room.
         Parameter xco: the x-coordinate of the room.
         Parameter yco: the y-coordinate of the room.
         """
-        self.x_coord = x_coord
-        self.y_coord = y_coord
+        self.x_pos = x_pos
+        self.y_pos = y_pos
 
     def intro_text(self):
         """
@@ -303,13 +303,13 @@ world_map = [
 ]
 
 
-def room_at(x_coord, y_coord):
+def room_at(x_pos, y_pos):
     """
     Locates the room at a given coordinate.
     """
-    if x_coord < 0 or y_coord < 0:
+    if x_pos < 0 or y_pos < 0:
         return None
     try:
-        return world_map[y_coord][x_coord]
+        return world_map[y_pos][x_pos]
     except IndexError:
         return None
