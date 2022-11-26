@@ -14,8 +14,8 @@ class Room:
     def __init__(self, x_pos, y_pos):
         """
         Creates an instance of a new room.
-        Parameter xco: the x-coordinate of the room.
-        Parameter yco: the y-coordinate of the room.
+        Parameter x_pos: the x-coordinate of the room.
+        Parameter y_pos: the y-coordinate of the room.
         """
         self.x_pos = x_pos
         self.y_pos = y_pos
