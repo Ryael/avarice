@@ -26,9 +26,10 @@ class Player:
         """
         The move method is called using named parameteres, these parameteres
         are from math and represent changes in x and y values. This method
-        accepts a change in the x and/or y directions.
+        accepts a change in the x and/or y directions. It moves the player
+        if the room exists, and doesn't if the room doesn't exist.
         """
-        if valid_move(dx_coords, dy_coords):
+        if valid_move(self, dx_coords, dy_coords):
             self.x_coord += dx_coords
             self.y_coord += dy_coords
         else:
@@ -63,11 +64,11 @@ class Player:
         self.move(dx_coords=1, dy_coords=0)
 
 
-def valid_move(x_coord, y_coord):
+def valid_move(player, x_coord, y_coord):
     """
     Checks if the room being moved into exists.
     """
-    if room_at(x_coord, y_coord) is not None:
+    if room_at(player.x_coord + x_coord, player.y_coord + y_coord) is not None:
         return True
 
     return False
