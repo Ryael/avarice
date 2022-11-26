@@ -7,6 +7,9 @@ This module contains the logic dictating everything concerning the player.
 """
 
 
+from world import room_at
+
+
 class Player:
     """
     The core class for the player character within the world.
@@ -25,8 +28,11 @@ class Player:
         are from math and represent changes in x and y values. This method
         accepts a change in the x and/or y directions.
         """
-        self.x_coord += dx_coords
-        self.y_coord += dy_coords
+        if valid_move(dx_coords, dy_coords):
+            self.x_coord += dx_coords
+            self.y_coord += dy_coords
+        else:
+            print("You find yourself unable to move in that direction.")
 
     def move_north(self):
         """
@@ -55,3 +61,13 @@ class Player:
         x-direction (positive).
         """
         self.move(dx_coords=1, dy_coords=0)
+
+
+def valid_move(x_coord, y_coord):
+    """
+    Checks if the room being moved into exists.
+    """
+    if room_at(x_coord, y_coord) is not None:
+        return True
+
+    return False
