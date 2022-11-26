@@ -21,6 +21,7 @@ class Player:
         """
         self.x_pos = 2
         self.y_pos = 0
+        self.moved = True
 
     def move(self, dx_pos, dy_pos):
         """
@@ -32,7 +33,9 @@ class Player:
         if valid_move(self, dx_pos, dy_pos):
             self.x_pos += dx_pos
             self.y_pos += dy_pos
+            self.moved = True
         else:
+            self.moved = False
             print("""
             You find yourself unable to move in that direction.
             """)

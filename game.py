@@ -84,7 +84,8 @@ def start_game():
                 while True:
                     # Spawns the player in the starting room.
                     current_room = world.room_at(player.x_pos, player.y_pos)
-                    p_t(current_room.intro_text())
+                    if player.moved:
+                        p_t(current_room.intro_text())
                     # Assigns movement actions to the player.
                     action_input = get_player_command()
                     if action_input in ["go n", "go north"]:
@@ -100,7 +101,8 @@ def start_game():
                 while True:
                     # Spawns the player in the starting room.
                     current_room = world.room_at(player.x_pos, player.y_pos)
-                    p_t(current_room.intro_text())
+                    if player.moved:
+                        p_t(current_room.intro_text())
                     # Assigns movement actions to the player.
                     action_input = get_player_command()
                     if action_input in ["go n", "go north"]:
