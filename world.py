@@ -141,7 +141,10 @@ class Common(Room):
     def intro_text(self):
         return """
         The common room, where people gathered during their free time. It's
-        also now the monster's nest.
+        also now the monster's nest.\n
+
+        A horrible smell overwhelms as you look up to see a sign reading
+        "Sanitation". You're suddenly overwhelmed with dread.
         """
 
 
@@ -152,6 +155,10 @@ class Lab(Room):
     def intro_text(self):
         return """
         The research lab, where the monster was first cultivated by scientists.
+        \n
+
+        A horrible smell overwhelms as you look up to see a sign reading
+        "Sanitation". You're suddenly overwhelmed with dread.
         """
 
 
@@ -161,7 +168,9 @@ class Green(Room):
     """
     def intro_text(self):
         return """
-        The greenhouse, where fruit, vegetables, and plants are grown.
+        The greenhouse, where fruit, vegetables, and plants are grown.\n
+
+        Directions from the Greenhouse.
         """
 
 
@@ -173,7 +182,9 @@ class Garden(Room):
         return """
         The garden, an open-air location with tall fences with electric wire
         on top. Not to prevent anyone from getting in, but rather to prevent
-        something from getting out.
+        something from getting out.\n
+
+        Directions from the Garden.
         """
 
 
@@ -184,7 +195,9 @@ class Play(Room):
     def intro_text(self):
         return """
         The playroom, where the monster grew up, played the piano (badly),
-        was introduced to other animals, and ultimately, went insane.
+        was introduced to other animals, and ultimately, went insane.\n
+
+        Directions from Play Room.
         """
 
 
@@ -195,7 +208,9 @@ class Contain(Room):
     def intro_text(self):
         return """
         The containment area. This is was put whenever it started acting out.
-        It also doubled as its resting area.
+        It also doubled as its resting area.\n
+
+        Directions from Containment.
         """
 
 
@@ -206,7 +221,9 @@ class Sanitate(Room):
     def intro_text(self):
         return """
         The sanitation room, where the monster was regularly cleaned in order
-        to maintain its hygiene. It was also fed here.
+        to maintain its hygiene. It was also fed here.\n
+
+        Directions from Sanitation.
         """
 
 
@@ -217,7 +234,9 @@ class Data(Room):
     def intro_text(self):
         return """
         Data storage room, where all the CCTV records, experimentation logs and
-        research logs, and other sensitive information is kept.
+        research logs, and other sensitive information is kept.\n
+
+        Directions from Data Storage.
         """
 
 
@@ -228,7 +247,9 @@ class Main(Room):
     def intro_text(self):
         return """
         The mainframe room. This is what powers the entire facility and where
-        all the important computers are located.
+        all the important computers are located.\n
+
+        Directions from Mainframe room.
         """
 
 
@@ -240,7 +261,9 @@ class Testing(Room):
         return """
         The testing room. This is where the monster's abilities were tested,
         including its endurance and health. Needless to say, it wasn't its
-        favourite room.
+        favourite room.\n
+
+        Directions from Testing.
         """
 
 
@@ -252,7 +275,9 @@ class Preserve(Room):
         return """
         The perservation room, this place was used to nurse the monster back
         to health after any dangerous encounters. Or to make additional
-        adjustments to its already mechnical body.
+        adjustments to its already mechnical body.\n
+
+        Directions from Preservation.
         """
 
 
@@ -262,7 +287,9 @@ class Toilets2(Room):
     """
     def intro_text(self):
         return """
-        The second of the two toilets available in the facility.
+        The second of the two toilets available in the facility.\n
+
+        Directions from the second existing toilets.
         """
 
 
