@@ -9,29 +9,52 @@ This module contains all the world details, lore, and location of items.
 from path import Path
 
 paths = [
-    Path("Locked", [0, 1], [1, 1]),  # Main Gate & Foyer
-    Path("Locked", [1, 2], [1, 3]),  # Security Centre & Containment
-    Path("Blocked", [0, 3], [0, 4]),  # Play Room & Testing
-    Path("Blocked", [3, 2], [3, 3]),  # Research Lab & Data Storage
-    Path("Blocked", [3, 2], [4, 2]),  # Research Lab & Greenhouse
-    Path("Blocked", [1, 2], [2, 2]),  # Security Centre & Common Room
-    Path("Open", [2, 0], [2, 1]),  # Observatory & Main Lobby
-    Path("Open", [2, 1], [3, 1]),  # Main Loby & Dormitory
-    Path("Open", [3, 1], [3, 0]),  # Dormitory & Kitchen
-    Path("Open", [3, 1], [4, 1]),  # Dormitory & Toilets(1)
-    Path("Open", [2, 1], [1, 1]),  # Main Lobby & Foyer
-    Path("Open", [1, 1], [1, 2]),  # Foyer & Security Centre
-    Path("Open", [2, 1], [2, 2]),  # Main Lobby & Common Room
-    Path("Open", [2, 2], [3, 2]),  # Common Room & Research Lab
-    Path("Open", [2, 2], [2, 3]),  # Common Room & Sanitation
-    Path("Open", [2, 3], [1, 3]),  # Sanitation & Containment
-    Path("Open", [1, 3], [0, 3]),  # Containment & Play Room
-    Path("Open", [1, 3], [1, 4]),  # Containment & Preservation
-    Path("Open", [2, 3], [3, 3]),  # Sanitation & Data Storage
-    Path("Open", [3, 3], [4, 3]),  # Data Storage & Mainframe
-    Path("Open", [4, 3], [4, 4]),  # Mainframe & Toilets(2)
-    Path("Open", [4, 3], [4, 2]),  # Mainframe & Greenhouse
-    Path("Open", [4, 2], [5, 2])  # Greenhouse & Garden
+    # Main Gate & Foyer
+    Path("Locked", [0, 1], [1, 1], lock=True),
+    # Security Centre & Containment
+    Path("Locked", [1, 2], [1, 3], lock=True),
+    # Play Room & Testing
+    Path("Blocked", [0, 3], [0, 4], block=True),
+    # Research Lab & Data Storage
+    Path("Blocked", [3, 2], [3, 3], block=True),
+    # Research Lab & Greenhouse
+    Path("Blocked", [3, 2], [4, 2], block=True),
+    # Security Centre & Common Room
+    Path("Blocked", [1, 2], [2, 2], block=True),
+    # Observatory & Main Lobby
+    Path("Open", [2, 0], [2, 1]),
+    # Main Loby & Dormitory
+    Path("Open", [2, 1], [3, 1]),
+    # Dormitory & Kitchen
+    Path("Open", [3, 1], [3, 0]),
+    # Dormitory & Toilets(1)
+    Path("Open", [3, 1], [4, 1]),
+    # Main Lobby & Foyer
+    Path("Open", [2, 1], [1, 1]),
+    # Foyer & Security Centre
+    Path("Open", [1, 1], [1, 2]),
+    # Main Lobby & Common Room
+    Path("Open", [2, 1], [2, 2]),
+    # Common Room & Research Lab
+    Path("Open", [2, 2], [3, 2]),
+    # Common Room & Sanitation
+    Path("Open", [2, 2], [2, 3]),
+    # Sanitation & Containment
+    Path("Open", [2, 3], [1, 3]),
+    # Containment & Play Room
+    Path("Open", [1, 3], [0, 3]),
+    # Containment & Preservation
+    Path("Open", [1, 3], [1, 4]),
+    # Sanitation & Data Storage
+    Path("Open", [2, 3], [3, 3]),
+    # Data Storage & Mainframe
+    Path("Open", [3, 3], [4, 3]),
+    # Mainframe & Toilets(2)
+    Path("Open", [4, 3], [4, 4]),
+    # Mainframe & Greenhouse
+    Path("Open", [4, 3], [4, 2]),
+    # Greenhouse & Garden
+    Path("Open", [4, 2], [5, 2])
 ]
 
 
