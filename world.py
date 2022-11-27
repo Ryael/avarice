@@ -45,6 +45,8 @@ paths = [
     Path("Open", [1, 3], [0, 3]),
     # Containment & Preservation
     Path("Open", [1, 3], [1, 4]),
+    # Preservation & Testing
+    Path("Open", [0, 4], [1, 4]),
     # Sanitation & Data Storage
     Path("Open", [2, 3], [3, 3]),
     # Data Storage & Mainframe
