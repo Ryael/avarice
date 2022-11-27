@@ -37,7 +37,7 @@ class Player:
         else:
             self.moved = False
             print("""
-            You find yourself unable to move in that direction.
+        You find yourself unable to move in that direction.
             """)
 
     def move_north(self):
