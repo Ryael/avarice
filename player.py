@@ -7,7 +7,7 @@ This module contains the logic dictating everything concerning the player.
 """
 
 
-from world import room_at
+from world import path_at
 
 
 class Player:
@@ -28,17 +28,24 @@ class Player:
         The move method is called using named parameteres, these parameteres
         are from math and represent changes in x and y values. This method
         accepts a change in the x and/or y directions. It moves the player
-        if the room exists, and doesn't if the room doesn't exist.
+        if the path exists, and doesn't if the path doesn't exist. It also
+        checks if the path is either blocked or locked.
         """
-        if valid_move(self, dx_pos, dy_pos):
-            self.x_pos += dx_pos
-            self.y_pos += dy_pos
-            self.moved = True
-        else:
-            self.moved = False
-            print("""
+        path = valid_move(self, dx_pos, dy_pos)
+
+        if path is not None:
+            if path.block or path.lock:
+                print(path.desc)
+            else:
+                self.x_pos += dx_pos
+                self.y_pos += dy_pos
+                self.moved = True
+                return
+
+        self.moved = False
+        print("""
         You find yourself unable to move in that direction.
-            """)
+        """)
 
     def move_north(self):
         """
@@ -71,9 +78,13 @@ class Player:
 
 def valid_move(player, x_pos, y_pos):
     """
-    Checks if the room being moved into exists.
+    Checks if the path being moved into exists.
     """
-    if room_at(player.x_pos + x_pos, player.y_pos + y_pos) is not None:
-        return True
+    x_dest = player.x_pos + x_pos
+    y_dest = player.y_pos + y_pos
+    path = path_at(player.x_pos, player.y_pos, x_dest, y_dest)
 
-    return False
+    if path is not None:
+        return path
+
+    return None

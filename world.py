@@ -10,7 +10,7 @@ from path import Path
 
 paths = [
     # Main Gate & Foyer
-    Path("Locked", [0, 1], [1, 1], lock=True),
+    Path("\n\tLocked", [0, 1], [1, 1], lock=True),
     # Security Centre & Containment
     Path("Locked", [1, 2], [1, 3], lock=True),
     # Play Room & Testing
@@ -387,4 +387,4 @@ def find_path(path_coords):
                 path_coords[1] == path.between[0]):
             return path
 
-        return None
+    return None
