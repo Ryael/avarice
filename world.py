@@ -7,6 +7,7 @@ This module contains all the world details, lore, and location of items.
 """
 
 from path import Path
+from item import Item
 
 paths = [
     # Main Gate & Foyer
@@ -58,6 +59,11 @@ paths = [
     # Greenhouse & Garden
     Path("Open", [4, 2], [5, 2])
 ]
+
+items = {
+    "cctv_footage": Item("CCTV Footage", "Records of the footage obtained from"
+                         " the Security Center.")
+}
 
 
 class Room:
