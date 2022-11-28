@@ -4,7 +4,7 @@
 
 [Avarice - Live Website](https://ryael.github.io/memoria/)
 
-![Stars - Badge](https://badgen.net/github/stars/Ryael/avarice) ![Watchers - Badge](https://badgen.net/github/watchers/Ryael/avarice ![Issues - Badge](https://badgen.net/github/issues/Ryael/avarice)
+![Stars - Badge](https://badgen.net/github/stars/Ryael/avarice) ![Watchers - Badge](https://badgen.net/github/watchers/Ryael/avarice) ![Issues - Badge](https://badgen.net/github/issues/Ryael/avarice)
 
 ![Avarice - Animation](docs/screenshots/memoria-animation-1.gif)
 
