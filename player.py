@@ -14,16 +14,15 @@ class Player:
     """
     The core class for the player character within the world.
     """
-    def __init__(self):
+    def __init__(self, pos):
         """
         Creates an instance of the player character and assigns x,y coordinates
         to them to represent their position within the world.
         """
-        self.x_pos = 2
-        self.y_pos = 0
+        self.pos = pos
         self.moved = True
 
-    def move(self, dx_pos, dy_pos):
+    def move(self, d_pos):
         """
         The move method is called using named parameteres, these parameteres
         are from math and represent changes in x and y values. This method
@@ -31,14 +30,13 @@ class Player:
         if the path exists, and doesn't if the path doesn't exist. It also
         checks if the path is either blocked or locked.
         """
-        path = valid_move(self, dx_pos, dy_pos)
+        path = valid_move(self, d_pos)
 
         if path is not None:
-            if path.block or path.lock:
+            if path.blocked or path.locked:
                 print(path.desc)
             else:
-                self.x_pos += dx_pos
-                self.y_pos += dy_pos
+                self.pos += d_pos
                 self.moved = True
                 return
 
@@ -47,42 +45,13 @@ class Player:
         You find yourself unable to move in that direction.
         """)
 
-    def move_north(self):
-        """
-        This method shows the amount of the change in the
-        y-direction (negative).
-        """
-        self.move(dx_pos=0, dy_pos=-1)
 
-    def move_south(self):
-        """
-        This method shows the amount of the change in the
-        y-direction (positive).
-        """
-        self.move(dx_pos=0, dy_pos=1)
-
-    def move_west(self):
-        """
-        This method shows the amount of the change in the
-        x-direction (negative).
-        """
-        self.move(dx_pos=-1, dy_pos=0)
-
-    def move_east(self):
-        """
-        This method shows the amount of the change in the
-        x-direction (positive).
-        """
-        self.move(dx_pos=1, dy_pos=0)
-
-
-def valid_move(player, x_pos, y_pos):
+def valid_move(player, d_pos):
     """
     Checks if the path being moved into exists.
     """
-    x_dest = player.x_pos + x_pos
-    y_dest = player.y_pos + y_pos
-    path = path_at(player.x_pos, player.y_pos, x_dest, y_dest)
+    dest = player.pos + d_pos
+    path = path_at(player.pos, dest)
 
     if path is not None:
         return path
