@@ -6,9 +6,9 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the game-loop and global variables.
 """
 
+from position import Position
 import world
 from player import Player
-from position import Position
 
 action_move_n_list = ["go n", "go north", "move n", "move north", "n", "north"]
 action_move_s_list = ["go s", "go south", "move s", "move south", "s", "south"]

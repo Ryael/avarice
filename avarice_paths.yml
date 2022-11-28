@@ -1,0 +1,240 @@
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 0
+    y: 1
+  room2: !!python/object:position.Position
+    x: 1
+    y: 1
+  blocked: false
+  desc: "\n\tLocked"
+  locked: true
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 1
+    y: 2
+  room2: !!python/object:position.Position
+    x: 1
+    y: 3
+  blocked: false
+  desc: Locked
+  locked: true
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 0
+    y: 3
+  room2: !!python/object:position.Position
+    x: 0
+    y: 4
+  blocked: true
+  desc: Blocked
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 3
+    y: 2
+  room2: !!python/object:position.Position
+    x: 3
+    y: 3
+  blocked: true
+  desc: Blocked
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 3
+    y: 2
+  room2: !!python/object:position.Position
+    x: 4
+    y: 2
+  blocked: true
+  desc: Blocked
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 1
+    y: 2
+  room2: !!python/object:position.Position
+    x: 2
+    y: 2
+  blocked: true
+  desc: Blocked
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 0
+  room2: !!python/object:position.Position
+    x: 2
+    y: 1
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 1
+  room2: !!python/object:position.Position
+    x: 3
+    y: 1
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 3
+    y: 1
+  room2: !!python/object:position.Position
+    x: 3
+    y: 0
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 3
+    y: 1
+  room2: !!python/object:position.Position
+    x: 4
+    y: 1
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 1
+  room2: !!python/object:position.Position
+    x: 1
+    y: 1
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 1
+    y: 1
+  room2: !!python/object:position.Position
+    x: 1
+    y: 2
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 1
+  room2: !!python/object:position.Position
+    x: 2
+    y: 2
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 2
+  room2: !!python/object:position.Position
+    x: 3
+    y: 2
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 2
+  room2: !!python/object:position.Position
+    x: 2
+    y: 3
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 3
+  room2: !!python/object:position.Position
+    x: 1
+    y: 3
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 1
+    y: 3
+  room2: !!python/object:position.Position
+    x: 0
+    y: 3
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 1
+    y: 3
+  room2: !!python/object:position.Position
+    x: 1
+    y: 4
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 0
+    y: 4
+  room2: !!python/object:position.Position
+    x: 1
+    y: 4
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 2
+    y: 3
+  room2: !!python/object:position.Position
+    x: 3
+    y: 3
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 3
+    y: 3
+  room2: !!python/object:position.Position
+    x: 4
+    y: 3
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 4
+    y: 3
+  room2: !!python/object:position.Position
+    x: 4
+    y: 4
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 4
+    y: 3
+  room2: !!python/object:position.Position
+    x: 4
+    y: 2
+  blocked: false
+  desc: Open
+  locked: false
+- !!python/object:path.Path
+  room1: !!python/object:position.Position
+    x: 4
+    y: 2
+  room2: !!python/object:position.Position
+    x: 5
+    y: 2
+  blocked: false
+  desc: Open
+  locked: false

@@ -1,1 +1,1 @@
-# Your requirements go here
+pyyaml == 6.0
