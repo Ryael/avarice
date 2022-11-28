@@ -30,7 +30,7 @@ RUN curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-ins
     && python3 -m pip install --no-cache-dir --upgrade \
         setuptools wheel virtualenv pipenv pylint rope flake8 \
         mypy autopep8 pep8 pylama pydocstyle bandit notebook \
-        twine \
+        twine pyyaml \
     && sudo rm -rf /tmp/*USER gitpod
 ENV PYTHONUSERBASE=/workspace/.pip-modules \
     PIP_USER=yes
