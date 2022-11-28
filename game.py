@@ -8,6 +8,12 @@ This module contains the game-loop and global variables.
 
 import world
 from player import Player
+from position import Position
+
+action_move_n_list = ["go n", "go north", "move n", "move north", "n", "north"]
+action_move_s_list = ["go s", "go south", "move s", "move south", "s", "south"]
+action_move_w_list = ["go w", "go west", "move w", "move west", "w", "west"]
+action_move_e_list = ["go e", "go east", "move e", "move east", "e", "east"]
 
 
 def p_t(text):
@@ -65,7 +71,7 @@ def start_game():
         p_t("We're sure you're the right person for this job.")
         # Instantiates the player and requests a name and assigns it to
         # a variable.
-        player = Player()
+        player = Player(Position(2, 0))
         player.name = get_str("Could you please state your name again?")
         p_t(f"Very well, Inspector {player.name}. Let's begin.")
         # Lets the user decide if they want to view the intro scene.
@@ -80,21 +86,26 @@ def start_game():
             p_t("We'll get straight to it then...")
         else:
             print("Please answer the question, yes or no will suffice.")
+
         while True:
             # Spawns the player in the starting room.
-            current_room = world.room_at(player.x_pos, player.y_pos)
+            current_room = world.room_at(player.pos)
             if player.moved:
-                p_t(current_room.intro_text())
+                if current_room.visited:
+                    p_t("\n\t" + current_room.desc + "\n")
+                else:
+                    p_t("\n\t" + current_room.intro + "\n")
+                    current_room.visited = True
             # Assigns movement actions to the player.
             action_input = get_player_command()
-            if action_input in ["go n", "go north"]:
-                player.move_north()
-            if action_input in ["go s", "go south"]:
-                player.move_south()
-            if action_input in ["go w", "go west"]:
-                player.move_west()
-            if action_input in ["go e", "go east"]:
-                player.move_east()
+            if action_input in action_move_n_list:
+                player.move(world.directions["n"])
+            if action_input in action_move_s_list:
+                player.move(world.directions["s"])
+            if action_input in action_move_w_list:
+                player.move(world.directions["w"])
+            if action_input in action_move_e_list:
+                player.move(world.directions["e"])
     elif start_choice.lower()[0] == "n":
         p_t("""\033[38;2;150;95;143m
     ████████╗██╗  ██╗███████╗    ███████╗███╗   ██╗██████╗
