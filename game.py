@@ -43,6 +43,7 @@ def get_str(question):
         if input_str.strip() == "":
             input_str = ""
         if not input_str:
+            time.sleep(0.75)
             print("Please input something rather than nothing.")
         else:
             return input_str
@@ -88,9 +89,9 @@ def start_game():
             p_t("and ultimately what their goal is")
             p_t("This will lead directly to the start of the game.")
         elif intro_choice.lower()[0] == "n":
-            p_t("We'll get straight to it then...")
+            p_t("\nWe'll get straight to it then...")
         else:
-            print("Please answer the question, yes or no will suffice.")
+            print("\nPlease answer the question, yes or no will suffice.")
 
         while True:
             # Spawns the player in the starting room.
@@ -113,14 +114,14 @@ def start_game():
                 player.move(world.directions["e"])
     elif start_choice.lower()[0] == "n":
         p_t("""\033[38;2;150;95;143m
-    ████████╗██╗  ██╗███████╗    ███████╗███╗   ██╗██████╗
-    ╚══██╔══╝██║  ██║██╔════╝    ██╔════╝████╗  ██║██╔══██╗
-       ██║   ███████║█████╗      █████╗  ██╔██╗ ██║██║  ██║
-       ██║   ██╔══██║██╔══╝      ██╔══╝  ██║╚██╗██║██║  ██║
-       ██║   ██║  ██║███████╗    ███████╗██║ ╚████║██████╔
-            \033[0m\n""")
+████████╗██╗  ██╗███████╗    ███████╗███╗   ██╗██████╗
+╚══██╔══╝██║  ██║██╔════╝    ██╔════╝████╗  ██║██╔══██╗
+   ██║   ███████║█████╗      █████╗  ██╔██╗ ██║██║  ██║
+   ██║   ██╔══██║██╔══╝      ██╔══╝  ██║╚██╗██║██║  ██║
+   ██║   ██║  ██║███████╗    ███████╗██║ ╚████║██████╔
+            \033[0m""")
         p_t("Perhaps another person would be better suited.")
-        p_t("Farewell, Investigator.")
+        p_t("\nFarewell, Investigator.\n")
     else:
         print("Please answer the question, yes or no will suffice.")
 
