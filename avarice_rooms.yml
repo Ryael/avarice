@@ -4,7 +4,7 @@
     x: 2
     y: 0
   visited: False
-  intro: "Starting room, a tall tower with windows on the top.\n\n\tYou hear faint noises coming from the south. Perhaps it's worth investigating..."
+  intro: "Starting room, a tall tower with windows on the top.\nYou hear faint noises coming from the south. Perhaps it's worth investigating..."
   desc: TODO
 - !!python/object:room.Room
   name: Kitchen
@@ -12,7 +12,7 @@
     x: 3
     y: 0
   visited: False
-  intro: "The kitchen, where the residents eat. Or perhaps it'll be more correct to say this is where they once ate.\n\n\tNot much else here, just a dead end."
+  intro: "The kitchen, where the residents eat. Or perhaps it'll be more correct to say this is where they once ate.\nNot much else here, just a dead end."
   desc: TODO
 - !!python/object:room.Room
   name: Main Gate
@@ -20,7 +20,7 @@
     x: 0
     y: 1
   visited: False
-  intro: "The main gate. Once sealed shut, now open.\n\n\tYou never thought you'd see the light of day after that harrowing experience, yet here you are."
+  intro: "The main gate. Once sealed shut, now open.\nYou never thought you'd see the light of day after that harrowing experience, yet here you are."
   desc: TODO
 - !!python/object:room.Room
   name: Foyer
@@ -28,7 +28,7 @@
     x: 1
     y: 1
   visited: False
-  intro: "The foyer, one of the first rooms people see.\n\n\tTo the east you see the main entrance for the facility. It looks sealed shut and you realise that you won't be able to leave without find a key. It's never that simple, is it... You hear a faint beeping sound coming from the south."
+  intro: "The foyer, one of the first rooms people see.\nTo the east you see the main entrance for the facility. It looks sealed shut and you realise that you won't be able to leave without find a key. It's never that simple, is it... You hear a faint beeping sound coming from the south."
   desc: TODO
 - !!python/object:room.Room
   name: Main Lobby
@@ -36,7 +36,7 @@
     x: 2
     y: 1
   visited: False
-  intro: "The main lobby, the room that connects all of the building together.\n\n\tThe noise you heard coming from the south is now much louder. It seems eerily... mechanical. Maybe avoiding that path for now would be for the best. After all, you still do have two other paths you could explore."
+  intro: "The main lobby, the room that connects all of the building together.\nThe noise you heard coming from the south is now much louder. It seems eerily... mechanical. Maybe avoiding that path for now would be for the best. After all, you still do have two other paths you could explore."
   desc: TODO
 - !!python/object:room.Room
   name: Dormitory
@@ -44,7 +44,7 @@
     x: 3
     y: 1
   visited: False
-  intro: "The dormitory, where residents come to turn in for the night.\n\n\tTo the north you see a sign reading \"Kitchen\" and to the east you see a sign reading \"Toilets\"."
+  intro: "The dormitory, where residents come to turn in for the night.\nTo the north you see a sign reading \"Kitchen\" and to the east you see a sign reading \"Toilets\"."
   desc: TODO
 - !!python/object:room.Room
   name: Toilets
@@ -52,7 +52,7 @@
     x: 4
     y: 1
   visited: False
-  intro: "The first of two available toilet rooms.\n\n\tThere's nothing else of interest here."
+  intro: "The first of two available toilet rooms.\nThere's nothing else of interest here."
   desc: TODO
 - !!python/object:room.Room
   name: Security
@@ -60,7 +60,7 @@
     x: 1
     y: 2
   visited: False
-  intro: "The security centre, where the guards reside and watch over CCTV footage.\n\n\tYou see a huge metallic two-part door to the south, but much like the entrance is also sealed shut."
+  intro: "The security centre, where the guards reside and watch over CCTV footage.\nYou see a huge metallic two-part door to the south, but much like the entrance is also sealed shut."
   desc: TODO
 - !!python/object:room.Room
   name: Common Room
@@ -68,7 +68,7 @@
     x: 2
     y: 2
   visited: False
-  intro: "The common room, where people gathered during their free time. It's also now the monster's nest.\n\n\tA horrible smell overwhelms as you look up to see a sign reading \"Sanitation\". You're suddenly overwhelmed with dread."
+  intro: "The common room, where people gathered during their free time. It's also now the monster's nest.\nA horrible smell overwhelms as you look up to see a sign reading \"Sanitation\". You're suddenly overwhelmed with dread."
   desc: TODO
 - !!python/object:room.Room
   name: Labratory
@@ -76,7 +76,7 @@
     x: 3
     y: 2
   visited: False
-  intro: "The research lab, where the monster was first cultivated by scientists.\n\n\tA horrible smell overwhelms as you look up to see a sign reading \"Sanitation\". You're suddenly overwhelmed with dread."
+  intro: "The research lab, where the monster was first cultivated by scientists.\nA horrible smell overwhelms as you look up to see a sign reading \"Sanitation\". You're suddenly overwhelmed with dread."
   desc: TODO
 - !!python/object:room.Room
   name: Greenhouse
@@ -84,7 +84,7 @@
     x: 4
     y: 2
   visited: False
-  intro: "The greenhouse, where fruit, vegetables, and plants are grown.\n\n\tDirections from the Greenhouse."
+  intro: "The greenhouse, where fruit, vegetables, and plants are grown.\nDirections from the Greenhouse."
   desc: TODO
 - !!python/object:room.Room
   name: Garden
@@ -92,7 +92,7 @@
     x: 5
     y: 2
   visited: False
-  intro: "The garden, an open-air location with tall fences with electric wire on top. Not to prevent anyone from getting in, but rather to prevent something from getting out.\n\n\tDirections from the Garden."
+  intro: "The garden, an open-air location with tall fences with electric wire on top. Not to prevent anyone from getting in, but rather to prevent something from getting out.\nDirections from the Garden."
   desc: TODO
 - !!python/object:room.Room
   name: Playroom
@@ -100,7 +100,7 @@
     x: 0
     y: 3
   visited: False
-  intro: "The playroom, where the monster grew up, played the piano (badly), was introduced to other animals, and ultimately, went insane.\n\n\tDirections from Play Room."
+  intro: "The playroom, where the monster grew up, played the piano (badly), was introduced to other animals, and ultimately, went insane.\nDirections from Play Room."
   desc: TODO
 - !!python/object:room.Room
   name: Containment Room
@@ -108,7 +108,7 @@
     x: 1
     y: 3
   visited: False
-  intro: "The containment area. This is was put whenever it started acting out. It also doubled as its resting area.\n\n\tDirections from Containment."
+  intro: "The containment area. This is was put whenever it started acting out. It also doubled as its resting area.\nDirections from Containment."
   desc: TODO
 - !!python/object:room.Room
   name: Sanitation Room
@@ -116,7 +116,7 @@
     x: 2
     y: 3
   visited: False
-  intro: "The sanitation room, where the monster was regularly cleaned in order to maintain its hygiene. It was also fed here.\n\n\tDirections from Sanitation."
+  intro: "The sanitation room, where the monster was regularly cleaned in order to maintain its hygiene. It was also fed here.\nDirections from Sanitation."
   desc: TODO
 - !!python/object:room.Room
   name: Data Storage Room
@@ -124,7 +124,7 @@
     x: 3
     y: 3
   visited: False
-  intro: "Data storage room, where all the CCTV records, experimentation logs and research logs, and other sensitive information is kept.\n\n\tDirections from Data Storage."
+  intro: "Data storage room, where all the CCTV records, experimentation logs and research logs, and other sensitive information is kept.\nDirections from Data Storage."
   desc: TODO
 - !!python/object:room.Room
   name: Mainframe Room
@@ -132,7 +132,7 @@
     x: 4
     y: 3
   visited: False
-  intro: "The mainframe room. This is what powers the entire facility and where all the important computers are located.\n\n\tDirections from Mainframe room."
+  intro: "The mainframe room. This is what powers the entire facility and where all the important computers are located.\nDirections from Mainframe room."
   desc: TODO
 - !!python/object:room.Room
   name: Testing Room
@@ -140,7 +140,7 @@
     x: 0
     y: 4
   visited: False
-  intro: "The testing room. This is where the monster's abilities were tested, including its endurance and health. Needless to say, it wasn't its favourite room.\n\n\tDirections from Testing."
+  intro: "The testing room. This is where the monster's abilities were tested, including its endurance and health. Needless to say, it wasn't its favourite room.\nDirections from Testing."
   desc: TODO
 - !!python/object:room.Room
   name: Preservation Room
@@ -148,7 +148,7 @@
     x: 1
     y: 4
   visited: False
-  intro: "The perservation room, this place was used to nurse the monster back to health after any dangerous encounters. Or to make additional adjustments to its already mechnical body.\n\n\tDirections from Preservation."
+  intro: "The perservation room, this place was used to nurse the monster back to health after any dangerous encounters. Or to make additional adjustments to its already mechnical body.\nDirections from Preservation."
   desc: TODO
 - !!python/object:room.Room
   name: Toilets
@@ -156,5 +156,5 @@
     x: 4
     y: 4
   visited: False
-  intro: "The second of the two toilets available in the facility.\n\n\tDirections from the second existing toilets."
+  intro: "The second of the two toilets available in the facility.\nDirections from the second existing toilets."
   desc: TODO

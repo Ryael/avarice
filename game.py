@@ -6,6 +6,7 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the game-loop and global variables.
 """
 
+import time
 from position import Position
 import world
 from player import Player
@@ -22,6 +23,7 @@ def p_t(text):
     The function name is abbreviated to permit for longer text strings.
     For clarity: "p_t" stands for print text.
     """
+    time.sleep(0.75)
     print(text)
 
 
@@ -57,27 +59,30 @@ def start_game():
     after which the game begins.
     """
     p_t("""\033[38;2;150;95;143m
-    █████╗ ██╗   ██╗ █████╗ ██████╗ ██╗ ██████╗███████╗
-    ██╔══██╗██║   ██║██╔══██╗██╔══██╗██║██╔════╝██╔════╝
-    ███████║██║   ██║███████║██████╔╝██║██║     █████╗
-    ██╔══██║╚██╗ ██╔╝██╔══██║██╔══██╗██║██║     ██╔══╝
-    ██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║╚██████╗███████╗
-    ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝ \033[0m\n""")
+█████╗ ██╗   ██╗ █████╗ ██████╗ ██╗ ██████╗███████╗
+██╔══██╗██║   ██║██╔══██╗██╔══██╗██║██╔════╝██╔════╝
+███████║██║   ██║███████║██████╔╝██║██║     █████╗
+██╔══██║╚██╗ ██╔╝██╔══██║██╔══██╗██║██║     ██╔══╝
+██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║╚██████╗███████╗
+╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝ \033[0m\n""")
     # Lets the user decide if they want to play the game.
-    start_choice = get_str("Investigator, do you accept the task? (Y/N):")
+    p_t("Investigator, do you accept the task?")
+    start_choice = get_str("(Y/N):\n")
     if start_choice.lower()[0] == "y":
-        p_t("This task isn't for the faint of hearted,")
-        p_t("but we appreciate your help in this matter.")
-        p_t("We're sure you're the right person for this job.")
+        p_t("\nThis task isn't for the faint of heart,")
+        p_t("but we appreciate your help nonetheless.")
+        p_t("We're confident that you're the right person for this job.")
         # Instantiates the player and requests a name and assigns it to
         # a variable.
         player = Player(Position(2, 0))
-        player.name = get_str("Could you please state your name again?")
-        p_t(f"Very well, Inspector {player.name}. Let's begin.")
+        p_t("Forgive my memory, I've dealt with a number of associates")
+        p_t("lately.\n")
+        player.name = get_str("Could you please state your name again?\n")
+        p_t(f"\nVery well, Inspector {player.name}. Let's begin.")
         # Lets the user decide if they want to view the intro scene.
-        intro_choice = get_str("Would you like to see the intro? (Y/N):")
+        intro_choice = get_str("\nShall we move onto the briefing? (Y/N):\n")
         if intro_choice.lower()[0] == "y":
-            p_t("Play intro scene")
+            p_t("\nPlay intro scene")
             p_t("This will describe the back story of the Investigator")
             p_t("Their motives, why they approached, who approached them")
             p_t("and ultimately what their goal is")
@@ -92,9 +97,9 @@ def start_game():
             current_room = world.room_at(player.pos)
             if player.moved:
                 if current_room.visited:
-                    p_t("\n\t" + current_room.desc + "\n")
+                    p_t("\n" + current_room.desc + "\n")
                 else:
-                    p_t("\n\t" + current_room.intro + "\n")
+                    p_t("\n" + current_room.intro + "\n")
                     current_room.visited = True
             # Assigns movement actions to the player.
             action_input = get_player_command()
