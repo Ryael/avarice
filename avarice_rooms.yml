@@ -36,8 +36,8 @@
     x: 2
     y: 1
   visited: False
-  intro: ".------------.\n| Main Lobby |\n'------------'\n\nThe main lobby, the room that connects all of the building together.\nThe noise you heard coming from the south is now much louder. It seems eerily... mechanical. Maybe avoiding that path for now would be for the best. After all, you still do have two other paths you could explore."
-  desc: TODO
+  intro: ".------------.\n| Main Lobby |\n'------------'\n\nYou stumble into what appears to be the facility's main lobby, with various\nhallways and labelled doors lining the walls. A massive staircase leads the\nway to the second floor, but is entirely blocked off.\n\nA reception desk sits at the center, and you make note of the crawlspace\nunderneath. Large scratch marks and dried bloodstains on the walls and floor\nsend a chill down your spine...\n\n“Mechanical” echoes in the back of your mind as you're able to pick up trace\nsounds of metal grinding together. Perhaps it'd be in your best interest to\navoid it for the time being. After all, there's still much to explore."
+  desc: ".------------.\n| Main Lobby |\n'------------'\n\nNumerous doors and halls that assumingely lead to other areas of the\nfacility line the walls. A reception desk sits at the center, and you make\nnote of the crawlspace underneath. Large scratch marks and dried bloodstains\non the walls and floor send a chill down your spine."
 - !!python/object:room.Room
   name: Dormitory
   pos: !!python/object:position.Position
@@ -45,22 +45,6 @@
     y: 1
   visited: False
   intro: ".-----------.\n| Dormitory |\n'-----------'\n\nThe dormitory, where residents come to turn in for the night.\nTo the north you see a sign reading \"Kitchen\" and to the east you see a sign reading \"Toilets\"."
-  desc: TODO
-- !!python/object:room.Room
-  name: Toilets
-  pos: !!python/object:position.Position
-    x: 4
-    y: 1
-  visited: False
-  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nThe first of two available toilet rooms.\nThere's nothing else of interest here."
-  desc: TODO
-- !!python/object:room.Room
-  name: Security
-  pos: !!python/object:position.Position
-    x: 1
-    y: 2
-  visited: False
-  intro: ".-----------------.\n| Security Center |\n'-----------------'\n\nThe security centre, where the guards reside and watch over CCTV footage.\nYou see a huge metallic two-part door to the south, but much like the entrance is also sealed shut."
   desc: TODO
 - !!python/object:room.Room
   name: Common Room
