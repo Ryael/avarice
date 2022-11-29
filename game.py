@@ -6,47 +6,16 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the game-loop and global variables.
 """
 
-import time
 from position import Position
 import world
+from constant import START_TITLE, END_TITLE
+from helper import p_t, get_str
 from player import Player
 
 action_move_n_list = ["go n", "go north", "move n", "move north", "n", "north"]
 action_move_s_list = ["go s", "go south", "move s", "move south", "s", "south"]
 action_move_w_list = ["go w", "go west", "move w", "move west", "w", "west"]
 action_move_e_list = ["go e", "go east", "move e", "move east", "e", "east"]
-
-
-def p_t(text):
-    """
-    Print a line of text.
-    The function name is abbreviated to permit for longer text strings.
-    For clarity: "p_t" stands for print text.
-    """
-    time.sleep(0.75)
-    print(text)
-
-
-def get_str(question):
-    """Returns a non-empty string, input by the user.
-    Runs a while loop, using the "question" parameter to seek user input.
-    If an empty string is given (i.e. the user just presses ENTER),
-    or if the user inputs only spaces,
-    the loop will print an error message and request input again.
-    Also removes extra whitespace from strings.
-    Adapted from a function by Siobhán Mooney:
-    https://github.com/Estelindis/double-agent
-    """
-    while True:
-        input_str = input(f"{question}\n")
-        input_str = " ".join(input_str.split())
-        if input_str.strip() == "":
-            input_str = ""
-        if not input_str:
-            time.sleep(0.75)
-            print("Please input something rather than nothing.")
-        else:
-            return input_str
 
 
 def start_game():
@@ -59,13 +28,7 @@ def start_game():
     The user is given a choice whether to view the intro,
     after which the game begins.
     """
-    p_t("""\033[38;2;150;95;143m
-█████╗ ██╗   ██╗ █████╗ ██████╗ ██╗ ██████╗███████╗
-██╔══██╗██║   ██║██╔══██╗██╔══██╗██║██╔════╝██╔════╝
-███████║██║   ██║███████║██████╔╝██║██║     █████╗
-██╔══██║╚██╗ ██╔╝██╔══██║██╔══██╗██║██║     ██╔══╝
-██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║╚██████╗███████╗
-╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝ \033[0m\n""")
+    p_t(START_TITLE)
     # Lets the user decide if they want to play the game.
     p_t("Investigator, do you accept the task?")
     start_choice = get_str("(Y/N):\n")
@@ -113,15 +76,9 @@ def start_game():
             if action_input in action_move_e_list:
                 player.move(world.directions["e"])
     elif start_choice.lower()[0] == "n":
-        p_t("""\033[38;2;150;95;143m
-████████╗██╗  ██╗███████╗    ███████╗███╗   ██╗██████╗
-╚══██╔══╝██║  ██║██╔════╝    ██╔════╝████╗  ██║██╔══██╗
-   ██║   ███████║█████╗      █████╗  ██╔██╗ ██║██║  ██║
-   ██║   ██╔══██║██╔══╝      ██╔══╝  ██║╚██╗██║██║  ██║
-   ██║   ██║  ██║███████╗    ███████╗██║ ╚████║██████╔
-            \033[0m""")
-        p_t("Perhaps another person would be better suited.")
-        p_t("\nFarewell, Investigator.\n")
+        p_t("\nPerhaps another person would be better suited.")
+        p_t("\nFarewell, Investigator.")
+        p_t(END_TITLE)
     else:
         print("Please answer the question, yes or no will suffice.")
 
