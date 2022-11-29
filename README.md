@@ -2,7 +2,7 @@
 
 ### A website for a CLI horror-themed text adventure.
 
-[Avarice - Live Website](https://ryael.github.io/memoria/)
+[Avarice - Live Website](https://avarice-txt.herokuapp.com/)
 
 ![Stars - Badge](https://badgen.net/github/stars/Ryael/avarice) ![Watchers - Badge](https://badgen.net/github/watchers/Ryael/avarice) ![Issues - Badge](https://badgen.net/github/issues/Ryael/avarice)
 
