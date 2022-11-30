@@ -12,8 +12,8 @@
     x: 3
     y: 0
   visited: False
-  intro: ".---------.\n| Kitchen |\n'---------'\n\nThe kitchen, where the residents eat. Or perhaps it'll be more correct to say this is where they once ate.\nNot much else here, just a dead end."
-  desc: TODO
+  intro: ".---------.\n| Kitchen |\n'---------'\n\nA kitchen seems to have been installed. You wonder if it\nwas once a center of commerce.\n\nDrawers have been stripped of various utensils inside and\nnow lay scattered on the floor, and a number of the dining\ntables have been flipped over. "
+  desc: ".---------.\n| Kitchen |\n'---------'\n\nWhat's left of the kitchen.\n\nUtensils are strewn about the floor and a number of the\ntables have been flipped over."
 - !!python/object:room.Room
   name: Main Gate
   pos: !!python/object:position.Position
@@ -44,8 +44,24 @@
     x: 3
     y: 1
   visited: False
-  intro: ".-----------.\n| Dormitory |\n'-----------'\n\nThe dormitory, where residents come to turn in for the night.\nTo the north you see a sign reading \"Kitchen\" and to the east you see a sign reading \"Toilets\"."
+  intro: ".-----------.\n| Dormitory |\n'-----------'\n\nA dormitory, presumably for the staff.\n\nA number of bunk beds have been knocked over, while\nothers have been broken. Several of the bookshelves have\nbeen knocked over. It looks as if it was caught in the\naftermath of some sort of rampage.\n\nTo the north you see a sign reading “Kitchen”, and\nto the east you see a sign reading “Toilets.”"
+  desc: "'.-----------.\n| Dormitory |\n'-----------'\n\nThe staff dormitory.\n\nThe beds have been knocked over, and bookshelves thrown\naround."
+- !!python/object:room.Room
+  name: Toilets
+  pos: !!python/object:position.Position
+    x: 4
+    y: 1
+  visited: False
+  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nThe first of two available toilet rooms.\nThere's nothing else of interest here."
   desc: TODO
+- !!python/object:room.Room
+  name: Security
+  pos: !!python/object:position.Position
+    x: 1
+    y: 2
+  visited: False
+  intro: ".-----------------.\n| Security Center |\n'-----------------'\n\nYou wander into what appears to be a security center.\n\nA number of monitors line the walls and desks. If you\ncan find a way to restore power, you wonder if you'd be\nable to see every room in the facility on these monitors.\nThere's a small desk at the middle of the CCTV screens,\nwith enough space to crawl underneath.\n\nA massive metal door resides on the southern wall, with\na huge dent from an impact on the other side."
+  desc: sec
 - !!python/object:room.Room
   name: Common Room
   pos: !!python/object:position.Position
