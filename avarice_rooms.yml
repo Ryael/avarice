@@ -4,8 +4,8 @@
     x: 2
     y: 0
   visited: False
-  intro: ".-------------.\n| Observatory |\n'-------------'\n\nStarting room, a tall tower with windows on the top.\nYou hear faint noises coming from the south. Perhaps it's worth investigating..."
-  desc: TODO
+  intro: ".-------------.\n| Observatory |\n'-------------'\n\nThe large domed tower stands tall. From what you remember\napproaching it from outside, its age is apparent: decaying\nbrick and shattered windows, with nature attempting to\nreclaim its lost territory as vines crawl up its sides,\ncapturing it in its claws like a predator.\n\nAn old ladder, your only apparent escape, seems tall\nenough to reach none of the windows. It looks as if you\nmight be able to use it to escape.\n\nYou hear faint noises coming from the south. Best to\nget a move on and investigate."
+  desc: ".-------------.\n| Observatory |\n'-------------'\n\nThe central observatory. Various types of plants have\nstarted to reclaim the building as their own, and you\nwonder how long the facility has been abandoned for\nthem to have reached such growth.\n\nBeams of sunlight pour through the shattered windows.\nYou cast a glance at the ladder."
 - !!python/object:room.Room
   name: Kitchen
   pos: !!python/object:position.Position
@@ -36,8 +36,8 @@
     x: 2
     y: 1
   visited: False
-  intro: ".------------.\n| Main Lobby |\n'------------'\n\nYou stumble into what appears to be the facility's main lobby, with various\nhallways and labelled doors lining the walls. A massive staircase leads the\nway to the second floor, but is entirely blocked off.\n\nA reception desk sits at the center, and you make note of the crawlspace\nunderneath. Large scratch marks and dried bloodstains on the walls and floor\nsend a chill down your spine...\n\n“Mechanical” echoes in the back of your mind as you're able to pick up trace\nsounds of metal grinding together. Perhaps it'd be in your best interest to\navoid it for the time being. After all, there's still much to explore."
-  desc: ".------------.\n| Main Lobby |\n'------------'\n\nNumerous doors and halls that assumingely lead to other areas of the\nfacility line the walls. A reception desk sits at the center, and you make\nnote of the crawlspace underneath. Large scratch marks and dried bloodstains\non the walls and floor send a chill down your spine."
+  intro: ".------------.\n| Main Lobby |\n'------------'\n\nYou stumble into what appears to be the facility's main\nlobby, with various hallways and labeled doors lining\nthe walls. A massive staircase leads the way to the\nsecond floor, but is entirely blocked off.\n\nA reception desk sits at the center, and you make\nnote of the crawlspace underneath. Large scratch marks\nand dried bloodstains on the walls and floor send a chill\ndown your spine...\n\n“Mechanical” echoes in the back of your mind as you're\nable to pick up trace sounds of metal grinding together.\nPerhaps it'd be in your best interest to avoid it for\nthe time being. After all, there's still much to explore."
+  desc: ".------------.\n| Main Lobby |\n'------------'\n\nNumerous doors and halls that assumingely lead to other\nareas of the facility line the walls. \n\nA reception desk sits at the center, and you make\nnote of the crawlspace underneath. Large scratch marks\nand dried bloodstains on the walls and floor send a\nchill down your spine."
 - !!python/object:room.Room
   name: Dormitory
   pos: !!python/object:position.Position
