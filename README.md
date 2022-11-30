@@ -33,14 +33,15 @@ The "Move" function is what truly frees the player up, as it allows them to choo
 
 1. [Project Goals](#project-goals)
     - [User Goals](#user-goals)
-    - [Site Owner Goals](#site-owner-goals)
+    - [Creator Goals](#creator-goals)
 2. [User Experience](#user-experience)
     - [Target Audience](#target-audience)
     - [User Stories](#user-stories)
-3. [User Interface](#user-interface)
-    - [Design Philosophy](#design-philosophy)
-    - [Fonts](#fonts)
-    - [Wireframes](#wireframes)
+3. [Game Design](#narrative_&_visual_design)
+    - [Narrative](#narrative)
+    - [Typography](#typography)
+    - [Colour Scheme](#colour_scheme)
+    - [Map & Flowcharts](#map_&_flowcharts)
 4. [Features](#features)
 5. [Validation](#validation)
     - [HTML Validation](#html-validation)
@@ -78,16 +79,16 @@ The aim of this project is:
 - Have control in how to deal with the monster
 - Read the displayed text at a comfortable speed
 - Experience multiple endings depending on choices made
-- Be provided feedback on performance after acquiring one of the main endings
 
-### Site Owner Goals
+### Creator Goals
 
 - Provide a text adventure game to play for fans of this type of game
 - Provide a suspenseful horror game that focuses on creating a threat that pertsists throughout the game
 - Present horror trophes in a unique and engaging manner
 - Give the user freedom by providing them with actions to roam the world and interact with objects within it
-- Provide a clear explanation of the game rules and difficulty
-- Provide links to the developer's social media should players discover any bugs
+- Give the users options with regard to where they can hide
+- Allow the text to displayed with a slight delay such that it doesn't get printed instantly
+- Provide the user with multiple endings depending on what choices they make throughout their journey
 
 [Back to Top &uarr;](#avarice)
 <hr>
@@ -97,87 +98,89 @@ The aim of this project is:
 ### Target Audience
 
 - People who are looking of a suspenseful albeit enjoyable experience
-- People who are looking for a quick break in an otherwise hectic lifestyle
-- People who are looking for a mini-game that's simple enough for children
-- Fans of memory card games
-- Fans of traditional fantasy concepts
-- People who are looking for a mini-game with an escalating level of difficulty
+- People who are looking for a game that consists mostly of reading
+- People who are looking for a monster game that explores the monster outside of villainising it
+- Fans of horror games
+- Fans of sci-fi concepts mixed with horror and mystery elements
+- People who are looking for a free-to-play text based adventure
 
 ### User Stories
 
-#### First Time Visitors
+#### First Time Players
 
-1. As a first-time visitor, I want to easily understand the main purpose of the game.
-2. As a first-time visitor, I want to easily navigate the menus without getting lost.
-3. As a first-time visitor, I want to learn about the developer.
-4. As a first-time visitor, I want to learn where the images were sourced.
-5. As a first-time visitor, I want to learn what the game rules are.
-6. As a first-time visitor, I want to know what difficulties are available to me.
-7. As a first-time visitor, I want to feel engaged when playing the game.
-8. As a first-time visitor, I want to be provided visual feedback upon beating a round.
+1. As a first-time player, I want to easily understand the main purpose of the game.
+2. As a first-time player, I want to learn how to navigate the map and interact with items.
+3. As a first-time player, I want to learn about the world and the lore.
+4. As a first-time player, I want to learn about the monster and how to deal with it.
+5. As a first-time player, I want to know what the criteria for the different endings is.
+6. As a first-time player, I want to not be overwhelmed by text appearing on screen.
+7. As a first-time player, I want to be able to see previously displayed text within rooms.
+8. As a first-time player, I want to see the people who were involved with the creation of this game.
 
-#### Returning Visitors
+#### Returning Players
 
-9. As a returning visitor, I want to quickly check if any new difficulties or game modes have been added.
-10. As a returning visitor, I want to progress through the difficulty levels to strengthen my memorisation.
+9. As a returning player, I want to go through the game to see and experience any endings I have not prior.
 
 #### Site Owner
 
-11. As the site owner, I want to clearly showcase the memory game.
-12. As the site owner, I want users to be able to navigate the menus smoothly and easily.
-13. As the site owner, I want to adhere to a specific vision and provide users with a very engaging game via its design and imagery.
-14. As the site owner, I want to provide a clear explanation of the game-rules and the different difficulties.
-15. As the site owner, I want to provide my social media contacts should users need to report a bug.
-16. As the site owner, I want to provide attribution links to the source of the image.
-17. As the site owner, I want to provide players a fun and beneficial game that can be enjoyed by players of all ages.
+10. As the creator, I want to provide players with a new horror-themed text adventure game.
+11. As the creator, I want users to be able to navigate the map easily and without any confusion.
+12. As the creator, I want to adhere to a specific vision in terms of how tropes are handled and provide users with a very engaging game via its text-based gameplay.
+13. As the creator, I want to provide a clear explanation of the actions available to the user within the game.
+14. As the creator, I want to provide feedback to the users that their inputs for actions are acknowledged.
+15. As the creator, I want to provide users with different endings depending on how many objectives they've accomplished, encouraging them to try to seek out all the objectives.
+16. As the creator, I want to provide players with a suspenseful and mysterious game that explores the monster and horror themes in a unique way.
 
 [Back to Top &uarr;](#avarice)
 <hr>
 
-## User Interface
+## Game Design
 
-### Design Philosophy
+As the core goal of this project is to demonstrate my knowledge and understanding of Python principles, most of my and efforts have been focused on doing such. However, narrative design and formatting the narrative to adhere to the 80 character limit of the terminal took a great deal of time. Only minor changes were made to the styling of terminal's webpage on Heroku.
 
-The design of this website began with a simple vision: I wanted to craft a clean and simple SPA with that was based on the old predominately [blue PS3 home theme](docs/screenshots/ps-theme.webp). With this as my core inspiration, the overall design of the website began to take form in my mind's eye. My idea was to find and use an image as the background that had a smooth and subtle light-blue to dark-blue gradient. After much searching I found [this lovely specimen on Freepik](https://www.freepik.com/free-vector/gradient-particles-background_4298560.htm#query=gradient%20particle%20background&position=0&from_view=search&track=sph). It has that exact colour scheme and wave-like particles that I had in mind, and after some manipulation I arrived at the current [background image](assets/images/background/main.png). This, combined with some simple and sleek visual menu elements is what makes the foundation of this project. I had hoped for the end result to be a combination of flashy and clean, which is a difficult balance to achieve but I think I was mostly successful and I am quite happy with the visual end result overall.
+### Narrative
 
-All sections of the website follow a similar structure with the "Memoria" title at the top of the page, the footer with the social icons at the bottom, and all interactive elements have similar hover/focus effects wherein they fade-in on mouse-over/interaction and fade-out gently on mouse-leave. This is done to establish a consistency throughout the website such that users become familiar with how interactive elements respond. The Rules & Difficulty, Leaderboards, and Credits section have a white with a slight hexagonal pattern as their main element as they contain text elements. Otherwise, the game portions of the website all possess complementary elements to the rest of the site, creating a sense of flow familiarity for new users.
+The core direction of the narrative was inspired by the [SCP Foundation](https://en.wikipedia.org/wiki/SCP_Foundation). "SCP" is abbreviated as "Secure", "Contain", "Protect". The wiki website is full of crowd-sourced stories about about odd objects and unusual entities that completely violate natural law. As such, they are founded in our common reality with a few twists and turns. For Avarice, this is exactly the setting I wanted to re-create. The game begins with you, the Investigator, talking to a mysterious broker that tasks you with entering a facility to gather as much information as you possibly can in order to learn about happened there. The broker is intentionally unclear about your task but offers you a great deal of financial compensation, compelling you to accept it. Between your desire for the money and a strained relation with your estranged spouse, you set out on your task.
 
-On smaller viewports, the content expands to 80-100% of the width to reduce user scrolling burden and to allow for easier viewing. The exception to this is the memory game itself. On the easy and normal difficulties, the game board always keep to a square ratio. However, on the hard difficulty, the game board takes the shape of rectangle to best use as much of the available vertical space. This is intentional, as otherwise the cards become far too small on smaller resolutions to interact with and would be an accessibility nightmare.
+Upon arriving at the designated location, you find a completely run down facility. Despite looking rundown, it seems sealed off from the inside and abandonded. As such, you find an entrance in the un-barred window on top of the observatory tower, at which point the game proper begins. Information is presented organically to the Investigator as they navigate through the facility, interact with objects, hide from the monster, all while trying to locate the key items necessary to uncover the secrets of this place and escape. Upon re-entering any room, a shorter summary is shown to prevent overwhelming the user with information and text.
 
-You can find the images used for all the backgrounds below:
+The key items are accompanied by some of the larger blurbs as they contain the most relevant information to the Investigator and their task. Acquiring the keycard allows the Investigator to leave at any point, otherwise two more different endings are available if the player gets some of the key items alongside the key or all of the key items and the key itself. Additional endings were planned but unfortunately fell out of the scope due to the deadline.
 
-<details>
-    <summary>Website Background</summary>
-    <img src="assets/images/background/main.png" alt="Background image used for website">
-</details>
+The tutorials are diegetic and help to expand on the Investigator's personality, while also explaining how to interact with the game. The player is asked for a name but this name is mostly form a connection with the protagonist at the beginning of the game and place the player in the Investigator's relative shoes. Aside from the this, the protagonist is not referred to by their given name but just as Investigator. Their gender and pronouns are also intentionally left ambigious in order to let the player make that decision for themselves. 
 
-<details>
-    <summary>Game Background</summary>
-    <img src="assets/images/background/game.webp" alt="Background image used for the game-board">
-</details>
+The player is able to piece the narrative together, piece by piece, as they progress through the facility. Each room comes with a shortly albeit a detailed description of the room, notable objects, and general directions. Examining the notable objects will provide a more detailed description and sometimes even a key item. As such, players are encouraged to examine everything. This, in turn, provides another reason to learn as much as possible at the facility in a natural manner. It also explains which areas having hiding spots, as not all hiding spots are made equal. 
 
-<details>
-    <summary>Settings Background</summary>
-    <img src="assets/images/background/settings.webp" alt="Background image used for the settings windows">
-</details>
+Hiding spots of course, become relevant when the monster itself is encountered in the Common Room. At this point, the monster spots the Investigator and chases them. The Investigator is given limited turns to find to hide within a hiding spot they should have found earlier. If a hiding spot is bad, then the monster will be able to find the Investigator, killing them and bringing the game to a pre-mature end. The hiding spots themselves are designed to be more than just the main method of avoiding the monster; they also function as environmental story-telling for the room they're within.
 
-### Colours 
+After the monster makes its appearance, it's after this point that the Investigator can examine notable objects that will alert the monster to the location of the Investigator. Due to this, it's important to always move slowly and carefully, as well as remembering the nearest safe hiding spot creating a sense of suspense.
 
-No pre-set colour palettes were used in the designing of this website. My vision was to have the site feel simple, clean, but also fancy and packing a bit of a flavourful punch. I wanted to focus on primarily three colours: blue, white, and purple. Shades of blue are used to establish structures and give form to the most important structures in the background, the game itself, and the game background. White is mainly used as the font and the buttons. Purple is used as an accent to the blue, often being used as the link and highlight colour. [Color-Name](https://www.color-name.com/) was used to find slightly lighter and darker shade variations of the colours used for this project. The text content is primarily dark-blue on a white background with darker titles. Buttons and their text elements are either entirely white that transition to purple or vice versa.
+Overall, the narrative focuses on what went on within the facility, a deep dive into the monster and how it came to be, what the facility was experimenting, and their attempt of fusing mechnics and biologics. The scientists also performed tests on plants, which in turn, caused nature to bite back in its own way. The monster was created out of corporate greed and a desire to create an unstoppable force, kept secret to the governments of the world. Unfortunately, this didn't come to fruition, and the monster's development was halted short as its creator's excessive greed ended up overcoming the monster itself, causing it to spiral out of control. But maybe, just maybe, it still is a lonely creature that's looking for a reason to belong...
 
-### Fonts
+The monster itself is very loosely inspired by Wendigos from Algonquian-speaking First Nations in North America. Wendigos tend to be very malevolent entities that are definited by their excessive greed, which as a concept fits the narrative perfectly. However, those in charge of the facility were unsatisified after creating an artificial Wendigo, deciding to create a being that consists of a bizarre fusion of organic and robotic. A total and complete perversion of nature. As the core theme is greed and how it brings everything here, to this facility, where they are consumed by it. Even nature itself decides to fight back against it, slowly overtaking the facility, bit by bit. But maybe, just maybe, the Investigator will be able to end this cycle of never-ending avarice.
 
-The fonts I chose for this project are Jost and Fredoka. Fredoka is the font for the general content, whereas Jost is used for title content. Prior to Jost, I had chosen and used Josefin Sans as my title font of choice. I saw it used [as a title here](https://elementor.com/blog/font-pairing/) and decided it was that geometric and retro look I wanted to introduce the user to the website. However, it unfortunately had uneven padding on its top and bottom, which is simply just how the font was designed. This made it very difficult to creative even padding areas. As such, I ended up looking for a similar font and fortunately Jost is visually very similar, and in fact, the shape of the capital "M" is even more visually appealing than what Josefin Sans had to offer. 
+A lot of narrative elements within the facility are left intentionally vague, so as to not to provide the player with all the answers. After all, some mysteries are best left unsolved and up to the imagination of the audience.
 
-Fredoka was chosen because of it's round edges and overall bold and daring appearance. It epitomises "fun" and I figured this was perfect for text content on a browser game website. They complement each other well although I hadn't found any pairings that used these two before. I think this is a fairly specific case that works which otherwise wouldn't work if the design philosophy was more minimalistic.
+### Typography
 
-Font-weights of 300, 400, and 600 were chosen for Jost and font-weights of 400 and 500. 400 was used as the default for both. 600 was used for a bit more weight and clarity, primarily in titles and especially the "Memoria" page title.
+ASCII art was used for the Start and End titles, using the "ANSI Shadow" font. This particular font was chosen due to its heavy and blocky shapes, which is further enhanced by the thin outline of it's shadow, creating an easy to discern 3D look that helps captivate the user. The titles were generated using [patorjk's Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&h=0&v=0&f=ANSI%20Shadow&t=Avarice).
 
-### Wireframes
+### Colour Scheme
 
-The conceptualisation of the layout used in this project began with simple pen and paper sketches, which were then transformed into wireframes via Balsamiq. Everything shown here is a rough beta of the layout, some of which has changed during development.
+Colours were generated for the titles mentioned above using [patorjk's Text Colour Fader](http://patorjk.com/text-color-fader/). More about colours here.
 
-This is the prototype of the project, which changes over the course of project development.
+### Map & Flowchart
+
+The map of the facility was created by looking at existing maps of similar facilities in other games, as well as real world facilities. This research was carried out in order to create a cohesive structure that made sense from a design perspective, flowing almost seamlessly from one section into another. This map was created via [Lucidchart](https://www.lucidchart.com/pages/).
+
+![map](link)
+
+The map shows the starting area relative to the rest of the facility, the room the monster is first encountered, all the locked paths, all the blocked paths, and all the dead-ends. A compass is provided for additional clarity of where each room is located in relation to each other, and an legends is provided to help explain what each colour represents on the map.
+
+![flowchart1](link)
+
+Furthermore, a flowchart was created using this map in order to present one route that a player may take in order to complete the game. Please note that this flowchart only shows one of many combinations of routes that the player can take and doesn't take into the player alerting the monster into account. In the interest of keeping the difficulty fair and to the assessors, an additional flowchart has been provided to show a complete route the player might take in order to achieve the ending in which all of the key items are obtained.
+
+![flowchart2](link)
 
 <details>
     <summary>Main Menu</summary>
