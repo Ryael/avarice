@@ -6,11 +6,8 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains all the world details, lore, and location of items.
 """
 
-from path import Path
-from item import Item
-from room import Room
-from position import Position
 import yaml
+from position import Position
 
 with open('avarice_paths.yml', 'r') as file:
     paths = yaml.load(file, Loader=yaml.Loader)
@@ -46,7 +43,7 @@ def generate_world():
     for row in range(max_y + 1):
         row = []
 
-        for column in range(max_x + 1):
+        for range(max_x + 1):
             row.append(None)
 
         rooms_map.append(row)
