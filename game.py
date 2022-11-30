@@ -30,11 +30,11 @@ def start_game():
     """
     p_t(START_TITLE)
     # Lets the user decide if they want to play the game.
-    p_t("Investigator, do you accept the task?")
+    p_t("\033[38;2;128;0;0mInvestigator, do you accept the task?\033[0m")
     start_choice = get_str("(Y/N):\n")
     if start_choice.lower()[0] == "y":
-        p_t("\nThis task isn't for the faint of heart,")
-        p_t("but we appreciate your help nonetheless.")
+        p_t("\nThis task isn't for the faint of heart, but we appreciate ")
+        p_t("your help nonetheless.")
         p_t("We're confident that you're the right person for this job.")
         # Instantiates the player and requests a name and assigns it to
         # a variable.
@@ -87,7 +87,7 @@ def get_player_command():
     """
     Returns the player's action.
     """
-    return input("Action: ")
+    return input("\033[38;2;128;0;0mAction: \033[0m")
 
 
 start_game()
