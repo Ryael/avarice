@@ -30,7 +30,7 @@ def get_str(question):
     https://github.com/Estelindis/double-agent
     """
     while True:
-        input_str = input(f"{question}\n")
+        input_str = input(f"\033[38;2;128;0;0m{question}\n\033[0m")
         input_str = " ".join(input_str.split())
         if input_str.strip() == "":
             input_str = ""
