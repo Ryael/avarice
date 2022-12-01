@@ -45,7 +45,7 @@
     y: 1
   visited: False
   intro: ".-----------.\n| Dormitory |\n'-----------'\n\nA dormitory, presumably for the staff.\n\nA number of bunk beds have been knocked over, while\nothers have been broken. Several of the bookshelves have\nbeen knocked over. It looks as if it was caught in the\naftermath of some sort of rampage.\n\nTo the north you see a sign reading “Kitchen”, and\nto the east you see a sign reading “Toilets.”"
-  desc: "'.-----------.\n| Dormitory |\n'-----------'\n\nThe staff dormitory.\n\nThe beds have been knocked over, and bookshelves thrown\naround."
+  desc: ".-----------.\n| Dormitory |\n'-----------'\n\nThe staff dormitory.\n\nThe beds have been knocked over, and bookshelves thrown\naround."
 - !!python/object:room.Room
   name: Toilets
   pos: !!python/object:position.Position
