@@ -172,11 +172,11 @@ Colours were generated for the titles mentioned above using [patorjk's Text Colo
 
 The map of the facility was created by looking at existing maps of similar facilities in other games, as well as real world facilities. This research was carried out in order to create a cohesive structure that made sense from a design perspective, flowing almost seamlessly from one section into another. This map was created via [Lucidchart](https://www.lucidchart.com/pages/).
 
-![Avarice Map]("docs/map.png")
+![Avarice Map](docs/map.png)
 
 The map shows the starting area relative to the rest of the facility, the room the monster is first encountered, all the locked paths, all the blocked paths, and all the dead-ends. A compass is provided for additional clarity of where each room is located in relation to each other.
 
-![Avarice Map]("docs/flowchart.png")
+![Avarice Map](docs/flowchart.png)
 
 Furthermore, a flowchart was created using this map in order to present one route that a player may take in order to complete the game. Please note that this flowchart only shows one of many combinations of routes that the player can take and doesn't take into the player alerting the monster into account. In the interest of keeping the difficulty fair and to the assessors, an additional flowchart has been provided to show a complete route the player might take in order to achieve the ending in which all of the key items are obtained.
 
