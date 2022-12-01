@@ -345,10 +345,18 @@ The Credits section is very similar to both the Rules & Difficulty and Leaderboa
 
 ## Bugs
 
-Bug # | Intended Outcome | Issue | Cause | Solution | Commit
--- | ------------- | ------------- | ------------- | ------------- | -------------
-1. | Player starts at the Observatory. | Player started at the Security Room. | Update coordinates to that of the Obseratory (2,0 instead of 1,2). | [Commit](https://github.com/Ryael/Avarice/commit/2ebce79799ae9b44ea3f13ff2c00dd23f40dfda1) |
-2. | Content Cell  | Content Cell | Background | Content Cell | Beep | 
+| Bug  	| Intended Outcome 	| Issue 	| Cause 	| Solution 	| Commit 	|
+|---	|---	|---	|---	|---	|---	|
+| #1 	| Player starts at the Observatory. 	| Player started at the Security Center. 	| Starting coordinates were set to (1,2). 	| Set the starting coordinates to (2,0). 	| [Commit]() 	|
+| #2 	| Player can only navigate to existing rooms within the world. 	| Player can go into "None" areas, where there are no rooms. 	| No check was implemented to see if the room direction being moved into had an existing room. 	| Add walls such that they prevent the player from falling off the map. `valid_move` checks the area the player is trying to move into to make sure it exists. 	| [Commit]() 	|
+| #3 	| Player is able to move in all cardinal directions. 	| Player is only able to move south, all other directions print a message that says no valid path exists. 	| What was being checked via `valid_move` was the room coordinates, starting at (0,0). 	| Instead of room coordinates, check the player's move coordinates from the starting position. 	| [Commit]() 	|
+| #4 	| `intro_text` is only printed upon a successful movement action, otherwise only the failed move text should be printed. 	| `intro_text` for every room is printed even after a failed move. 	| No default state for the room existing had been set. 	| Add `self_moved` and set it to `True`. If a room doesn't exist, then set it to `False`. Also add an if statement to `start_game` to make sure the `intro_text` is only printed when a valid move is made: `self.moved = True`. 	| [Commit]() 	|
+| #5 	| Player can only access room that are directly linked to each other. 	| Player can move between rooms that aren't directly linked and are only separated by empty space. 	| No check was implemented to see if there was a valid path between any given rooms. 	| Paths were added with a check to see if there was a valid path between rooms, or if the path was either blocked or locked. 	| [Commit]() 	|
+| #6 	| Player should be move through all open paths, but not through locked or blocked paths. 	| Player was able to move through locked and/or blocked paths.  	| If statement was set to `if path.block and path.lock`, but no path was both locked and blocked. Additional, `return` was incorrectly indented within in `def find_path()` at the very end. 	| Set the if statement to be `path.block or path.lock` and un-indent the `return` at the end of `def find_path()`. 	| [Commit]() 	|
+| #7 	| Player can access Testing from Preservation. 	| Player can't access Testing from Preservation. 	| No path existed between these two rooms. 	| Add a path between these two rooms into the paths array. 	| [Commit]() 	|
+| #8 	| `iadd` should return assigned and updated (x, y) coordinates to reflect the movement of the player. 	| `iadd` was not returning the assigned and updated (x, y) coordinates. 	| The updated (x, y) coordinates were not being returned. 	| Add `return self`. 	| [Commit]() 	|
+| #9 	| First question should repeat even if the input is invalid (neither yes nor no). 	| Invalid input during the first question causes the game to end. 	| No while loop. 	| Add a while loop. 	| [Commit]() 	|
+| #10 	| When asked if the player wants a briefing, an invalid input should prompt the user for another input. 	| When asked if the player wants a briefing, an invalid input prints a statement saying that the input has to be a Yes or a No, however the briefing is still skipped and the game continues. 	| No while loop. 	| Add a while loop. 	| [Commit]() 	|
 
 1.  **Intended Outcome:** Background images covers the entire available viewport.
     * **Issue:** Background image only covers a certain amount of the vertical viewport, before being cropped and displaying white space.
