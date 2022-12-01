@@ -42,17 +42,21 @@ The "Move" function is what truly frees the player up, as it allows them to choo
     - [Typography](#typography)
     - [Colour Scheme](#colour_scheme)
     - [Map & Flowcharts](#map_&_flowcharts)
-4. [Features](#features)
+4. [Code](#code)
+    - [Commits](#commits)
+    - [Folder Structure](#folder_structure)
+    - [Variables](#variables)
+    - [Helper Functions](#helper-functions)
+    - [Game Loop](#game-loop)
+    - [Actions](#actions)
+    - [Map Design](#map-design)
+    - [YAML](#YAML)
+    - [Data Model](#data-model)
 5. [Validation](#validation)
-    - [HTML Validation](#html-validation)
-    - [CSS Validation](#css-validation)
-    - [JavaScript Validation](#javascript-validation)
+    - [Python Validation](#html-validation)
+    - [YAML Validation](#css-validation)
 6. [Testing](#testing)
-    - [Responsiveness](#responsiveness)
-    - [Accessibility](#accessibility)
-    - [Performance](#performance)
-    - [Device Testing](#device-testing)
-    - [Browser Compatibility](#browser-compatability)
+    - [Play Testing](#play-testing)
     - [Testing User Stories](#testing-user-stories)
 7. [Bugs](#bugs)
 8. [Future Updates](#future-updates)
@@ -166,7 +170,22 @@ ASCII art was used for the Start and End titles, using the "ANSI Shadow" font. T
 
 ### Colour Scheme
 
-Colours were generated for the titles mentioned above using [patorjk's Text Colour Fader](http://patorjk.com/text-color-fader/). More about colours here.
+Colours were generated for the titles mentioned above using [patorjk's Text Colour Fader](http://patorjk.com/text-color-fader/), which were then converted from HEX to RGB and added to strings as an escape sequence using the information found on this [Stack Overflow thread](https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences). 
+
+For the start and end titles, the following colours were used:
+
+- #ff2a2a: \033[38;2;255;42;42m
+- #fe3b3b: \033[38;2;254;59;459m
+- #fe4e4e: \033[38;2;254;78;78m
+- #ff6161: \033[38;2;255;97;97m
+- #ff7d7d: \033[38;2;255;125;125m
+- #ff9b9b: \033[38;2;255;155;155m
+
+The colours used start as a bright red and slowly fade into a soft pink, and altogether this effect creates a very striking looking title on the black background. The contrast is very effective and it suits the general bloody theme of the game.
+
+Additionally, for inputs the text is changed to a reddish brown to help differentiate between inputs and outputs.
+
+- #bf6148: \033[38;2;191;97;72m
 
 ### Map & Flowchart
 
@@ -178,170 +197,82 @@ The map shows the starting area relative to the rest of the facility, the room t
 
 ![Avarice Map](docs/flowchart.png)
 
-Furthermore, a flowchart was created using this map in order to present one route that a player may take in order to complete the game. Please note that this flowchart only shows one of many combinations of routes that the player can take and doesn't take into the player alerting the monster into account. In the interest of keeping the difficulty fair and to the assessors, an additional flowchart has been provided to show a complete route the player might take in order to achieve the ending in which all of the key items are obtained.
+Furthermore, a flowchart was created using this map in order to present one route that a player may take in order to complete the game. Please note that this flowchart only shows one of many combinations of routes that the player can take and doesn't take into the player alerting the monster into account. This path explores the entirety of the map and covers the route one would take to acquire all items in order to achieve the most complete ending.
 
-![flowchart2](link)
+1. Examine the CCTV monitors within the Security Center. The player will realise they need a battery to power the devices in order to obtain the CCTV footage.
+2. Examine the drawers within the Research Lab. The player will find research documents on the monster within.
+3. Examine last functional computer within the Mainframe. The player will be able to get a battery to power the CCTV devices within the Security Center.
+4. Examine the hand sticking out of the dirt grave in the Garden. This will grant the player the keycard, allowing them to open any locked doors.
+5. Examine the chest-cavity within Testing. This will grant the player the Development Records on the monster.
 
-<details>
-    <summary>Main Menu</summary>
-    <img src="docs/wireframes/main.png" alt="Wireframe of the Main Menu">
-</details>
-<details>
-    <summary>Settings Window</summary>
-    <img src="docs/wireframes/settings.png" alt="Wireframe of the Settings Window">
-</details>
-<details>
-    <summary>Game Board</summary>
-    <img src="docs/wireframes/game.png" alt="Wireframe of the Game Board">
-</details>
+At this point, the player can leave to achieve the main ending of the game.
+
+In order to avoid the monster, it's important to remember where the good and bad hiding spots are.
 
 [Back to top &uarr;](#avarice)
 <hr>
 
-## Features
+## Code
 
-### Title
-
-![Title](docs/features/header-title.png)
+### Commits
 
 The Title is the first things users will see when loading the page and its geometric and retro look is here to make an impact. It's bold and assertive with its heavy font-weight and contrasting white on blue, and establishes the sort of design philosophy the rest of the website will adhere to. Upon mouse-over and focus, it plays [a subtle animation](docs/features/header-title-animation.gif) and converts the user's cursor to that of a pointer to indicate that it's an interactable element. Upon interaction it plays a script that reloads the page, effectively bringing the user to the Main Menu. As such, no matter what part of the game the user has navigated to, they are always a simple click or tap away from going back to the Main Menu. The name "Memoria" is simply a play on the word "memory" and has no other significant meaning aside from aesthetic preference.
 
-### Main Menu
-
-![Main-Menu](docs/features/main-menu.png)
+### Folder Structure
 
 The Main Menu is fundamentally the navigation menu for the website and also doubles up as the landing page. Upon loading into the page, the user is greeted by a subtle fade-in transition, which is used throughout the entirety of Memoria. It keeps people who prefer reduced motion in mind and is quick and simple on the eyes. From the Main Menu, the user has the option to: a) start a game, b) view the Leaderboards, or c) read the credits. All the [buttons have animations](docs/features/main-menu-animation.gif) that play upon hover/focus. A smooth fade in, and smooth fade out. Upon interaction, a script runs that hides the Main Menu and displays the relevant area instead. For example, clicking on Start Game will hide the Main Menu and instead display the Rules & Difficulty section alongside the return button, which can bring the user back to the Main Menu.
 
-### Rules & Difficulty
-
-![Rules & Difficulty](docs/features/rules-difficulty.png)
+### Variables
 
 The Rules & Difficulty section introduces the rules of the game and the overall objective of the game. It also provides three buttons that allow the user to select their difficulty of choice. The difficulty level itself is explained within the name, where easy is 2x2, normal is 4x4, and hard is 6x6. From a single glance it is clear exactly what each button accomplishes. Their colour palettes are inverted due to the white background but [a similar animation](docs/features/rules-difficulty-animation.gif) plays upon hover/focus. Similar to Main Menu's script, upon interacting with any of the difficulties, the Rules & Difficulty section will be hidden and the game-board will be generated based on which difficulty was selected. 
 
-### Memory Game - Easy
+### Helper Functions
 
-![Memory Game - Easy](docs/features/game-easy.png)
 
 Here is where the magic happens! This is the core functionality of the website that displays a 4-card grid upon the Easy mode button being interacted with. The previous menu is hidden but the game itself is written such that the timer doesn't start counting until the user clicks on a card. There's nothing worse than games that have their timers begin counting before the user is even able to take an action. The emoji are randomised each time using a shuffle method but they are always pulled from the same list of emoji. The emoji approach is quite novel as it allows the website to not have to load images everytime as every device has their own version of emojis built in. 
 
-The game board also has a simple border animation that runs around the edges, drawing the user's focus towards the game board. Upon selecting a card, they flip upwards. Upon selecting two non-matching cards, they both briefly shake to provide the user with visual feedback that there hasn't been a match before flipping back down. However, upon selecting two matching cards, the cards remain flipped. Once all the cards have been flipped, the board itself flips. At this point two things occur simultaneously: 1) the user is presented with their amount of flips and the time elapsed in minutes and second, and 2) a confetti script is run to give the user a reason to celebrate their victory. [Here is the example](docs/features/border-animation.gif) of the animated border and the win screen with the confetti. This is perfect for younger kids as it's flashy enough to keep them invested and to get a taste of what memory games are like before diving into the higher difficulties.
-
-### Memory Game - Normal
-
-![Memory Game - Normal](docs/features/game-normal.png)
+### Game Loop
 
 Normal mode is pretty much identical to what is described up above except that the game board generates a 16-card grid. This is pretty much the ideal difficulty to play as it strikes the sweet spot between easy and normal, and is commonly what one would see when looking at other memory card games. It doesn't take too long but still tests the user's short-term memory. It's a nice and relaxing difficulty mode. Both the easy and normal modes retain their square ratio across all resolutions.
 
-### Memory Game - Hard
-
-![Memory Game - Hard](docs/features/game-hard.png)
+### Actions
 
 Hard mode is very similar to the other two difficulties but the key difference is that it generates a 36 card grid. Playing on hard mode is significantly more time consuming and can take as much time as two full normal mode games, however, this game mode is here for those who are really trying to push their abilities and test their memory. Completing the game to have the board flip and seeing the confetti is extremely satisfying considering the time and effort needed to be put in, but I'd like to believe that it's all worth it! If the user is looking for a challenge, then they need look no further. Hard mode maintains a square ratio for most viewports except the very small and narrow ones, at which point it flex-wraps into a column. This is to make the best use of the vertical space, ensure that the cards themselves aren't too small, and prevent the game-board from overflowing entirely.
 
-### Return Button
-
-![Return Button](docs/features/return-button.png)
+### Map Design
 
 The Return to the Main Menu button is present on every section but the Main Menu. Its purpose is to bring the user back to the Main Menu as it simply plays the same reload script as the Title does, resetting the page to its default state: the Main Menu. It has the exact same animation as the other Main Menu buttons and is even styled the same to ensure consistency and familiarity. 
 
-### Leaderboards
-
-![Leaderboards](docs/features/leaderboards.png)
+### YAML
 
 The Leaderboards section is unfortunately not finished. It was intended to be a section where players could select one of the three corresponding difficulties to display the top 10 times for each. Due to no backend knowledge, the intention was to use a service like [Parse Platform](https://parseplatform.org/). However, I ended up running out of time and didn't want to rush and ultimately fail properly implementing this, hence this feature will be implemented in the future.
 
-### Credits
-
-![Credits](docs/features/credits.png)
+### Data Model
 
 The Credits section is very similar to both the Rules & Difficulty and Leaderboards sections, both in how it displays and hides the other content and how it looks. Here the user can find my details and information on how to best contact me in the event of a bug. It also attributes the images used from FreePik.
 
-### Footer
-
-![Footer](docs/features/footer-icons.png)
-
-The Footer of Memoria displays three social icons which are created via Font Awesome. These are links to my GitHub, LinkedIn, and E-mail. No more were added as the intention was to keep this strictly professional. The Footer is present in all sections, providing the user with easy and direct methods to contact me to report bugs or any other reason. They also have [a unique animation](docs/features/footer-icons-animated.png) that fades in and out, similarly to the buttons.
-
-### Favicon
-
-![Favicon](docs/features/favicon.png)
-
-As with all websites, this one also has a Favicon that is displayed beside the Title of the page. A user can quickly and easily discern if they have Memoria open amongst many different tabs by looking for the capital "M" icon, which is rendered in the same font as the Title text, Jost.
-
-[Back to top &uarr;](#avarice)
-<hr>
-
 ## Validation
 
-### HTML Validation
+### Python Validation
 
 [W3C Markup Validation Service](https://validator.w3.org/nu/) was used to validate HTML code. No errors were found. 
 
 ![HTML Validation](docs/validation/html-validation.png)
 
-### CSS Validation
+### YAML Validation
 
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate CSS code. No errors were found. 
 
 ![CSS Validation](docs/validation/css-validation.png)
-
-### JavaScript Validation
-
-[JSHint](https://jshint.com/) was used to validate JavaScript code. It detected two undefined variables; however, they are from a library, which is where they're defined. It also detected seven unused variables are called from the DOM and hence JSHint is unable to detect that they are used. There were no errors found otherwise.
-
-![JavaScript Validation](docs/validation/js-validation.png)
 
 [Back to top &uarr;](#avarice)
 <hr>
 
 ## Testing
 
-### Responsiveness
+### Play Testing
 
 [Website Responsive Test Online](https://websiteresponsivetest.com/) was used to extensively test the responsiveness of Memoria. All screen sizes and viewports are now accounted for, including even extremely small screen-widths like 240 px.
-
-### Accessibility
-
-[WAVE WebAIM](https://wave.webaim.org/report#/https://ryael.github.io/memoria/) was used to check for accessibility and no errors were found.
-
-![WAVE WebAIM](docs/testing/wave-webaim.png)
-
-### Performance
-
-Google Lighthouse was used to assess the performance of this website. All tests were performed in incognito mode to avoid interference from any other sources. Tests were carried out on each section but the same result was returned every time. This was the same case for mobile, and as such, only one result will be provided. Performance could be improved yet again but I made a choice to not convert the main background due to the colours becoming [visibly distorted](docs/testing/background-issue.png). 
-
-![Lighthouse](docs/testing/lighthouse.png)
-
-### Device Testing
-
-The website was tested on many different devices, such as:
-
-- Samsung Galaxy S10
-- Samsung Galaxy S21
-- Samsung Galaxy Note 8
-- MSI GE72 6QF Apache Pro
-- iPhone 8
-- iPhone 10
-- iPhone 11
-- iPhone 11 Pro
-- iPhone 12
-- iPhone 14 Pro Max
-- iPad Mini (Landscape and Portrait)
-- iPad (Landscape and Portrait)
-- Vivo S1 Pro
-- LG v60
-- Huawei P40 Pro
-- Google Pixel 6
-
-### Browser Compatibility
-
-- Mozilla Firefox
-- Google Chrome
-- Opera
-- Safari
-- Microsoft Edge
-
-I tested the website extensively on Mozilla Firefox, Google Chrome, and Microsoft Edge. For the remaining two, I asked friends and family to test the website on my behalf while overlooking it to ensure cross-compatibility. No issues or bugs were reported.
 
 ### Testing User Stories
 
@@ -413,6 +344,11 @@ I tested the website extensively on Mozilla Firefox, Google Chrome, and Microsof
 <hr>
 
 ## Bugs
+
+Bug # | Intended Outcome | Issue | Cause | Solution | Commit
+-- | ------------- | ------------- | ------------- | ------------- | -------------
+1. | Player starts at the Observatory. | Player started at the Security Room. | Update coordinates to that of the Obseratory (2,0 instead of 1,2). | [Commit](https://github.com/Ryael/Avarice/commit/2ebce79799ae9b44ea3f13ff2c00dd23f40dfda1) |
+2. | Content Cell  | Content Cell | Background | Content Cell | Beep | 
 
 1.  **Intended Outcome:** Background images covers the entire available viewport.
     * **Issue:** Background image only covers a certain amount of the vertical viewport, before being cropped and displaying white space.
