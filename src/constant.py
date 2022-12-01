@@ -6,6 +6,11 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains useful constants.
 """
 
+from player import Player
+from world import Position
+
+START_POSITION = Player(Position(2, 0))
+
 START_TITLE = ("""
 \033[38;2;255;42;42m
  █████╗ ██╗   ██╗ █████╗ ██████╗ ██╗ ██████╗███████╗\033[38;2;254;59;59m

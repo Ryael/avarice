@@ -6,11 +6,10 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the game-loop and global variables.
 """
 
-from position import Position
+
 import world
-from constant import START_TITLE, END_TITLE
+from constant import START_POSITION, START_TITLE, END_TITLE
 from helper import p_t, get_str
-from player import Player
 
 action_move_n_list = ["go n", "go north", "move n", "move north", "n", "north"]
 action_move_s_list = ["go s", "go south", "move s", "move south", "s", "south"]
@@ -33,12 +32,12 @@ def start_game():
     p_t("\033[38;2;128;0;0mInvestigator, do you accept the task?\033[0m")
     start_choice = get_str("(Y/N):\n")
     if start_choice.lower()[0] == "y":
-        p_t("\nThis task isn't for the faint of heart, but we appreciate ")
+        p_t("\nThis task isn't for the faint of heart, but we appreciate")
         p_t("your help nonetheless.")
         p_t("We're confident that you're the right person for this job.")
         # Instantiates the player and requests a name and assigns it to
         # a variable.
-        player = Player(Position(2, 0))
+        player = START_POSITION
         p_t("Forgive my memory, I've dealt with a number of associates")
         p_t("lately.\n")
         player.name = get_str("Could you please state your name again?\n")
