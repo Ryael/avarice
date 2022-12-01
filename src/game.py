@@ -29,7 +29,7 @@ def start_game():
     """
     p_t(START_TITLE)
     # Lets the user decide if they want to play the game.
-    p_t("\033[38;2;128;0;0mInvestigator, do you accept the task?\033[0m")
+    p_t("\033[38;2;191;97;72mInvestigator, do you accept the task?\033[0m")
     start_choice = get_str("(Y/N):\n")
     if start_choice.lower()[0] == "y":
         p_t("\nThis task isn't for the faint of heart, but we appreciate")
@@ -86,7 +86,7 @@ def get_player_command():
     """
     Returns the player's action.
     """
-    return input("\033[38;2;128;0;0mAction: \033[0m")
+    return input("\033[38;2;191;97;72mYour action: \033[0m")
 
 
 start_game()
