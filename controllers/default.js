@@ -16,7 +16,7 @@ function socket() {
     this.on('open', function (client) {
 
         // Spawn terminal
-        client.tty = Pty.spawn('python3', ['game.py'], {
+        client.tty = Pty.spawn('python3', ['src/game.py'], {
             name: 'xterm-color',
             cols: 80,
             rows: 24,
