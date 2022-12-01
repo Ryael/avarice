@@ -28,8 +28,8 @@
     x: 1
     y: 1
   visited: False
-  intro: ".-------.\n| Foyer |\n'-------'\n\nThe foyer, one of the first rooms people see.\nTo the east you see the main entrance for the facility. It looks sealed shut and you realise that you won't be able to leave without find a key. It's never that simple, is it... You hear a faint beeping sound coming from the south."
-  desc: TODO
+  intro: ".-------.\n| Foyer |\n'-------'\n\n TODO"
+  desc: ".-------.\n| Foyer |\n'-------'\n\nThe central foyer. All of the windows have been boarded\noff, but one of the lockers had been opened. The\nchandelier remained destroyed under where it once hung."
 - !!python/object:room.Room
   name: Main Lobby
   pos: !!python/object:position.Position
@@ -52,8 +52,8 @@
     x: 4
     y: 1
   visited: False
-  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nThe first of two available toilet rooms.\nThere's nothing else of interest here."
-  desc: TODO
+  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nYou come across one of the two marked bathrooms.\n\nA row of bathroom stalls seem to have sustained some\ndamage. Whether due to age or outside influence, it's\nunclear. What is clear, is the smell coming from them."
+  desc: ".------------.\n| Toilets #1 |\n'------------'\n\nOne of the marked bathrooms.\n\nA foul odor comes from some of the stalls."
 - !!python/object:room.Room
   name: Security
   pos: !!python/object:position.Position
@@ -61,23 +61,23 @@
     y: 2
   visited: False
   intro: ".-----------------.\n| Security Center |\n'-----------------'\n\nYou wander into what appears to be a security center.\n\nA number of monitors line the walls and desks. If you\ncan find a way to restore power, you wonder if you'd be\nable to see every room in the facility on these monitors.\nThere's a small desk at the middle of the CCTV screens,\nwith enough space to crawl underneath.\n\nA massive metal door resides on the southern wall, with\na huge dent from an impact on the other side."
-  desc: sec
+  desc: ".-----------------.\n| Security Center |\n'-----------------'\n\nThe security center.\n\nA row of CCTV screens line the wall, with a small desk\nat the center. It seems as if you can hide under it.\n\nA large metal door seems to be locked."
 - !!python/object:room.Room
   name: Common Room
   pos: !!python/object:position.Position
     x: 2
     y: 2
   visited: False
-  intro: ".-------------.\n| Common Room |\n'-------------'\n\nThe common room, where people gathered during their free time. It's also now the monster's nest.\nA horrible smell overwhelms as you look up to see a sign reading \"Sanitation\". You're suddenly overwhelmed with dread."
-  desc: TODO
+  intro: ".-------------.\n| Common Room |\n'-------------'\n\nYou wander into what appears to be some sort of common\nroom. Or, the remains of one, rather.\n\nThe first thing your eyes settle on are the scattered\nbones—the distinct shape of human skulls. The floor and\nwalls are painted with dried blood, and gouged out with\nlarge scratch marks. A couch fell victim to whatever\nrampaged through here, torn and gutted like a fish.\nA large nearby tree that seemed to have stretched into\nthe building blocks one of the exits, bearing the same\nlarge scratch marks.\n\nA horrible smell envelopes as you look up to see a sign\nreading “Sanitation” to the south. You're suddenly\noverwhelmed with dread."
+  desc: ".-------------.\n| Common Room |\n'-------------'\n\nThe remains of what once was the common room.\n\nHuman skulls and various bones are scattered about.\nDried blood paints the floors and walls, and large\nscratch marks have destroyed one of the couches. A\ndamaged tree nblocks the eastern exit."
 - !!python/object:room.Room
   name: Labratory
   pos: !!python/object:position.Position
     x: 3
     y: 2
   visited: False
-  intro: ".--------------.\n| Research Lab |\n'--------------'\n\nThe research lab, where the monster was first cultivated by scientists.\nA horrible smell overwhelms as you look up to see a sign reading \"Sanitation\". You're suddenly overwhelmed with dread."
-  desc: TODO
+  intro: ".--------------.\n| Research Lab |\n'--------------'\n\nYou manage to find your way into a laboratory. It takes\nyou back to the days as a student, if those memories\nwere cloaked in a veil of dust and scattered debris.\n\nOn closer inspection, you notice what appear to be test\ntubes with varying specimens preserved. Some of the\ndrawers have been haphazardly pried open, their contents\nspilled onto the floor. An opaque fume hood sits against\none of the walls, for chemicals—you find yourself inanely\nthinking."
+  desc: ".--------------.\n| Research Lab |\n'--------------'\n\nThe main lab.\n\nVarious specimens are preserved in test tubes, and a\nchemical station with a fume hood sits against one of the\nwalls. Some of the drawers have been pried open."
 - !!python/object:room.Room
   name: Greenhouse
   pos: !!python/object:position.Position
