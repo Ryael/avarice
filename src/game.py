@@ -3,7 +3,7 @@ Project Portfolio 3 (Python): "Avarice"
 
 Developed and written by Andrey Belyakov, November 2022.
 Code is for a terminal of 80 characters wide and 24 rows high.
-This module contains the game-loop and global variables.
+This module contains the game-loop.
 """
 
 
@@ -79,7 +79,7 @@ def start_game():
         p_t("\nFarewell, Investigator.")
         p_t(END_TITLE)
     else:
-        print("Please answer the question, yes or no will suffice.")
+        print("\nPlease answer the question, yes or no will suffice.")
 
 
 def get_player_command():

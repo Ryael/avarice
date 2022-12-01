@@ -36,6 +36,6 @@ def get_str(question):
             input_str = ""
         if not input_str:
             time.sleep(0.75)
-            print("Please input something rather than nothing.")
+            print("Please input something rather than nothing.\n")
         else:
             return input_str
