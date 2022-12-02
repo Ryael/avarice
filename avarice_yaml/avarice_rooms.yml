@@ -84,16 +84,16 @@
     x: 4
     y: 2
   visited: False
-  intro: ".------------.\n| Greenhouse |\n'------------'\n\nThe greenhouse, where fruit, vegetables, and plants are grown.\nDirections from the Greenhouse."
-  desc: TODO
+  intro: ".------------.\n| Greenhouse |\n'------------'\n\nYou find a greenhouse, surprisingly preserved.\n\nA variety of fruit and vegetables, as well as foreign\nplants, have been growing for a while. Calling it\novergrown would be an understatement; the room is all\nbut alive itself. Something tells you to not wander too\nclose to the foliage.\n\nThe west is blocked by overgrowth, the east leads to a\nroom labeled “Garden.” At first glance the path appears\nto be blocked, but you think you could squeeze through\nif you wanted to."
+  desc: ".------------.\n| Greenhouse |\n'------------'\n\nTODO"
 - !!python/object:room.Room
   name: Garden
   pos: !!python/object:position.Position
     x: 5
     y: 2
   visited: False
-  intro: ".--------.\n| Garden |\n'--------'\n\nThe garden, an open-air location with tall fences with electric wire on top. Not to prevent anyone from getting in, but rather to prevent something from getting out.\nDirections from the Garden."
-  desc: TODO
+  intro: ".--------.\n| Garden |\n'--------'\n\nIs this an extension of the greenhouse? Its flora\nfeels more mature, and the word “garden” comes to mind.\n\nMuch of the flora is unrecognizable to you, neither\nnative to the surrounding area or anything you can call\nin published records. There are electric fences bordering\nthe perimeter—you wonder if they're live or not—and they\nseem as if they're meant to keep something in rather than\nout. Something catches your eye sticking out from the\nground, and on closer inspection, you see that it is a\nhuman arm."
+  desc: ".--------.\n| Garden |\n'--------'\n\nThe central garden.\n\nIt's blocked off by electric fences and overgrown flora\nthat blocks your paths. A human arm sticks out\nconspicuously from under the floor."
 - !!python/object:room.Room
   name: Playroom
   pos: !!python/object:position.Position
@@ -116,24 +116,24 @@
     x: 2
     y: 3
   visited: False
-  intro: ".------------.\n| Sanitation |\n'------------'\n\nThe sanitation room, where the monster was regularly cleaned in order to maintain its hygiene. It was also fed here.\nDirections from Sanitation."
-  desc: TODO
+  intro: ".------------.\n| Sanitation |\n'------------'\n\nIt appears to be some sort of sanitation room.\n\nA line of armored hazmat suits are strung up on a rack,\nmost of which bearing large tears. A row of small\npersonal lockers are lined up against one of the walls,\nnone of which appear to be opened. There is a large\nsteel door that opens into a smaller room.\n\nTo the west is a steel door with the sign “Sanitation”\nhanging above it, and to the east you see what seems to\nbe some sort of overgrown data storage room."
+  desc: ".------------.\n| Sanitation |\n'------------'\n\nIt's the sanitation room.\n\nThe hazmat suits are lined up surprisingly orderly, save\nfor the huge tears in a number of them. There is a row\nof lockers lined up against one of the walls, and a\nlarge steel door on another."
 - !!python/object:room.Room
   name: Data Storage Room
   pos: !!python/object:position.Position
     x: 3
     y: 3
   visited: False
-  intro: ".--------------.\n| Data Storage |\n'--------------'\n\nData storage room, where all the CCTV records, experimentation logs and research logs, and other sensitive information is kept.\nDirections from Data Storage."
-  desc: TODO
+  intro: ".--------------.\n| Data Storage |\n'--------------'\n\nIt's some kind of data storage room. Records,\ndocumentation, various servers, all likely containing\nevidence on what might've transpired here. Or, so you'd\nhope.\n\nA row of destroyed computers remain on desks, and vines\nhave already begun to reclaim the room as their own. It\ndoesn't seem as if there's any place you'd be able to\nhide here."
+  desc: ".--------------.\n| Data Storage |\n'--------------'\n\nWhat remains of a data storage room.\n\nThe computers are smashed and useless, and greenery\nhas started to reclaim the area as their own."
 - !!python/object:room.Room
   name: Mainframe Room
   pos: !!python/object:position.Position
     x: 4
     y: 3
   visited: False
-  intro: ".-----------.\n| Mainframe |\n'-----------'\n\nThe mainframe room. This is what powers the entire facility and where all the important computers are located.\nDirections from Mainframe room."
-  desc: TODO
+  intro: ".-----------.\n| Mainframe |\n'-----------'\n\nIs this...some sort of mainframe? You may be able to\npower the facility from here.\n\nAmidst a graveyard of destroyed monitors, there seems\nto be one computer that may actually be functional,\nsurprisingly enough, spared from the natural and\nunnatural flora trying to reclaim its territory.\n\nTo the south is the second marked bathroom, the north\nis an area marked “Greenhouse”."
+  desc: ".-----------.\n| Mainframe |\n'-----------'\n\nThe remains of the mainframe.\n\nOne monitor seems to remain intact, you wonder if it\nwill turn on."
 - !!python/object:room.Room
   name: Testing Room
   pos: !!python/object:position.Position
@@ -156,5 +156,5 @@
     x: 4
     y: 4
   visited: False
-  intro: ".------------.\n| Toilets #2 |\n'------------'\n\nThe second of the two toilets available in the facility.\nDirections from the second existing toilets."
-  desc: TODO
+  intro: ".------------.\n| Toilets #2 |\n'------------'\n\nAnother marked restroom.\n\nMuch like the other, the mirror has been smashed, but\nsurprisingly, several of the stall doors remain intact.\nA large hole had been smashed into the wall, leaving you\nwith a little crawl space that you may be able to fit in."
+  desc: ".------------.\n| Toilets #2 |\n'------------'\n\nOne of the two marked restrooms.\n\nThe stalls remain more intact, and a HOLE in the wall\nprovides room for a crawl space. The MIRROR has been\nsmashed."
