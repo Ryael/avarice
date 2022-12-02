@@ -337,9 +337,6 @@ The Credits section is very similar to both the Rules & Difficulty and Leaderboa
 16. As the site owner, I want to provide attribution links to the website where I sourced images from.
     - The attribution links, where the images were found, and who they were designed and uploaded by can all be found within the Credits section, which contains clearly laid-out and high-lighted links.
 
-17. As the site owner, I want to provide players a fun and beneficial game that can be enjoyed by players of all ages.
-    - Due to the different difficulties available, especially easy, and the fun and flashy design direction of the application, it's something even younger kids can pick up and learn to enjoy. The concepts don't take much learning and the confetti upon winning will be all the encouragement they'll need.
-
 [Back to top &uarr;](#avarice)
 <hr>
 
@@ -351,77 +348,13 @@ The Credits section is very similar to both the Rules & Difficulty and Leaderboa
 | #2 	| Player can only navigate to existing rooms within the world. 	| Player can go into "None" areas, where there are no rooms. 	| No check was implemented to see if the room direction being moved into had an existing room. 	| Add walls such that they prevent the player from falling off the map. `valid_move` checks the area the player is trying to move into to make sure it exists. 	| [Commit]() 	|
 | #3 	| Player is able to move in all cardinal directions. 	| Player is only able to move south, all other directions print a message that says no valid path exists. 	| What was being checked via `valid_move` was the room coordinates, starting at (0,0). 	| Instead of room coordinates, check the player's move coordinates from the starting position. 	| [Commit]() 	|
 | #4 	| `intro_text` is only printed upon a successful movement action, otherwise only the failed move text should be printed. 	| `intro_text` for every room is printed even after a failed move. 	| No default state for the room existing had been set. 	| Add `self_moved` and set it to `True`. If a room doesn't exist, then set it to `False`. Also add an if statement to `start_game` to make sure the `intro_text` is only printed when a valid move is made: `self.moved = True`. 	| [Commit]() 	|
-| #5 	| Player can only access room that are directly linked to each other. 	| Player can move between rooms that aren't directly linked and are only separated by empty space. 	| No check was implemented to see if there was a valid path between any given rooms. 	| Paths were added with a check to see if there was a valid path between rooms, or if the path was either blocked or locked. 	| [Commit]() 	|
-| #6 	| Player should be move through all open paths, but not through locked or blocked paths. 	| Player was able to move through locked and/or blocked paths.  	| If statement was set to `if path.block and path.lock`, but no path was both locked and blocked. Additional, `return` was incorrectly indented within in `def find_path()` at the very end. 	| Set the if statement to be `path.block or path.lock` and un-indent the `return` at the end of `def find_path()`. 	| [Commit]() 	|
+| #5 	| Player can only access rooms that are directly linked to each other. 	| Player can move between rooms that aren't directly linked and are only separated by empty space. 	| No check was implemented to see if there was a valid path between any given rooms. 	| Paths were added with a check to see if there was a valid path between rooms, or if the path was either blocked or locked. 	| [Commit]() 	|
+| #6 	| Player should be able to move through all open paths, but not through locked or blocked paths. 	| Player was able to move through locked and/or blocked paths.  	| If statement was set to `if path.block and path.lock`, but no path was both locked and blocked. Additional, `return` was incorrectly indented within in `def find_path()` at the very end. 	| Set the if statement to be `path.block or path.lock` and un-indent the `return` at the end of `def find_path()`. 	| [Commit]() 	|
 | #7 	| Player can access Testing from Preservation. 	| Player can't access Testing from Preservation. 	| No path existed between these two rooms. 	| Add a path between these two rooms into the paths array. 	| [Commit]() 	|
 | #8 	| `iadd` should return assigned and updated (x, y) coordinates to reflect the movement of the player. 	| `iadd` was not returning the assigned and updated (x, y) coordinates. 	| The updated (x, y) coordinates were not being returned. 	| Add `return self`. 	| [Commit]() 	|
 | #9 	| First question should repeat even if the input is invalid (neither yes nor no). 	| Invalid input during the first question causes the game to end. 	| No while loop. 	| Add a while loop. 	| [Commit]() 	|
 | #10 	| When asked if the player wants a briefing, an invalid input should prompt the user for another input. 	| When asked if the player wants a briefing, an invalid input prints a statement saying that the input has to be a Yes or a No, however the briefing is still skipped and the game continues. 	| No while loop. 	| Add a while loop. 	| [Commit]() 	|
-
-1.  **Intended Outcome:** Background images covers the entire available viewport.
-    * **Issue:** Background image only covers a certain amount of the vertical viewport, before being cropped and displaying white space.
-    * **Cause:** The background image had a square ratio and was quite small in terms of size.
-    * **Solution:** Replace the old image with a new image that's a higher resolution and a wider ratio. [Commit](https://github.com/Ryael/memoria/commit/36d73075c269e5c6e902a1075212808940ee9e61).
-
-2.  **Intended Outcome:** H1 title is created such that there is an even amount of space above and below it.
-    * **Issue:** [H1 title is unevenly spaced](docs/bugs/bug-2.png).
-    * **Cause:** H1 title is created such that there is excess space below the it.
-    * **Solution:** Replace the old font with a new font, Jost, that has an even amount of space above and below it. [Commit](https://github.com/Ryael/memoria/commit/7f15638933dd2b3692a467dd0eb7296c9fa39fad).
-
-3.  **Intended Outcome:** After using Return/Back button, all the previously displayed containers should be hidden.
-    * **Issue:** After using Return/Back button, all the previously displayed containers were still being displayed.
-    * **Cause:** After using Return/Back button, all the previously displayed containers didn't have their display changed to "display: none".
-    * **Solution:** Hide the containers when the Return/Back is clicked. This was then later changed to be a reload script, which accomplishes the same thing. [Commit](https://github.com/Ryael/memoria/commit/6340e47c37d8cdf294e879975b10f71dc296abfb).
-
-4.  **Intended Outcome:** All emoji should be rendered once the game board is generated.
-    * **Issue:** Some emoji weren't being being rendered.
-    * **Cause:** The emoji that weren't being rendered simply weren't compatible with being displayed as icons.
-    * **Solution:** Replace the emoji that weren't being properly rendered with ones that are. [Commit](https://github.com/Ryael/memoria/commit/309ec88eb40360d0ef139a6481b6cc65214dd82e).
-
-5.  **Intended Outcome:** The win state is only displayed after a round is over.
-    * **Issue:** A part of the win state is being displayed and no text is visible after the board flips.
-    * **Cause:** The memory game had a white colour covering it, which is what made the text disappear. Additionally, "win" had a class selector instead of a id selector.
-    * **Solution:** Remove the white background and update "win" from a class selector to a id selector. [Commit](https://github.com/Ryael/memoria/commit/a3dd7769ce25eeaac6482b322984772099935f10).
-
-6.  **Intended Outcome:** Game controls is displayed above the game area.
-    * **Issue:** Game controls is not visible at all.
-    * **Cause:** The game controls section was being placed beside the game area. It also wasn't being hidden upon the user navigating away from the game.
-    * **Solution:** Moving the container up a level/div and adding a script to the easyGameMode script that allows the game stats to be displayed from a none-display state. Fix the typo in the constant selectors (no # for idSelector) [Commit](https://github.com/Ryael/memoria/commit/b8693edf9777f0abc5d7eeda75e6975fc3ab1829).
-
-7.  **Intended Outcome:** Upon interacting with the Back/Return buttons, elements on the page fade in normally.
-    * **Issue:** Interacting with the Back/Return button would display the Main Menu briefly before the reload and the transitional effects that follow.
-    * **Cause:** The page reload would play the transitional effects once and then the show/hide scripts would play the effects again.
-    * **Solution:** Remove hide/show scripts in favour of location.reload script. [Commit](https://github.com/Ryael/memoria/commit/6340e47c37d8cdf294e879975b10f71dc296abfb).
-
-8.  **Intended Outcome:** Interacting with the H1 title allows the user to return to the Main Menu.
-    * **Issue:** Interacting with the entire section that houses the H1 title causes the user to return to the Main Menu.
-    * **Cause:** The function returnButton() was attached to the div that houses the H1 title.
-    * **Solution:** Move returnButton() to the H1 instead. [Commit](https://github.com/Ryael/memoria/commit/faab9a6d22a7dbc62ea460199e791247234c1c07).
-
-9. **Intended Outcome:** Memory game works as intended with the "matched" and "shakes" class being added to matching cards when two matched cards are flipped.
-    * **Issue:** Too many rapid inputs break the game.
-    * **Cause:** The event listener breaks and stops adding the "flipped" and "matched" classes making it impossible to progress the game.
-    * **Solution:** Add timeOutRef which adds a delay to shake and flip. [Commit](https://github.com/Ryael/memoria/commit/76eeaa0eb1cf5c14d4e58206d43badc00b12897f).
-
-10. **Intended Outcome:** Border animation stops playing after the game board is flipped and the win state is displayed.
-    * **Issue:** [Border animation continues playing on the flipped game board when the win state is displayed](docs/bugs/bug-11.png). This was only present on Google Chrome.
-    * **Cause:** Google Chrome handles this animation differently from other browsers and the animation persists despite the element technically being out of view.
-    * **Solution:** Add "display: none;" to the animated borders (spans) on flip. [Commit](https://github.com/Ryael/memoria/commit/fa7763928db3b5d77a2695a6389867115fde44fa).
-
-11. **Intended Outcome:** All difficulty levels of the game should be responsive.
-    * **Issue:** [After hard mode was made responsive, easy and normal modes broke](docs/bugs/bug-12.png).
-    * **Cause:** Easy, normal, and hard all share one ID selector, which was changed via media query to make the game responsive on hard.
-    * **Solution:** Adjust generateGame script with the inclusion of template literals to create 3 different boards (board-2, board-4, board-6) to better manipulate all with separate media queries. [Commit](https://github.com/Ryael/memoria/commit/9a7121533e56761c93745c4e5da2b222b11a912b).
-
-12. **Intended Outcome:** Animated border around the game area should remain around the game area.
-    * **Issue:** Animated border appears far off to the right side on the smallest media query.
-    * **Cause:** The left and right part of animated border are displaced due to the smallest media query causing the hard game board to vertically fill up the screen.
-    * **Solution:** Add "overflow: hidden;" to #board-container to hide it. [Commit](https://github.com/Ryael/memoria/commit/f8894fa2842cb0066b707c647ff59ed9d6bde6e1). 
-
-13. **Intended Outcome:** Flip counter only counts the flips made on the game board.
-    * **Issue:** Flip counter adds extra flips if the user rapidly interacted with the game board, even if a card was already mid-flip.
-    * **Cause:** There was no if statement to ensure there are less than two total flips existing at any time.
-    * **Solution:** Moving state.TotalFlips++ into the if statement where there has to be less than 2 total flips existing at any time. [Commit](https://github.com/Ryael/memoria/commit/553351075921cacf2eb57d01241111674ef56b47).  
+| #11 	| When the player inputs an invalid move action, the description of a room is not printed. 	| When the player inputs an invalid move action, the description of the move is printed. 	| No while loop to check. 	| Add a while loop. 	| [Commit]() 	|
 
 [Back to top &uarr;](#avarice)
 <hr>
