@@ -37,20 +37,20 @@ The "Move" function is what truly frees the player up, as it allows them to choo
 2. [User Experience](#user-experience)
     - [Target Audience](#target-audience)
     - [User Stories](#user-stories)
-3. [Game Design](#narrative_&_visual_design)
+3. [Game Design](#game)
     - [Narrative](#narrative)
     - [Typography](#typography)
-    - [Colour Scheme](#colour_scheme)
-    - [Map & Flowcharts](#map_&_flowcharts)
+    - [Colour Scheme](#colour-scheme)
+    - [Map & Flowcharts](#map--flowcharts)
 4. [Code](#code)
     - [Commits](#commits)
-    - [Folder Structure](#folder_structure)
+    - [Folder Structure](#folder-structure)
     - [Variables](#variables)
     - [Helper Functions](#helper-functions)
     - [Game Loop](#game-loop)
     - [Actions](#actions)
     - [Map Design](#map-design)
-    - [YAML](#YAML)
+    - [YAML](#yaml)
     - [Data Model](#data-model)
 5. [Validation](#validation)
     - [Python Validation](#html-validation)
@@ -63,7 +63,8 @@ The "Move" function is what truly frees the player up, as it allows them to choo
 9. [Deployment](#deployment)
 10. [Technologies Used](#technologies-used)
     - [Languages](#languages)
-    - [Frameworks & Tools](#frameworks-&-tools)
+    - [Python Libraries](#python-libraries)
+    - [Frameworks & Tools](#frameworks--tools)
 11. [Credits](#credits)
 12. [Acknowledgements](#acknowledgements)
 
@@ -158,9 +159,9 @@ Hiding spots of course, become relevant when the monster itself is encountered i
 
 After the monster makes its appearance, it's after this point that the Investigator can examine notable objects that will alert the monster to the location of the Investigator. Due to this, it's important to always move slowly and carefully, as well as remembering the nearest safe hiding spot creating a sense of suspense.
 
-Overall, the narrative focuses on what went on within the facility, a deep dive into the monster and how it came to be, what the facility was experimenting, and their attempt of fusing mechnics and biologics. The scientists also performed tests on plants, which in turn, caused nature to bite back in its own way. The monster was created out of corporate greed and a desire to create an unstoppable force, kept secret to the governments of the world. Unfortunately, this didn't come to fruition, and the monster's development was halted short as its creator's excessive greed ended up overcoming the monster itself, causing it to spiral out of control. But maybe, just maybe, it still is a lonely creature that's looking for a reason to belong...
+Overall, the narrative focuses on what went on within the facility, a deep dive into the monster and how it came to be, what the facility was experimenting, and their attempt of fusing flora and fauna. The scientists also performed tests on plants, which in turn, caused nature to bite back in its own way. The monster was created out of corporate greed and a desire to create an unstoppable force, kept secret to the governments of the world. Unfortunately, this didn't come to fruition, and the monster's development was halted short as its creator's excessive greed ended up overcoming the monster itself, causing it to spiral out of control. But maybe, just maybe, it still is a lonely creature that's looking for a reason to belong...
 
-The monster itself is very loosely inspired by Wendigos from Algonquian-speaking First Nations in North America. Wendigos tend to be very malevolent entities that are definited by their excessive greed, which as a concept fits the narrative perfectly. However, those in charge of the facility were unsatisified after creating an artificial Wendigo, deciding to create a being that consists of a bizarre fusion of organic and robotic. A total and complete perversion of nature. As the core theme is greed and how it brings everything here, to this facility, where they are consumed by it. Even nature itself decides to fight back against it, slowly overtaking the facility, bit by bit. But maybe, just maybe, the Investigator will be able to end this cycle of never-ending avarice.
+The monster itself is very loosely inspired by Wendigos from Algonquian-speaking First Nations in North America. Wendigos tend to be very malevolent entities that are definited by their excessive greed, which as a concept fits the narrative perfectly. However, those in charge of the facility were unsatisified after creating an artificial Wendigo, deciding to create a being that consists of an unholy fusion of flora and fauna. A total and complete perversion of nature. As the core theme is greed and how it brings everything here, to this facility, where they are consumed by it. Even nature itself decides to fight back against it, slowly overtaking the facility, bit by bit. But maybe, just maybe, the Investigator will be able to end this cycle of never-ending avarice.
 
 A lot of narrative elements within the facility are left intentionally vague, so as to not to provide the player with all the answers. After all, some mysteries are best left unsolved and up to the imagination of the audience.
 
@@ -216,52 +217,55 @@ In order to avoid the monster, it's important to remember where the good and bad
 
 ### Commits
 
-The Title is the first things users will see when loading the page and its geometric and retro look is here to make an impact. It's bold and assertive with its heavy font-weight and contrasting white on blue, and establishes the sort of design philosophy the rest of the website will adhere to. Upon mouse-over and focus, it plays [a subtle animation](docs/features/header-title-animation.gif) and converts the user's cursor to that of a pointer to indicate that it's an interactable element. Upon interaction it plays a script that reloads the page, effectively bringing the user to the Main Menu. As such, no matter what part of the game the user has navigated to, they are always a simple click or tap away from going back to the Main Menu. The name "Memoria" is simply a play on the word "memory" and has no other significant meaning aside from aesthetic preference.
+
 
 ### Folder Structure
 
-The Main Menu is fundamentally the navigation menu for the website and also doubles up as the landing page. Upon loading into the page, the user is greeted by a subtle fade-in transition, which is used throughout the entirety of Memoria. It keeps people who prefer reduced motion in mind and is quick and simple on the eyes. From the Main Menu, the user has the option to: a) start a game, b) view the Leaderboards, or c) read the credits. All the [buttons have animations](docs/features/main-menu-animation.gif) that play upon hover/focus. A smooth fade in, and smooth fade out. Upon interaction, a script runs that hides the Main Menu and displays the relevant area instead. For example, clicking on Start Game will hide the Main Menu and instead display the Rules & Difficulty section alongside the return button, which can bring the user back to the Main Menu.
+
 
 ### Variables
 
-The Rules & Difficulty section introduces the rules of the game and the overall objective of the game. It also provides three buttons that allow the user to select their difficulty of choice. The difficulty level itself is explained within the name, where easy is 2x2, normal is 4x4, and hard is 6x6. From a single glance it is clear exactly what each button accomplishes. Their colour palettes are inverted due to the white background but [a similar animation](docs/features/rules-difficulty-animation.gif) plays upon hover/focus. Similar to Main Menu's script, upon interacting with any of the difficulties, the Rules & Difficulty section will be hidden and the game-board will be generated based on which difficulty was selected. 
+
 
 ### Helper Functions
 
 
-Here is where the magic happens! This is the core functionality of the website that displays a 4-card grid upon the Easy mode button being interacted with. The previous menu is hidden but the game itself is written such that the timer doesn't start counting until the user clicks on a card. There's nothing worse than games that have their timers begin counting before the user is even able to take an action. The emoji are randomised each time using a shuffle method but they are always pulled from the same list of emoji. The emoji approach is quite novel as it allows the website to not have to load images everytime as every device has their own version of emojis built in. 
 
 ### Game Loop
 
-Normal mode is pretty much identical to what is described up above except that the game board generates a 16-card grid. This is pretty much the ideal difficulty to play as it strikes the sweet spot between easy and normal, and is commonly what one would see when looking at other memory card games. It doesn't take too long but still tests the user's short-term memory. It's a nice and relaxing difficulty mode. Both the easy and normal modes retain their square ratio across all resolutions.
+
 
 ### Actions
 
-Hard mode is very similar to the other two difficulties but the key difference is that it generates a 36 card grid. Playing on hard mode is significantly more time consuming and can take as much time as two full normal mode games, however, this game mode is here for those who are really trying to push their abilities and test their memory. Completing the game to have the board flip and seeing the confetti is extremely satisfying considering the time and effort needed to be put in, but I'd like to believe that it's all worth it! If the user is looking for a challenge, then they need look no further. Hard mode maintains a square ratio for most viewports except the very small and narrow ones, at which point it flex-wraps into a column. This is to make the best use of the vertical space, ensure that the cards themselves aren't too small, and prevent the game-board from overflowing entirely.
+
 
 ### Map Design
 
-The Return to the Main Menu button is present on every section but the Main Menu. Its purpose is to bring the user back to the Main Menu as it simply plays the same reload script as the Title does, resetting the page to its default state: the Main Menu. It has the exact same animation as the other Main Menu buttons and is even styled the same to ensure consistency and familiarity. 
+
 
 ### YAML
 
-The Leaderboards section is unfortunately not finished. It was intended to be a section where players could select one of the three corresponding difficulties to display the top 10 times for each. Due to no backend knowledge, the intention was to use a service like [Parse Platform](https://parseplatform.org/). However, I ended up running out of time and didn't want to rush and ultimately fail properly implementing this, hence this feature will be implemented in the future.
+
 
 ### Data Model
 
-The Credits section is very similar to both the Rules & Difficulty and Leaderboards sections, both in how it displays and hides the other content and how it looks. Here the user can find my details and information on how to best contact me in the event of a bug. It also attributes the images used from FreePik.
+
 
 ## Validation
 
 ### Python Validation
 
-[W3C Markup Validation Service](https://validator.w3.org/nu/) was used to validate HTML code. No errors were found. 
+[PEP8 Code Institute Linter](https://pep8ci.herokuapp.com/) was used to validate Python code. No errors were found. 
 
-![HTML Validation](docs/validation/html-validation.png)
+- Mention snakecase naming errors via PyLint and decision to ignore them for x, y coordinate variable names.
+
+![Python Validation](docs/validation/html-validation.png)
 
 ### YAML Validation
 
-[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate CSS code. No errors were found. 
+[YAML Lint](https://www.yamllint.com/) was used to validate YML code. No errors were found. 
+
+- Errors were detected in GitPod, but they were attempted to be solved, etc. Link image. Explain what was done. it still works.
 
 ![CSS Validation](docs/validation/css-validation.png)
 
@@ -272,70 +276,78 @@ The Credits section is very similar to both the Rules & Difficulty and Leaderboa
 
 ### Play Testing
 
-[Website Responsive Test Online](https://websiteresponsivetest.com/) was used to extensively test the responsiveness of Memoria. All screen sizes and viewports are now accounted for, including even extremely small screen-widths like 240 px.
+The game was play tested during all stages of development, this is how the bugs that are detailed in the bugs section were found. Each function was tested and any bugs were documented as soon as they were found. They were then solved, and this solving process was also documented. 
+
+The play testers also provided some very helpful feedback:
+- "N", "S", "E", and "W" for movement alongside "North", "South", "East", West", and "Go North" and etc. This helps to speed up the process of moving around the map as this is a very common input.
+- Do not implement capitalisation check for Investigator name as some players prefer lowercase names as well as names made entirely out of numbers.
 
 ### Testing User Stories
 
-1. As a first-time visitor, I want to easily understand the main purpose of the game.
-    - Upon navigating to the website, the user is automatically greeted with a clean and easily readable Main Menu that allows them to go to their page of choice. The Start Game button will bring them to the Rules & Difficulty section, where they can read about the rules and objective of the game.
-    - At this point, users can then select a difficulty to start a game and see first-hand what the purpose of the game is.
-    - In addition to this, they may navigate to the GitHub via the Footer and/or the Credits section, where they can read the introduction of the readme in order to ascertain the purpose.
+1. As a first-time player, I want to easily understand the main purpose of the game.
+    - Upon running the application, the user is automatically greeted with a clean and distinctive title screen. The tone of the game is very quickly established after this with the player being asked if they're interested in playing.
+    - At this point, players can choose a name and whether or not to view the introduction, after which point they're thrown into the game where the tone and atmosphere is slowly established.
 
-2. As a first-time visitor, I want to easily navigate the menus without getting lost.
-    - The website was designed to be easy to navigate and fluid. The top of each section has a Title which doubles as a back button alongside the actual Return Button, with clearly described descriptions so the user has an idea of where they'll end up upon interaction.
-    - Every section always has a clear means of moving forwards or backwards, ensuring the user is never lost or overwhelmed.
+2. As a first-time player, I want to learn how to navigate the map and interact with items.
+    - With the help of a diagetic and unskippable tutorial that plays right after the introductory scene, the player is introduced to their actions and how to use them. Both the Move and Examine actions are covered within this.
 
-3. As a first-time visitor, I want to learn about the developer.
-    - Navigating to the Credits section is the best and most simple way to learn more about the developer, as it contains a short blurb, a means to report bugs, and attribution links for the images used throughout the project.
-    - Additionally, the icons in the Footer allow the user to visit the developer's GitHub or LinkedIn, where they may learn additional information.
+3. As a first-time player, I want to learn about the world and the lore.
+    - By simply navigating the world, the player is able to learn a lot about the world and its lore.
+    - Additionally, by examining certain items the player is able to learn even more.
+    - Key items expand on this even further, often containing vital information.
 
-4. As a first-time visitor, I want to learn where the images were sourced.
-    - The Credits section will hold the answer to this, as it contains full attribution links to the images, their source, and who they were designed by.
+4. As a first-time player, I want to learn about the monster and how to deal with it.
+    - Upon entering the Common Room, which is unavoidable, the monster is introduced, and in doing so, the player is met with another diegetic tutorial that teaches them the Hide action.
+    - At this point, examining certain objects will make it clear that it's possible to hide near, behind, under, or inside of them.
 
-5. As a first-time visitor, I want to learn what the game rules are.
-    - Simply pressing Start Game will bring the user to the Rules & Difficulty section, which clearly lays out the rule of the game, the objective, and how the difficulties differ.
+5. As a first-time player, I want to know what the criteria for the different endings is.
+    - By playing through the game and managing to escape, the player is informed of how successful they were during their investigator and how many (if any) of the key items they obtained.
+    - As such, it is easy to infer how many other alternative endings exist dependant on the goals accomplished.
 
-6. As a first-time visitor, I want to know what difficulties are available to me.
-    - Navigating to the Rules & Difficulty section by interacting with Start Game will bring the user where the difficulties are displayed via buttons alongside a clear descriptor of how they differ from each other.
-    - To add to this, they can click on each difficulty before returning to the Main Menu and clicking on the others to see the difference for themselves.
+6. As a first-time player, I want to not be overwhelmed by text appearing on screen.
+    - Via the use of the `p_t()` function, text is delayed by 0.75 seconds and is only printed after that period of time has elapsed.
+    - Additionally, no more than one portion of text is printed to the terminal at any given time, with actions causing more or less text to be printed.
+    - Re-visiting areas prints less text, allowing for an easier navigation experience.
 
-7. As a first-time visitor, I want to feel engaged when playing the game.
-    - Upon starting the game via any of the difficulty buttons, the board is faded in as it generates with a subtle yet fitting background and an additional animation that runs around the border of the board.
-    - Additionally, feedback is provided to the user via the cards shaking upon an incorrect match being made. 
-    - Further yet, the game-controls area shows the amount of flips they've made and the amount of time that has elapsed, allowing them to keep track of their moves and become more invested.
+7. As a first-time player, I want to be able to see previously displayed text within rooms.
+    - Using the Recall action, the player is able to view the longer description of any room they choose. 
 
-8. As a first-time visitor, I want to be provided visual feedback upon beating a round.
-    - Upon the completion of the game on any difficulty, an animation is played where the board flips and confetti starts firing, increasing the user's engagement with the game by providing visual feedback of their accomplishment. 
+8. As a first-time player, I want to see the people who were involved with the creation of this game.
+    - Upon the completion of the game, credits are displayed that show the developer, writer, and name honourable mentions that had a had in shaping this game.
 
-9. As a returning visitor, I want to quickly check if any new difficulties or game modes have been added.
-    - If the UI remains the same and there isn't any additional element that informs the user of an update, then they could check the GitHub to see if any updates have been made to the game.
-    - Ultimately, they could also visit the Rules & Difficult section of the application to see whether or not new games modes or extra difficulties have been added as of yet.
+9. As a returning player, I want to go through the game to see and experience any endings I have not prior.
+    - Once the route to finish the game is made known the player, going through the game again will be much easier and quicker.
+    - As such, all the player will have to do is prioritise obtained some or all of key items to trigger the different endings.
 
-10. As a returning visitor, I want to progress through the difficulty levels to strengthen my memorisation.
-    - This is easily accomplished by starting with whichever difficulty the user may have left off on and work their way up the ladder that ends with the hardest difficulty.
-    - At this point the user should attempt the fastest clear time possible without any means of cheating to hone their memorisation.
+10. As the creator, I want to provide players with a new horror-themed text adventure game.
+    - By hosting the game on Heroku, players can experience the game without having to download it and run it locally.
+    - It is completely free to play and available to absolute any one looking for both horror-themed game.
 
-11. As the site owner, I want to clearly showcase the memory game.
-    - The application is designed with the game at the forefront; the menus are sleek and easy to navigate, the semantic structure suggests that there is a game available here, and the clear labelling of buttons will bring the user to the game within seconds.
+11. As the creator, I want users to be able to navigate the map easily and without any confusion.
+    - Through the use of a simple and diegetic tutorial, the player is introduced to the move commands.
+    - In addition, the commands are simple and straightforward, and accept different inputs (n, north, move n, move north and etc).
+    - If the player moves in a direction where there's either a wall or the path is blocked, this is acknowleged and a message is printed to the terminal.
 
-12. As the site owner, I want users to be able to navigate the menus smoothly and easily.
-    - The website has a very clear Main Menu, with easily seen text due to the contrast of the background and the colour of the links. This allows for a smooth navigation experience.
-    - Each section is built to be fluidic and flow in a coherent manner where the user learns relevant information as they go through each section of each page.
+12. As the creator, I want to adhere to a specific vision in terms of how tropes are handled and provide users with a very engaging game via its text-based gameplay.
+    - Through careful brainstorming and planning, the narrative was delicately crafted in order to provide a unique albeit slightly familiar experience.
+    - Text is carefully formatted and space, making sure it is consistent and easy to read.
+    - The game is written in the second person perspective, and aims to place the player in the shoes of the protagonist. Everything happens through the player's eyes.
 
-13. As the site owner, I want to adhere to a specific vision and provide users with a very engaging game via its design and imagery.
-    - The consistency of the effects and colours used provide an experience that succeeds bringing many separate parts together to form something that's more than the sum of its parts.
-    - All the backgrounds used are primarily blue with some purple hues to create a colour synergy and the application never deviates from its theme.
-    - The game portion of the application itself is designed to provide as much feedback to user as possible, hopefully providing them with a highly engaging experience.
+13. As the creator, I want to provide a clear explanation of the actions available to the user within the game.
+    - The game's use of multiple diegetic tutorials let the user be clearly aware of the actions that the game revolves around.
 
-14. As the site owner, I want to provide a clear explanation of the game-rules and the different difficulties.
-    - Users can find the explanation of the rules, objective, and different difficulties in the Rules & Difficulty section, which covers them succintly. 
+14. As the creator, I want to provide feedback to the users that their inputs for actions are acknowledged.
+    - Players' input is always printed back to the terminal, such that they are able to see what their previous inputs were.
+    - Invalid inputs print a message saying that the input or action wasn't recongised and that they should try again.
 
-15. As the site owner, I want to provide my social media contacts if users need to report a bug.
-    - The Credits section links to the issues page on the relevant GitHub page and explains that this is the ideal place to report bugs.
-    - Additionally, users may navigate to the Footer of the application and further navigate to the GitHub via that or send an e-mail altogether.
+15. As the creator, I want to provide users with different endings depending on how many objectives they've accomplished, encouraging them to try to seek out all the objectives.
+    - One of three endings are available to the player depending on when they leave the facility and with how many of the key items.
+    - Each of the endings, while somewhat similar in that they all end with the player escaping, provide an interesting bit of lore regarding the mysteries in of the that protagonist and/or the monster.
 
-16. As the site owner, I want to provide attribution links to the website where I sourced images from.
-    - The attribution links, where the images were found, and who they were designed and uploaded by can all be found within the Credits section, which contains clearly laid-out and high-lighted links.
+16. As the creator, I want to provide players with a suspenseful and mysterious game that explores the monster and horror themes in a unique way.
+    - Through the use of the second person perspective during the narrative, the freedom of choosing whichever path the player likes, and the looming threat of chasing monster, the player is put under suspense throughout the game.
+    - The exception to this is the beginning of the game, which is the figurative calm before the storm and establishes the overall atmosphere and world.
+    - The monster is also portrayed less as an mindless and malevolent being and more as a complex albet intimidating entity.
 
 [Back to top &uarr;](#avarice)
 <hr>
@@ -344,34 +356,36 @@ The Credits section is very similar to both the Rules & Difficulty and Leaderboa
 
 | Bug  	| Intended Outcome 	| Issue 	| Cause 	| Solution 	| Commit 	|
 |---	|---	|---	|---	|---	|---	|
-| #1 	| Player starts at the Observatory. 	| Player started at the Security Center. 	| Starting coordinates were set to (1,2). 	| Set the starting coordinates to (2,0). 	| [Commit]() 	|
-| #2 	| Player can only navigate to existing rooms within the world. 	| Player can go into "None" areas, where there are no rooms. 	| No check was implemented to see if the room direction being moved into had an existing room. 	| Add walls such that they prevent the player from falling off the map. `valid_move` checks the area the player is trying to move into to make sure it exists. 	| [Commit]() 	|
-| #3 	| Player is able to move in all cardinal directions. 	| Player is only able to move south, all other directions print a message that says no valid path exists. 	| What was being checked via `valid_move` was the room coordinates, starting at (0,0). 	| Instead of room coordinates, check the player's move coordinates from the starting position. 	| [Commit]() 	|
-| #4 	| `intro_text` is only printed upon a successful movement action, otherwise only the failed move text should be printed. 	| `intro_text` for every room is printed even after a failed move. 	| No default state for the room existing had been set. 	| Add `self_moved` and set it to `True`. If a room doesn't exist, then set it to `False`. Also add an if statement to `start_game` to make sure the `intro_text` is only printed when a valid move is made: `self.moved = True`. 	| [Commit]() 	|
-| #5 	| Player can only access rooms that are directly linked to each other. 	| Player can move between rooms that aren't directly linked and are only separated by empty space. 	| No check was implemented to see if there was a valid path between any given rooms. 	| Paths were added with a check to see if there was a valid path between rooms, or if the path was either blocked or locked. 	| [Commit]() 	|
-| #6 	| Player should be able to move through all open paths, but not through locked or blocked paths. 	| Player was able to move through locked and/or blocked paths.  	| If statement was set to `if path.block and path.lock`, but no path was both locked and blocked. Additional, `return` was incorrectly indented within in `def find_path()` at the very end. 	| Set the if statement to be `path.block or path.lock` and un-indent the `return` at the end of `def find_path()`. 	| [Commit]() 	|
-| #7 	| Player can access Testing from Preservation. 	| Player can't access Testing from Preservation. 	| No path existed between these two rooms. 	| Add a path between these two rooms into the paths array. 	| [Commit]() 	|
-| #8 	| `iadd` should return assigned and updated (x, y) coordinates to reflect the movement of the player. 	| `iadd` was not returning the assigned and updated (x, y) coordinates. 	| The updated (x, y) coordinates were not being returned. 	| Add `return self`. 	| [Commit]() 	|
-| #9 	| First question should repeat even if the input is invalid (neither yes nor no). 	| Invalid input during the first question causes the game to end. 	| No while loop. 	| Add a while loop. 	| [Commit]() 	|
-| #10 	| When asked if the player wants a briefing, an invalid input should prompt the user for another input. 	| When asked if the player wants a briefing, an invalid input prints a statement saying that the input has to be a Yes or a No, however the briefing is still skipped and the game continues. 	| No while loop. 	| Add a while loop. 	| [Commit]() 	|
-| #11 	| When the player inputs an invalid move action, the description of a room is not printed. 	| When the player inputs an invalid move action, the description of the move is printed. 	| No while loop to check. 	| Add a while loop. 	| [Commit]() 	|
+| #1 	| Player starts at the Observatory. 	| Player started at the Security Center. 	| Starting coordinates were set to (1,2). 	| Set the starting coordinates to (2,0). 	| [Commit 2ebce79](https://github.com/Ryael/avarice/commit/2ebce79799ae9b44ea3f13ff2c00dd23f40dfda1) 	|
+| #2 	| Player can only navigate to existing rooms within the world. 	| Player can go into "None" areas, where there are no rooms. 	| No check was implemented to see if the room direction being moved into had an existing room. 	| Add walls such that they prevent the player from falling off the map. `valid_move` checks the area the player is trying to move into to make sure it exists. 	| [Commit 9a072eb](https://github.com/Ryael/avarice/commit/9a072eb9e05671090164691f669f041d29396d91) 	|
+| #3 	| Player is able to move in all cardinal directions. 	| Player is only able to move south, all other directions print a message that says no valid path exists. 	| What was being checked via `valid_move` was the room coordinates, starting at (0,0). 	| Instead of room coordinates, check the player's move coordinates from the starting position. 	| [Commit 177ad5e](https://github.com/Ryael/avarice/commit/177ad5e532f311ae457551d69ae5a2ad1fe8c3e0) 	|
+| #4 	| `intro_text` is only printed upon a successful movement action, otherwise only the failed move text should be printed. 	| `intro_text` for every room is printed even after a failed move. 	| No default state for the room existing had been set. 	| Add `self_moved` and set it to `True`. If a room doesn't exist, then set it to `False`. Also add an if statement to `start_game` to make sure the `intro_text` is only printed when a valid move is made: `self.moved = True`. 	| [Commit d0bba8a](https://github.com/Ryael/avarice/commit/d0bba8a8ce25944e7ffdc90e523079d8980bf040) 	|
+| #5 	| Player can only access rooms that are directly linked to each other. 	| Player can move between rooms that aren't directly linked and are only separated by empty space. 	| No check was implemented to see if there was a valid path between any given rooms. 	| Paths were added with a check to see if there was a valid path between rooms, or if the path was either blocked or locked. 	| [Commit fa5a441](https://github.com/Ryael/avarice/commit/fa5a441c0fc9b158667bb5363fe8ec3e72cef790) 	|
+| #6 	| Player should be able to move through all open paths, but not through locked or blocked paths. 	| Player was able to move through locked and/or blocked paths.  	| If statement was set to `if path.block and path.lock`, but no path was both locked and blocked. Additional, `return` was incorrectly indented within in `def find_path()` at the very end. 	| Set the if statement to be `path.block or path.lock` and un-indent the `return` at the end of `def find_path()`. 	| [Commit e763e32](https://github.com/Ryael/avarice/commit/e763e32c75323e069b0aa78e20e80a1f4f8622ef) 	|
+| #7 	| Player can access Testing from Preservation. 	| Player can't access Testing from Preservation. 	| No path existed between these two rooms. 	| Add a path between these two rooms into the paths array. 	| [Commit ac8a458](https://github.com/Ryael/avarice/commit/ac8a458fe514476134845d23fed7abe1a60426f3) 	|
+| #8 	| `iadd` should return assigned and updated (x, y) coordinates to reflect the movement of the player. 	| `iadd` was not returning the assigned and updated (x, y) coordinates. 	| The updated (x, y) coordinates were not being returned. 	| Add `return self`. 	| [Commit 6011328](https://github.com/Ryael/avarice/commit/6011328dbf9d58716a4098c41b6d004db32b782d) 	|
+| #9 	| First question should repeat even if the input is invalid (neither yes nor no). 	| Invalid input during the first question causes the game to end. 	| No while loop. 	| Add a while loop. NOT FINISHED	| [Commit]() 	|
+| #10 	| When asked if the player wants a briefing, an invalid input should prompt the user for another input. 	| When asked if the player wants a briefing, an invalid input prints a statement saying that the input has to be a Yes or a No, however the briefing is still skipped and the game continues. 	| No while loop. 	| Add a while loop. NOT FINISHED	| [Commit]() 	|
+| #11 	| When the player inputs an invalid move action, the description of a room is not printed. 	| When the player inputs an invalid move action, the description of the move is printed. 	| No while loop to check. 	| Add a while loop. NOT FINISHED 	| [Commit]() 	|
 
 [Back to top &uarr;](#avarice)
 <hr>
 
 ## Future Updates
 
-1. Leaderboards - Unfortunately this was part of the original scope, it proved to be too difficult to incorporate in time. The idea is top display the top ten users for every difficulty. After winning a round, a the win state would allow the user to input their name and assign it their clear time, which would then be ranked against other players who input their name.
+1. Additional Endings - Initially, examining the ladder at the very beginning of the game was meant to prompt a silly and grim ending. Additional items were also considered to be included, which would have the player make a choice if they were to meet certain secret criteria before escaping. Once met, the path would split from this point on. One choice would have the player continuing playing the game after the ending, wherein they revisit the facility and are able to unlock an entirely different ending. The other choice would allow for a unique and secret ending scene depending if all the secret criteria was met. These endings and ideas were unfortunately cut from the base game due to the scope being too big.
 
-2. Restart Button - This would allow users to restart a game without having to return to the Main Menu, effectively saving them a lot of extra clicks. 
+2. Lore Expansion - Expanding on the vital information provided by the key items whenever the player examines them within their inventory is something I'd like to do ASAP. With this, information can be provided diegetically and organically to the player with regards to what transpired here as the game in its current state may leave the player with more questions than answers.
 
-3. UI Update - I'd like to update the UI, namely the settings menus such that they feel even more visually and thematically fitting.
+3. Bigger Facility - I'd like to expand the facility to have more floors. This is precisely why the stairs are inaccessible. Multiple floors would allow for more rooms, more items, more interactions, and more ways to interact with the monster.
 
-4. Extra Difficulties - For people that would really like to push their memorisation to the max. Namely 8 x 8 card grids and 10 x 10 card grids.
+4. Monster AI - Expanding on the monster AI and giving the player more actions to be able to distract the monster whenever it acts as a roadblock in blocking a path would provide for a more suspenseful and difficult experience.
 
-5. More Emoji - Add more emoji that fit the criteria of traditional fantasy role playing game concepts. This would allow for an even wider pool of emoji to be pulled from, creating a much more varied pool.
+5. Rotate the Map - It's difficult to randomise the location of the items due to the the importance of their containing locations, hence a simple rotation by +- 90° would disorientate players who were familiar with the map. Additionally, while items can't be randomised, perhaps it'll be easier to randomise sets of certain rooms that belong close to each other and how their paths connect.
 
-I'd like to revisit this project in the future after having learned more about JavaScript in order to push this application to become as good as it can possibly be.
+6. NPCs - NPCs weren't planned initially but it would be an interesting addition, as this could impact the ending achieved. Adding a rescuable NPC that the player can potentially kill by bringing the monster to them accidentally would add another layer of complexity and suspense. 
+
+I'd like to revisit this project in the future after having learned more about Python, YAML, and game design in general in order to push this application to become as good as it can possibly be. It's something I thoroughly enjoyed working on and have grown quite a bit as a developer.
 
 ## Deployment
 
@@ -398,53 +412,59 @@ It can also be forked via the following steps:
 
 ### Languages
 
-- HTML 5
+- Python
+- YAML
+- HTML
 - CSS 3
 - JavaScript
+
+### Python Libraries
+
+- [PyYAML](https://pypi.org/project/PyYAML/) - PyYAML is a YAML parser and emitter for Python.
+- [Dataclasses](https://docs.python.org/3/library/dataclasses.html) - This module provides a decorator and functions for automatically adding generated special methods such as `__init__()` and `__repr__()` to user-defined classes.
+- [Time](https://docs.python.org/3/library/time.html) - This module provides various time-related functions.
 
 ### Frameworks & Tools
 
 - [GitPod](https://gitpod.io) - IDE used to code and build this project.
-- [GitHub](https://github.com/) - The repository was created here, is currently stored here, and was deployed via the GitHub Pages features.
-- [Balsamiq](https://balsamiq.com) - Used to create wireframes.
+- [GitHub](https://github.com/) - The repository was created here, is currently stored here.
+- [Heroku: Cloud Application Platform](https://www.heroku.com) - Used to deploy the application and host a mock terminal.
+- [Lucidchart](www.lucidchart.com) - Used to create the map and flowchart for the game.
 - [Obsidian](https://obsidian.md/) - Used to take notes and create to-do lists.
+- [Sublime Text](https://www.sublimetext.com/) - Text editor used to code offline when GitPod was giving errors and during any internet outages.
 - [Adope Photoshop](https://www.adobe.com/products/photoshop.html) - Used to crop, resize, and edit images.
-- [Adope Illustrator](https://www.adobe.com/products/illustrator.html) - Used to manipulate background images from FreePik.
-- [W3C HTML Validator](https://validator.w3.org/) - Used to validate HTML code.
-- [W3C JigSaw Validator](https://jigsaw.w3.org/css-validator/) - Used to Validate CSS code.
-- [JSHint](https://jshint.com/) - Used to validate JS code.
-- [WAVE WebAIM](https://wave.webaim.org/) - Used to check accessibility.
-- [Google Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - Used to check performance, SEO, accessibility, and best practices.
-- [Mozilla Firefox Developer Tools](https://www.mozilla.org/en-US/firefox/new/) - Used to check and test the project.
-- [AmIResponsive](https://ui.dev/amiresponsive) - Used to create the Am I Responsive image mock-up.
-- [FreeConvert](https://www.freeconvert.com/jpg-to-webp) - Used to convert .PNG to .WEBP.
-- [TinyPNG](https://tinypng.com/) - Used to compress images.
-- [Google Fonts](https://fonts.google.com/) - Fonts were imported from here.
-- [Font Awesome](https://fontawesome.com/) - Icons are used from here.
 - [Favicon.io](https://favicon.io/) - Used to create a favicon.
 - [ShareX](https://getsharex.com/) - Used to take screenshots and gifs.
-- [Color-Name](https://www.color-name.com/) - Used to find complementary shades of colours used.
-- [Elementor](https://elementor.com/blog/font-pairing/) - Used to find Google Font combinations.
-- [Canvas Confetti](https://www.kirilv.com/canvas-confetti/) - Library of confetti scripts, which were used.
-- [FreePik](https://www.freepik.com/) - Used to find background images.
 - [Badgen](https://badgen.net/) - Used to generate live badge icons.
-- [Website Responsive Test Online](https://websiteresponsivetest.com/) - Used to test the responsiveness of the website.
+- [Text Color Fader](http://patorjk.com/text-color-fader/) - Used to create gradients for the title text.
+- [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&h=0&v=0&f=ANSI%20Shadow&t=Avarice) - Used to generate the title text for the start and end of the game.
+- [ASCII Frames](https://texteditor.com/ascii-frames/) - Used to generate room name-plates.
+- [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) - Used to quickly and easily generate tables for the readme.
+- [Character Counter](https://www.character-counter.io/) - Used to quickly count the amount of character per line in order to create a consistent column of text throughout the game.
+- [PEP8 Code Institute Linter](https://pep8ci.herokuapp.com/) was used to validate Python code. 
+- [YAML Lint](https://www.yamllint.com/) was used to validate YML code.
+
 
 ## Credits
 
-1. [WebTips - Memory Game Tutorial](https://www.webtips.dev/memory-game-in-javascript) - The code presented and explained here was what my project was based on. I heavily modified it and commented every single step of the way to demonstrate my understanding of the complete functionality and concepts employed throughout. It served as a frame of reference with regard to how certain aspects of the memory game worked and gaps with bridging this approach to my own vision were filled by my own solutions and ideas.
-1. [Code Institute Template](https://github.com/Code-Institute-Org/gitpod-full-template) - This project was first based off the repository created by Code Institute. This template made it very easy to work with in GitPod.
-3. [Codepen - Swarup Kumar Kuila](https://codepen.io/uiswarup/pen/RBByzW) - This codepen is where the idea for the animated border came from and helped me understand the use of nth-child elements in creating a uniquely animated four part border such as this.
-4. [Stack Overflow](https://stackoverflow.com/) & [W3Schools](https://www.w3schools.com/) - These two website were instrumental in me furthering my understanding of HTML 
-5. [Code Institute](https://codeinstitute.net/ie/) - Last but certainly not least, this project wouldn't have been possible without the course and material presented there.
+1. [Phillip Johnson's "Make Your Own Python Text Adventure"](https://link.springer.com/book/10.1007/978-1-4842-3231-6) - The code presented and explained here was what gave me my initial boost of confidence that my vision for this project could be accomplished. I heavily modified it and commented every single step of the way to demonstrate my understanding of the complete functionality and concepts employed throughout. It served as a frame of reference with regard to how certain aspects of the x, y coordinate map worked and gaps with bridging this approach to my own vision were filled by my own solutions and ideas.
+2. [python-text-adventure by jbussin](https://github.com/jbussin/python-text-adventure) - jbussin's code and readme helped expand on the ideas laid out within Phillip Johnson's book and showed me just how a simple concept can be executed improved upon. It was also what gave me the idea to transition my x,y map from a 2D list to a `.yml` file, as well as the modular structure of the game and its repoistory.
+3. [double-agent by Estelindis](https://github.com/Estelindis/double-agent) - Double Agent is a fantastic project and it is the very reason I found how to add colour to the terminal via escape sequences and without relying on any additional Python modules. It was also the place where I found the patorjk resources which proved invaluable. Additionally, one of my functions, `p_t()`, was adapted from their `p_d()`.
+4. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - This project was first based off the repository created by Code Institute. This template made it very easy to work with in GitPod and came fully ready to deploy on Heroku.
+5. [Stack Overflow](https://stackoverflow.com/) - This website was instrumental in me furthering my understanding of Python and YML. It also helped immensely with troubleshooting problems.
+6. [Code Institute](https://codeinstitute.net/ie/) - Last but certainly not least, this project wouldn't have been possible without the course and material presented there.
 
 ## Acknowledgements 
 
 - [Akshat Garg](https://github.com/akshatnitd) - Akshat is an absolutely amazing mentor that's friendly, knowledgeable, and helpful. He's been super helpful in providing me with suggestions and advice.
-- [Simon Waldron](https://github.com/saikez) - One of my closest friends and the very person who introduced me to the world of programming! He has been supporting me throughout my reskilling journey and is an absolute wonder of a human being. He has taken time out of his day again to help break down the more complicated JavaScript concepts and I honestly wouldn't have been able to complete this project to a satisfactory level without him.
-- My family and friends, who have been incredibly supportive and have been instrumental in keeping me motivated throughout this project. Thank you all so much! All of you who helped proofread, test, provide feedback on the UI, code, and etc... I couldn't have done it without you all!
+- [Simon Waldron](https://github.com/saikez) - This project pushed me a lot and Simon was kind enough to be there for me every step of the way. Whenever I faltered and started feeling the most intense stockholm syndrome, he was adamant I would be able to finish this project and adhere to my vision. I cannot possibly thank him enough for his patience, time, advice, suggestions, and most of all, his eagerness to help me.
+- Lu C. - All of the writing within the game was done by her and she did an absolutely stellar job throughout. I'd like to thank her for her endless support and encouragement, especially when I felt overburnded with my vision for this project. Lu easily adhered to my narrative skeleton structure and produced fantastic results.
+- Rose S. - Rose was instrumental in helping me proofread this readme as well as the entirety of the game script. You've saved me so much time and hassle, after looking at it for so long I just can't spot errors any longer... so, thank you so much, Rose!
+- [Phillip Waldron](https://github.com/Philip-Waldron) - Phil helped me build my idea for this product from its infancy, subtly guiding me towards simpler approaches for my ideas. If not for him and his sage advice, I honestly think the scope of this project would have been a huge mistake and I wouldn't have been able to meet the deadline. Most of the concepts and ideas he brought up are ones I carried through into the final build. Thank you so much! It was genuinely super fun to spitball ideas with you.
+- [Justin Y.](https://github.com/Lichaes) - Last but certainly not least, Justin provided me with suggestions all throughout my development process to aid me in my approach to this project. He also play tested the game extensively, and without his irreplaceable help, the testing procedure would have taken so much longer.
+- My family and friends, who have been incredibly supportive and have been instrumental in keeping me motivated throughout this project. Thank you all so much! All of you who helped proofread, test, provide feedback on the game, code, and etc... I couldn't have done it without you all!
 - The Code Institute community on Slack - Easy, straightforward, and always willing to help and provide advice.
-- Love Running - Ultimately, it wasn't until we went through this project that I realised that this was something I could do. A lot of the website is loosely based on it, too.
+- Love Sandwiches - Ultimately, it wasn't until we went through this project that I realised that this was something I could do. A lot of the website is loosely based on it, too.
 
 [Back to top &uarr;](#avarice)
 <hr>
