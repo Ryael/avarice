@@ -4,16 +4,16 @@
     x: 2
     y: 0
   visited: False
-  intro: ".-------------.\n| Observatory |\n'-------------'\n\nThe large domed tower stands tall. From what you remember\napproaching it from outside, its age is apparent: decaying\nbrick and shattered windows, with nature attempting to\nreclaim its lost territory as vines crawl up its sides,\ncapturing it in its claws like a predator.\n\nAn old ladder, your only apparent escape, seems tall\nenough to reach none of the windows. It looks as if you\nmight be able to use it to escape.\n\nYou hear faint noises coming from the south. Best to\nget a move on and investigate."
-  desc: ".-------------.\n| Observatory |\n'-------------'\n\nThe central observatory. Various types of plants have\nstarted to reclaim the building as their own, and you\nwonder how long the facility has been abandoned for\nthem to have reached such growth.\n\nBeams of sunlight pour through the shattered windows.\nYou cast a glance at the ladder."
+  intro: ".-------------.\n| Observatory |\n'-------------'\n\nThe large domed tower stands tall. From what you remember\napproaching it from outside, its age is apparent: decaying\nbrick and shattered windows, with nature attempting to\nreclaim its lost territory as vines crawl up its sides,\ncapturing it in its claws like a predator.\n\nAn old LADDER, your only apparent escape, seems tall\nenough to reach none of the windows. It looks as if you\nmight be able to use it to escape.\n\nYou hear faint noises coming from the south. Best to\nget a move on and investigate."
+  desc: ".-------------.\n| Observatory |\n'-------------'\n\nThe central observatory.\n\nVarious types of PLANTS have started to reclaim the\nbuilding as their own, and you wonder how long the\nfacility has been abandoned for them to have reached such\ngrowth. Beams of sunlight pour through the shattered\nwindows. You cast a glance at the LADDER."
 - !!python/object:room.Room
   name: Kitchen
   pos: !!python/object:position.Position
     x: 3
     y: 0
   visited: False
-  intro: ".---------.\n| Kitchen |\n'---------'\n\nA kitchen seems to have been installed. You wonder if it\nwas once a center of commerce.\n\nDrawers have been stripped of various utensils inside and\nnow lay scattered on the floor, and a number of the dining\ntables have been flipped over. "
-  desc: ".---------.\n| Kitchen |\n'---------'\n\nWhat's left of the kitchen.\n\nUtensils are strewn about the floor and a number of the\ntables have been flipped over."
+  intro: ".---------.\n| Kitchen |\n'---------'\n\nA kitchen seems to have been installed. You wonder if it\nwas once a center of commerce.\n\nDrawers have been stripped of various UTENSILS inside and\nnow lay scattered on the floor, and a number of the dining\ntables have been flipped over. "
+  desc: ".---------.\n| Kitchen |\n'---------'\n\nWhat's left of the kitchen.\n\nUTENSILS are strewn about the floor and a number of the\ntables have been flipped over."
 - !!python/object:room.Room
   name: Main Gate
   pos: !!python/object:position.Position
@@ -21,7 +21,7 @@
     y: 1
   visited: False
   intro: ".-----------.\n| Main Gate |\n'-----------'\n\nThe main gate. Once sealed shut, now open.\nYou never thought you'd see the light of day after that harrowing experience, yet here you are."
-  desc: TODO
+  desc: "N/A"
 - !!python/object:room.Room
   name: Foyer
   pos: !!python/object:position.Position
@@ -29,62 +29,62 @@
     y: 1
   visited: False
   intro: ".-------.\n| Foyer |\n'-------'\n\n TODO"
-  desc: ".-------.\n| Foyer |\n'-------'\n\nThe central foyer. All of the windows have been boarded\noff, but one of the lockers had been opened. The\nchandelier remained destroyed under where it once hung."
+  desc: ".-------.\n| Foyer |\n'-------'\n\nThe central foyer. All of the WINDOWS have been boarded\noff, but one of the LOCKERS had been opened. The\nCHANDELIER remained destroyed under where it once hung."
 - !!python/object:room.Room
   name: Main Lobby
   pos: !!python/object:position.Position
     x: 2
     y: 1
   visited: False
-  intro: ".------------.\n| Main Lobby |\n'------------'\n\nYou stumble into what appears to be the facility's main\nlobby, with various hallways and labeled doors lining\nthe walls. A massive staircase leads the way to the\nsecond floor, but is entirely blocked off.\n\nA reception desk sits at the center, and you make\nnote of the crawlspace underneath. Large scratch marks\nand dried bloodstains on the walls and floor send a chill\ndown your spine...\n\n“Mechanical” echoes in the back of your mind as you're\nable to pick up trace sounds of metal grinding together.\nPerhaps it'd be in your best interest to avoid it for\nthe time being. After all, there's still much to explore."
-  desc: ".------------.\n| Main Lobby |\n'------------'\n\nNumerous doors and halls that assumingely lead to other\nareas of the facility line the walls. \n\nA reception desk sits at the center, and you make\nnote of the crawlspace underneath. Large scratch marks\nand dried bloodstains on the walls and floor send a\nchill down your spine."
+  intro: ".------------.\n| Main Lobby |\n'------------'\n\nYou stumble into what appears to be the facility's main\nlobby, with various hallways and labeled doors lining\nthe walls. A massive staircase leads the way to the\nsecond floor, but is entirely blocked off.\n\nA RECEPTION DESK sits at the center, and you make\nnote of the crawlspace underneath. Large SCRATCH MARKS\nand dried bloodstains on the walls and floor send a chill\ndown your spine...\n\n“Mechanical” echoes in the back of your mind as you're\nable to pick up trace sounds of metal grinding together.\nPerhaps it'd be in your best interest to avoid it for\nthe time being. After all, there's still much to explore."
+  desc: ".------------.\n| Main Lobby |\n'------------'\n\nNumerous doors and halls that assumingely lead to other\nareas of the facility line the walls. \n\nA RECEPTION DESK sits at the center, and you make\nnote of the crawlspace underneath. Large SCRATCH MARKS\nand dried bloodstains on the walls and floor send a\nchill down your spine."
 - !!python/object:room.Room
   name: Dormitory
   pos: !!python/object:position.Position
     x: 3
     y: 1
   visited: False
-  intro: ".-----------.\n| Dormitory |\n'-----------'\n\nA dormitory, presumably for the staff.\n\nA number of bunk beds have been knocked over, while\nothers have been broken. Several of the bookshelves have\nbeen knocked over. It looks as if it was caught in the\naftermath of some sort of rampage.\n\nTo the north you see a sign reading “Kitchen”, and\nto the east you see a sign reading “Toilets.”"
-  desc: ".-----------.\n| Dormitory |\n'-----------'\n\nThe staff dormitory.\n\nThe beds have been knocked over, and bookshelves thrown\naround."
+  intro: ".-----------.\n| Dormitory |\n'-----------'\n\nA dormitory, presumably for the staff.\n\nA number of bunk BEDS have been knocked over, while\nothers have been broken. Several of the BOOKSHELVES have\nbeen knocked over. It looks as if it was caught in the\naftermath of some sort of rampage.\n\nTo the north you see a sign reading “Kitchen”, and\nto the east you see a sign reading “Toilets.”"
+  desc: ".-----------.\n| Dormitory |\n'-----------'\n\nThe staff dormitory.\n\nThe BEDS have been knocked over, and BOOKSHELVES thrown\naround."
 - !!python/object:room.Room
   name: Toilets
   pos: !!python/object:position.Position
     x: 4
     y: 1
   visited: False
-  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nYou come across one of the two marked bathrooms.\n\nA row of bathroom stalls seem to have sustained some\ndamage. Whether due to age or outside influence, it's\nunclear. What is clear, is the smell coming from them."
-  desc: ".------------.\n| Toilets #1 |\n'------------'\n\nOne of the marked bathrooms.\n\nA foul odor comes from some of the stalls."
+  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nYou come across one of the two marked bathrooms.\n\nA row of bathroom STALLS seem to have sustained some\ndamage. Whether due to age or outside influence, it's\nunclear. What is clear, is the smell coming from them."
+  desc: ".------------.\n| Toilets #1 |\n'------------'\n\nOne of the marked bathrooms.\n\nA foul odor comes from some of the STALLS."
 - !!python/object:room.Room
   name: Security
   pos: !!python/object:position.Position
     x: 1
     y: 2
   visited: False
-  intro: ".-----------------.\n| Security Center |\n'-----------------'\n\nYou wander into what appears to be a security center.\n\nA number of monitors line the walls and desks. If you\ncan find a way to restore power, you wonder if you'd be\nable to see every room in the facility on these monitors.\nThere's a small desk at the middle of the CCTV screens,\nwith enough space to crawl underneath.\n\nA massive metal door resides on the southern wall, with\na huge dent from an impact on the other side."
-  desc: ".-----------------.\n| Security Center |\n'-----------------'\n\nThe security center.\n\nA row of CCTV screens line the wall, with a small desk\nat the center. It seems as if you can hide under it.\n\nA large metal door seems to be locked."
+  intro: ".-----------------.\n| Security Center |\n'-----------------'\n\nYou wander into what appears to be a security center.\n\nA number of MONITORS line the walls and desks. If you\ncan find a way to restore power, you wonder if you'd be\nable to see every room in the facility on these MONITORS.\nThere's a SMALL DESK at the middle of the CCTV screens,\nwith enough space to crawl underneath.\n\nA massive METAL DOOR resides on the southern wall, with\na huge dent from an impact on the other side."
+  desc: ".-----------------.\n| Security Center |\n'-----------------'\n\nThe security center.\n\nA row of CCTV MONITORS line the wall, with a SMALL DESK\nat the center. It seems as if you can hide under it.\n\nA large METAL DOOR seems to be locked."
 - !!python/object:room.Room
   name: Common Room
   pos: !!python/object:position.Position
     x: 2
     y: 2
   visited: False
-  intro: ".-------------.\n| Common Room |\n'-------------'\n\nYou wander into what appears to be some sort of common\nroom. Or, the remains of one, rather.\n\nThe first thing your eyes settle on are the scattered\nbones—the distinct shape of human skulls. The floor and\nwalls are painted with dried blood, and gouged out with\nlarge scratch marks. A couch fell victim to whatever\nrampaged through here, torn and gutted like a fish.\nA large nearby tree that seemed to have stretched into\nthe building blocks one of the exits, bearing the same\nlarge scratch marks.\n\nA horrible smell envelopes as you look up to see a sign\nreading “Sanitation” to the south. You're suddenly\noverwhelmed with dread."
-  desc: ".-------------.\n| Common Room |\n'-------------'\n\nThe remains of what once was the common room.\n\nHuman skulls and various bones are scattered about.\nDried blood paints the floors and walls, and large\nscratch marks have destroyed one of the couches. A\ndamaged tree nblocks the eastern exit."
+  intro: ".-------------.\n| Common Room |\n'-------------'\n\nYou wander into what appears to be some sort of common\nroom. Or, the remains of one, rather.\n\nThe first thing your eyes settle on are the scattered\nBONES—the distinct shape of human skulls. The floor and\nwalls are painted with dried blood, and gouged out with\nlarge scratch marks. A COUCH fell victim to whatever\nrampaged through here, torn and gutted like a fish.\nA large nearby TREE that seemed to have stretched into\nthe building blocks one of the exits, bearing the same\nlarge scratch marks.\n\nA horrible smell envelopes as you look up to see a sign\nreading “Sanitation” to the south. You're suddenly\noverwhelmed with dread."
+  desc: ".-------------.\n| Common Room |\n'-------------'\n\nThe remains of what once was the common room.\n\nHuman skulls and various BONES are scattered about.\nDried blood paints the floors and walls, and large\nscratch marks have destroyed one of the COUCHES. A\ndamaged TREE nblocks the eastern exit."
 - !!python/object:room.Room
   name: Labratory
   pos: !!python/object:position.Position
     x: 3
     y: 2
   visited: False
-  intro: ".--------------.\n| Research Lab |\n'--------------'\n\nYou manage to find your way into a laboratory. It takes\nyou back to the days as a student, if those memories\nwere cloaked in a veil of dust and scattered debris.\n\nOn closer inspection, you notice what appear to be test\ntubes with varying specimens preserved. Some of the\ndrawers have been haphazardly pried open, their contents\nspilled onto the floor. An opaque fume hood sits against\none of the walls, for chemicals—you find yourself inanely\nthinking."
-  desc: ".--------------.\n| Research Lab |\n'--------------'\n\nThe main lab.\n\nVarious specimens are preserved in test tubes, and a\nchemical station with a fume hood sits against one of the\nwalls. Some of the drawers have been pried open."
+  intro: ".--------------.\n| Research Lab |\n'--------------'\n\nYou manage to find your way into a laboratory. It takes\nyou back to the days as a student, if those memories\nwere cloaked in a veil of dust and scattered debris.\n\nOn closer inspection, you notice what appear to be TEST\nTUBES with varying specimens preserved. Some of the\nDRAWERS have been haphazardly pried open, their contents\nspilled onto the floor. An opaque FUME HOOD sits against\none of the walls, for chemicals—you find yourself inanely\nthinking.\n\nThe east and south exits are blocked by a tree that begins\nsomewhere in the southwest of the room and terminates\ntowards the north east. Nature seems to behave strangely\nhere."
+  desc: ".--------------.\n| Research Lab |\n'--------------'\n\nThe main lab.\n\nVarious specimens are preserved in TEST TUBES, and a\nchemical station with a FUME HOOD sits against one of the\nwalls. Some of the DRAWERS have been pried open."
 - !!python/object:room.Room
   name: Greenhouse
   pos: !!python/object:position.Position
     x: 4
     y: 2
   visited: False
-  intro: ".------------.\n| Greenhouse |\n'------------'\n\nYou find a greenhouse, surprisingly preserved.\n\nA variety of fruit and vegetables, as well as foreign\nplants, have been growing for a while. Calling it\novergrown would be an understatement; the room is all\nbut alive itself. Something tells you to not wander too\nclose to the foliage.\n\nThe west is blocked by overgrowth, the east leads to a\nroom labeled “Garden.” At first glance the path appears\nto be blocked, but you think you could squeeze through\nif you wanted to."
+  intro: ".------------.\n| Greenhouse |\n'------------'\n\nYou find a greenhouse, surprisingly preserved.\n\nA variety of fruit and vegetables, as well as FOREIGN\nPLANTS, have been growing for a while. Calling it\novergrown would be an understatement; the room is all\nbut alive itself. Something tells you to not wander too\nclose to the FOLIAGE.\n\nThe west is blocked by overgrowth, the east leads to a\nroom labeled “Garden.” At first glance the path appears\nto be blocked, but you think you could squeeze through\nif you wanted to."
   desc: ".------------.\n| Greenhouse |\n'------------'\n\nTODO"
 - !!python/object:room.Room
   name: Garden
@@ -92,8 +92,8 @@
     x: 5
     y: 2
   visited: False
-  intro: ".--------.\n| Garden |\n'--------'\n\nIs this an extension of the greenhouse? Its flora\nfeels more mature, and the word “garden” comes to mind.\n\nMuch of the flora is unrecognizable to you, neither\nnative to the surrounding area or anything you can call\nin published records. There are electric fences bordering\nthe perimeter—you wonder if they're live or not—and they\nseem as if they're meant to keep something in rather than\nout. Something catches your eye sticking out from the\nground, and on closer inspection, you see that it is a\nhuman arm."
-  desc: ".--------.\n| Garden |\n'--------'\n\nThe central garden.\n\nIt's blocked off by electric fences and overgrown flora\nthat blocks your paths. A human arm sticks out\nconspicuously from under the floor."
+  intro: ".--------.\n| Garden |\n'--------'\n\nIs this an extension of the greenhouse? Its FLORA\nfeels more mature, and the word “garden” comes to mind.\n\nMuch of the FLORA is unrecognizable to you, neither\nnative to the surrounding area or anything you can call\nin published records. There are ELECTRIC FENCES bordering\nthe perimeter—you wonder if they're live or not—and they\nseem as if they're meant to keep something in rather than\nout. Something catches your eye sticking out from the\nground, and on closer inspection, you see that it is a\nHUMAN ARM."
+  desc: ".--------.\n| Garden |\n'--------'\n\nThe central garden.\n\nIt's blocked off by ELECTRIC FENCES and overgrown FLORA\nthat blocks your paths. A HUMAN ARM sticks out\nconspicuously from under the floor."
 - !!python/object:room.Room
   name: Playroom
   pos: !!python/object:position.Position
@@ -116,24 +116,24 @@
     x: 2
     y: 3
   visited: False
-  intro: ".------------.\n| Sanitation |\n'------------'\n\nIt appears to be some sort of sanitation room.\n\nA line of armored hazmat suits are strung up on a rack,\nmost of which bearing large tears. A row of small\npersonal lockers are lined up against one of the walls,\nnone of which appear to be opened. There is a large\nsteel door that opens into a smaller room.\n\nTo the west is a steel door with the sign “Sanitation”\nhanging above it, and to the east you see what seems to\nbe some sort of overgrown data storage room."
-  desc: ".------------.\n| Sanitation |\n'------------'\n\nIt's the sanitation room.\n\nThe hazmat suits are lined up surprisingly orderly, save\nfor the huge tears in a number of them. There is a row\nof lockers lined up against one of the walls, and a\nlarge steel door on another."
+  intro: ".------------.\n| Sanitation |\n'------------'\n\nIt appears to be some sort of sanitation room.\n\nA line of armored HAZMAT SUITS are strung up on a rack,\nmost of which bearing large tears. A row of small\nPERSONAL LOCKERS are lined up against one of the walls,\nnone of which appear to be opened. There is a large\nSTEEL DOOR that opens into a smaller room.\n\nTo the west is a bulky door with the sign “Sanitation”\nhanging above it, and to the east you see what seems to\nbe some sort of overgrown data storage room."
+  desc: ".------------.\n| Sanitation |\n'------------'\n\nIt's the sanitation room.\n\nThe HAZMAT SUITS are lined up surprisingly orderly, save\nfor the huge tears in a number of them. There is a row\nof PERSONAL LOCKERS lined up against one of the walls, and a\nlarge STEEL DOOR on another."
 - !!python/object:room.Room
   name: Data Storage Room
   pos: !!python/object:position.Position
     x: 3
     y: 3
   visited: False
-  intro: ".--------------.\n| Data Storage |\n'--------------'\n\nIt's some kind of data storage room. Records,\ndocumentation, various servers, all likely containing\nevidence on what might've transpired here. Or, so you'd\nhope.\n\nA row of destroyed computers remain on desks, and vines\nhave already begun to reclaim the room as their own. It\ndoesn't seem as if there's any place you'd be able to\nhide here."
-  desc: ".--------------.\n| Data Storage |\n'--------------'\n\nWhat remains of a data storage room.\n\nThe computers are smashed and useless, and greenery\nhas started to reclaim the area as their own."
+  intro: ".--------------.\n| Data Storage |\n'--------------'\n\nIt's some kind of data storage room. Records,\ndocumentation, various servers, all likely containing\nevidence on what might've transpired here. Or, so you'd\nhope.\n\nA row of destroyed COMPUTERS remain on desks, and GREENERY\nhas already begun to reclaim the room as its own. It\ndoesn't seem as if there's any place you'd be able to\nhide here."
+  desc: ".--------------.\n| Data Storage |\n'--------------'\n\nWhat remains of a data storage room.\n\nThe COMPUTERS are smashed and useless, and GREENERY\nhas started to reclaim the area as its own."
 - !!python/object:room.Room
   name: Mainframe Room
   pos: !!python/object:position.Position
     x: 4
     y: 3
   visited: False
-  intro: ".-----------.\n| Mainframe |\n'-----------'\n\nIs this...some sort of mainframe? You may be able to\npower the facility from here.\n\nAmidst a graveyard of destroyed monitors, there seems\nto be one computer that may actually be functional,\nsurprisingly enough, spared from the natural and\nunnatural flora trying to reclaim its territory.\n\nTo the south is the second marked bathroom, the north\nis an area marked “Greenhouse”."
-  desc: ".-----------.\n| Mainframe |\n'-----------'\n\nThe remains of the mainframe.\n\nOne monitor seems to remain intact, you wonder if it\nwill turn on."
+  intro: ".-----------.\n| Mainframe |\n'-----------'\n\nIs this...some sort of mainframe? You may be able to\npower the facility from here.\n\nAmidst a graveyard of destroyed computers, there seems\nto be one that may actually be FUNCTIONAL,\nsurprisingly enough, spared from the natural and\nunnatural flora trying to reclaim its territory.\n\nTo the south is the second marked bathroom, the north\nis an area marked “Greenhouse”."
+  desc: ".-----------.\n| Mainframe |\n'-----------'\n\nThe remains of the mainframe.\n\nOne computer seems to remain FUNCTIONAL, you wonder if it\nwill turn on."
 - !!python/object:room.Room
   name: Testing Room
   pos: !!python/object:position.Position
@@ -156,5 +156,5 @@
     x: 4
     y: 4
   visited: False
-  intro: ".------------.\n| Toilets #2 |\n'------------'\n\nAnother marked restroom.\n\nMuch like the other, the mirror has been smashed, but\nsurprisingly, several of the stall doors remain intact.\nA large hole had been smashed into the wall, leaving you\nwith a little crawl space that you may be able to fit in."
-  desc: ".------------.\n| Toilets #2 |\n'------------'\n\nOne of the two marked restrooms.\n\nThe stalls remain more intact, and a HOLE in the wall\nprovides room for a crawl space. The MIRROR has been\nsmashed."
+  intro: ".------------.\n| Toilets #2 |\n'------------'\n\nAnother marked restroom.\n\nMuch like the other, the MIRROR has been smashed, but\nsurprisingly, several of the stall doors remain intact.\nA large hole had been smashed into the WALL, leaving you\nwith a little crawl space that you may be able to fit in."
+  desc: ".------------.\n| Toilets #2 |\n'------------'\n\nOne of the two marked restrooms.\n\nThe stalls remain more intact, and a hole in the WALL\nprovides room for a crawl space. The MIRROR has been\nsmashed."
