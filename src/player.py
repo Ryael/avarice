@@ -8,6 +8,7 @@ This module contains the logic dictating everything concerning the player.
 
 
 from world import path_at
+from inventory import Inventory
 
 
 class Player:
@@ -21,7 +22,7 @@ class Player:
         """
         self.pos = pos
         self.moved = True
-        self.inventory = {}
+        self.inventory = Inventory
 
     def move(self, d_pos):
         """

@@ -6,6 +6,8 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the Room class.
 """
 
+from inventory import Inventory
+
 
 class Room:
     """
@@ -22,4 +24,4 @@ class Room:
         self.visited = False
         self.intro = intro
         self.desc = desc
-        self.items = {}
+        self.inventory = Inventory

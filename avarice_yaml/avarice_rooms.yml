@@ -62,10 +62,11 @@
   visited: False
   intro: ".-----------------.\n| Security Center |\n'-----------------'\n\nYou wander into what appears to be a security center.\n\nA number of MONITORS line the walls and desks. If you\ncan find a way to restore power, you wonder if you'd be\nable to see every room in the facility on these MONITORS.\nThere's a SMALL DESK at the middle of the camera monitorss,\nwith enough space to crawl underneath.\n\nA massive METAL DOOR resides on the southern wall, with\na huge dent from an impact on the other side."
   desc: ".-----------------.\n| Security Center |\n'-----------------'\n\nThe security center.\n\nA row of camera MONITORS line the wall, with a SMALL DESK\nat the center. It seems as if you can hide under it.\n\nA large METAL DOOR seems to be locked."
-  items: 
-    - cctv_footage: !!python/object:item.Item
-        desc: "Records of the footage obtained from the Security Center."
-        name: CCTV Footage
+  inventory: !!python/object:inventory.Inventory 
+    items:
+      - cctv_footage: !!python/object:item.Item
+          desc: "Records of the footage obtained from the Security Center."
+          name: CCTV Footage
 - !!python/object:room.Room
   name: Common Room
   pos: !!python/object:position.Position
@@ -82,10 +83,11 @@
   visited: False
   intro: ".--------------.\n| Research Lab |\n'--------------'\n\nYou manage to find your way into a laboratory. It takes\nyou back to the days as a student, if those memories\nwere cloaked in a veil of dust and scattered debris.\n\nOn closer inspection, you notice what appear to be TEST\nTUBES with varying specimens preserved. Some of the\nDRAWERS have been haphazardly pried open, their contents\nspilled onto the floor. An opaque FUME HOOD sits against\none of the walls, for chemicals—you find yourself inanely\nthinking.\n\nThe east and south exits are blocked by a tree that begins\nsomewhere in the southwest of the room and terminates\ntowards the north east. Nature seems to behave strangely\nhere."
   desc: ".--------------.\n| Research Lab |\n'--------------'\n\nThe main lab.\n\nVarious specimens are preserved in TEST TUBES, and a\nchemical station with a FUME HOOD sits against one of the\nwalls. Some of the DRAWERS have been pried open."
-  items: 
-    - battery: !!python/object:item.Item
-        desc: "A battery you could use to power the computer in the\nSecurity Center."
-        name: Battery
+  inventory: !!python/object:inventory.Inventory 
+    items:
+      - battery: !!python/object:item.Item
+          desc: "A battery you could use to power the computer in the\nSecurity Center."
+          name: Battery
 - !!python/object:room.Room
   name: Greenhouse
   pos: !!python/object:position.Position
@@ -102,8 +104,9 @@
   visited: False
   intro: ".--------.\n| Garden |\n'--------'\n\nIs this an extension of the greenhouse? Its FLORA\nfeels more mature, and the word “garden” comes to mind.\n\nMuch of the FLORA is unrecognizable to you, neither\nnative to the surrounding area or anything you can call\nin published records. There are ELECTRIC FENCES bordering\nthe perimeter—you wonder if they're live or not—and they\nseem as if they're meant to keep something in rather than\nout. Something catches your eye sticking out from the\nground, and on closer inspection, you see that it is a\nHUMAN ARM."
   desc: ".--------.\n| Garden |\n'--------'\n\nThe central garden.\n\nIt's blocked off by ELECTRIC FENCES and overgrown FLORA\nthat blocks your paths. A HUMAN ARM sticks out\nconspicuously from under the floor."
-  items: 
-    - keycard: !!python/object:item.Item
+  inventory: !!python/object:inventory.Inventory 
+    items:
+      - keycard: !!python/object:item.Item
           desc: "The keycard you found being held by a corpse. It looks\nlike your ticket out of here."
           name: Keycard
 - !!python/object:room.Room
@@ -146,10 +149,11 @@
   visited: False
   intro: ".-----------.\n| Mainframe |\n'-----------'\n\nIs this...some sort of mainframe? It seems to power the\n entire facility.\n\nAmidst a graveyard of destroyed computers, there seems\nto be one that may actually be FUNCTIONAL,\nsurprisingly enough, spared from the natural and\nunnatural flora trying to reclaim its territory.\n\nTo the south is the second marked bathroom, the north\nis an area marked “Greenhouse”."
   desc: ".-----------.\n| Mainframe |\n'-----------'\n\nThe remains of the mainframe.\n\nOne computer seems to remain FUNCTIONAL, you wonder if it\nwill turn on."
-  items: 
-    - research_documents: !!python/object:item.Item
-        desc: "Detailed documentation covering the creation of the\nmonster."
-        name: Research Documents
+  inventory: !!python/object:inventory.Inventory 
+    items:
+      - research_documents: !!python/object:item.Item
+          desc: "Detailed documentation covering the creation of the\nmonster."
+          name: Research Documents
 - !!python/object:room.Room
   name: Testing Room
   pos: !!python/object:position.Position
@@ -158,8 +162,9 @@
   visited: False
   intro: ".---------.\n| Testing |\n'---------'\n\nYou enter what appears to be a testing room. It looks\nlike this is where the creature's abilities were tested,\nincluding its endurance and health.\n\nNeedless to say, it probably wasn't its favorite room.\nThere appears to be CHEST CAVITY of some kind, and a GUN\nlying conspicuously on the nearby table.\n\nThe northern corridor has been smashed... What kind of\nstrength is needed to even accomplish such a feat, it\nlooks completely caved in..."
   desc: ".---------.\n| Testing |\n'---------'\n\nThe testing room.\n\nWhat catches your eye is a decaying CHEST CAVITY, and a strange looking GUN."
-  items:
-    - developnent_records: !!python/object:item.Item
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - developnent_records: !!python/object:item.Item
           desc: "Records detailing the growth of the monster."
           name: Keycard
 - !!python/object:room.Room
