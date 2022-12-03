@@ -6,15 +6,10 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the game-loop.
 """
 
-
+import actions
 import world
 from constant import START_POSITION, START_TITLE, END_TITLE
 from helper import p_t, get_str
-
-action_move_n_list = ["go n", "go north", "move n", "move north", "n", "north"]
-action_move_s_list = ["go s", "go south", "move s", "move south", "s", "south"]
-action_move_w_list = ["go w", "go west", "move w", "move west", "w", "west"]
-action_move_e_list = ["go e", "go east", "move e", "move east", "e", "east"]
 
 
 def start_game():
@@ -29,8 +24,7 @@ def start_game():
     """
     p_t(START_TITLE)
     # Lets the user decide if they want to play the game.
-    p_t("\033[38;2;191;97;72mInvestigator, do you accept the task?\033[0m")
-    start_choice = get_str("(Y/N):\n")
+    start_choice = get_str("Investigator, do you accept the task? (Y/N)\n")
     if start_choice.lower()[0] == "y":
         p_t("\nThis task isn't for the faint of heart, but we appreciate")
         p_t("your help nonetheless.")
@@ -45,15 +39,15 @@ def start_game():
         # Lets the user decide if they want to view the intro scene.
         intro_choice = get_str("\nShall we move onto the briefing? (Y/N):\n")
         if intro_choice.lower()[0] == "y":
-            p_t("\nPlay intro scene")
+            p_t("Play intro scene")
             p_t("This will describe the back story of the Investigator")
             p_t("Their motives, why they approached, who approached them")
             p_t("and ultimately what their goal is")
             p_t("This will lead directly to the start of the game.")
         elif intro_choice.lower()[0] == "n":
-            p_t("\nWe'll get straight to it then...")
+            p_t("We'll get straight to it then...")
         else:
-            print("\nPlease answer the question, yes or no will suffice.")
+            print("Please answer the question, yes or no will suffice.")
 
         while True:
             # Spawns the player in the starting room.
@@ -65,28 +59,20 @@ def start_game():
                     p_t("\n" + current_room.intro + "\n")
                     current_room.visited = True
             # Assigns movement actions to the player.
-            action_input = get_player_command()
-            if action_input in action_move_n_list:
-                player.move(world.directions["n"])
-            if action_input in action_move_s_list:
-                player.move(world.directions["s"])
-            if action_input in action_move_w_list:
-                player.move(world.directions["w"])
-            if action_input in action_move_e_list:
-                player.move(world.directions["e"])
+            command = actions.get_player_command()
+            if command["action_type"] == 'MOVE':
+                direction = command["direction"]
+                player.move(actions.directions[direction])
+            elif command["action_type"] == 'EXAMINE':
+                # Do make related call
+                command = 1
+
     elif start_choice.lower()[0] == "n":
         p_t("\nPerhaps another person would be better suited.")
         p_t("\nFarewell, Investigator.")
         p_t(END_TITLE)
     else:
         print("\nPlease answer the question, yes or no will suffice.")
-
-
-def get_player_command():
-    """
-    Returns the player's action.
-    """
-    return input("\033[38;2;191;97;72mYour action: \033[0m")
 
 
 start_game()

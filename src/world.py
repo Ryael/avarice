@@ -7,7 +7,6 @@ This module contains all the world details, lore, and location of items.
 """
 
 import yaml
-from position import Position
 
 with open("avarice_yaml/avarice_paths.yml", "r", encoding="utf-8") as file:
     paths = yaml.load(file, Loader=yaml.Loader)
@@ -17,13 +16,6 @@ with open("avarice_yaml/avarice_items.yml", "r", encoding="utf-8") as file:
 
 with open("avarice_yaml/avarice_rooms.yml", "r", encoding="utf-8") as file:
     rooms = yaml.load(file, Loader=yaml.Loader)
-
-directions = {
-    "n": Position(0, -1),
-    "e": Position(1, 0),
-    "s": Position(0, 1),
-    "w": Position(-1, 0)
-}
 
 
 def generate_world():

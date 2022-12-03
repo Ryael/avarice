@@ -7,7 +7,7 @@ This module contains global constants.
 """
 
 from player import Player
-from world import Position
+from position import Position
 
 START_POSITION = Player(Position(2, 0))
 
