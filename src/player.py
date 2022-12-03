@@ -21,6 +21,7 @@ class Player:
         """
         self.pos = pos
         self.moved = True
+        self.inventory = {}
 
     def move(self, d_pos):
         """
@@ -44,6 +45,12 @@ class Player:
         print("""
         You find yourself unable to move in that direction.
         """)
+
+    def add_item(self, item_id, item):
+        """
+        Adds an item to the player's inventory.
+        """
+        self.inventory[item_id] = item
 
 
 def valid_move(player, d_pos):

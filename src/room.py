@@ -22,3 +22,4 @@ class Room:
         self.visited = False
         self.intro = intro
         self.desc = desc
+        self.items = {}
