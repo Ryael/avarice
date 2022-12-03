@@ -11,9 +11,6 @@ import yaml
 with open("avarice_yaml/avarice_paths.yml", "r", encoding="utf-8") as file:
     paths = yaml.load(file, Loader=yaml.Loader)
 
-with open("avarice_yaml/avarice_items.yml", "r", encoding="utf-8") as file:
-    items = yaml.load(file, Loader=yaml.Loader)
-
 with open("avarice_yaml/avarice_rooms.yml", "r", encoding="utf-8") as file:
     rooms = yaml.load(file, Loader=yaml.Loader)
 
