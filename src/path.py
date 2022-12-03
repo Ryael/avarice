@@ -6,23 +6,20 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the Path class.
 """
 
+from dataclasses import dataclass
+from room import Room
 
+
+@dataclass
 class Path:
     """
     The core path for the map within the world.
     """
-    def __init__(self, room1, room2, desc, locked=False, blocked=False):
-        """
-         Creates an instance of a new path.
-         Parameter desc = description of the path.
-         Parameters room1 & room2 = path between two rooms.
-         Parameters lock and block: locked and blocked paths.
-        """
-        self.desc = desc
-        self.room1 = room1
-        self.room2 = room2
-        self.locked = locked
-        self.blocked = blocked
+    desc: str
+    room1: Room
+    room2: Room
+    locked: bool = False
+    blocked: bool = False
 
     def exists(self, pos, dest):
         """

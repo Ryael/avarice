@@ -6,23 +6,20 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the logic dictating everything concerning the player.
 """
 
-
+from dataclasses import dataclass, field
 from world import path_at
 from inventory import Inventory
+from position import Position
 
 
+@dataclass
 class Player:
     """
     The core class for the player character within the world.
     """
-    def __init__(self, pos):
-        """
-        Creates an instance of the player character and assigns x,y coordinates
-        to them to represent their position within the world.
-        """
-        self.pos = pos
-        self.moved = True
-        self.inventory = Inventory
+    pos: Position
+    inventory: Inventory = field(default_factory=Inventory)
+    moved = True
 
     def move(self, d_pos):
         """

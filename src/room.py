@@ -6,22 +6,19 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the Room class.
 """
 
+from dataclasses import dataclass, field
 from inventory import Inventory
+from position import Position
 
 
+@dataclass
 class Room:
     """
     The core class for a room within the world.
     """
-    def __init__(self, pos, name, intro, desc):
-        """
-        Creates an instance of a new room.
-        Parameter x_pos: the x-coordinate of the room.
-        Parameter y_pos: the y-coordinate of the room.
-        """
-        self.pos = pos
-        self.name = name
-        self.visited = False
-        self.intro = intro
-        self.desc = desc
-        self.inventory = Inventory
+    pos: Position
+    name: str
+    intro: str
+    desc: str
+    inventory: Inventory = field(default_factory=Inventory)
+    visited: bool = False

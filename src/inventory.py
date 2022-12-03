@@ -6,7 +6,7 @@ Code is for a terminal of 80 characters wide and 24 rows high.
 This module contains the logic dictating everything concerning the Invetories.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -14,7 +14,7 @@ class Inventory:
     """
     Contains items in a dictionary
     """
-    items: dict
+    items: dict = field(default_factory=dict)
 
     def add_item(self, identifier, item):
         """
