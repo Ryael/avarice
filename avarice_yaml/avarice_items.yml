@@ -1,3 +1,12 @@
 cctv_footage: !!python/object:item.Item
-  desc: Records of the footage obtained from the Security Center.
+  desc: "Records of the footage obtained from the Security Center."
   name: CCTV Footage
+research_documents: !!python/object:item.Item
+  desc: "Detailed documentation covering the creation of the\nmonster."
+  name: Research Documents
+battery: !!python/object:item.Item
+  desc: "A battery you could use to power the computer in the\nSecurity Center."
+  name: Battery
+keycard: !!python/object:item.Item
+  desc: "The keycard you found being held by a corpse. It looks\nlike your ticket out of here."
+  name: Keycard
