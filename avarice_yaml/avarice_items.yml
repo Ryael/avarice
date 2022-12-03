@@ -7,6 +7,9 @@ research_documents: !!python/object:item.Item
 battery: !!python/object:item.Item
   desc: "A battery you could use to power the computer in the\nSecurity Center."
   name: Battery
+developnent_records: !!python/object:item.Item
+  desc: "Records detailing the growth of the monster."
+  name: Keycard
 keycard: !!python/object:item.Item
   desc: "The keycard you found being held by a corpse. It looks\nlike your ticket out of here."
   name: Keycard
