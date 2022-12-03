@@ -4,7 +4,7 @@
     x: 2
     y: 0
   visited: False
-  intro: ".-------------.\n| Observatory |\n'-------------'\n\nThe large domed tower stands tall. From what you remember\napproaching it from outside, its age is apparent: decaying\nbrick and shattered windows, with nature attempting to\nreclaim its lost territory as vines crawl up its sides,\ncapturing it in its claws like a predator.\n\nAn old LADDER, your only apparent escape, seems tall\nenough to reach none of the windows. It looks as if you\nmight be able to use it to escape.\n\nYou hear faint noises coming from the south. Best to\nget a move on and investigate."
+  intro: ".-------------.\n| Observatory |\n'-------------'\n\nThe large domed tower stands tall. From what you remember\napproaching it from outside, its age is apparent: decaying\nbrick and shattered windows, with nature attempting to\nreclaim its lost territory as VINES crawl up its sides,\ncapturing it in its claws like a predator.\n\nAn old LADDER, your only apparent escape, seems tall\nenough to reach none of the windows. It looks as if you\nmight be able to use it to escape.\n\nYou hear faint noises coming from the south. Best to\nget a move on and investigate."
   desc: ".-------------.\n| Observatory |\n'-------------'\n\nThe central observatory.\n\nVarious types of PLANTS have started to reclaim the\nbuilding as their own, and you wonder how long the\nfacility has been abandoned for them to have reached such\ngrowth. Beams of sunlight pour through the shattered\nwindows. You cast a glance at the LADDER."
 - !!python/object:room.Room
   name: Kitchen
@@ -100,16 +100,16 @@
     x: 0
     y: 3
   visited: False
-  intro: ".----------.\n| Playroom |\n'----------'\n\nThe playroom, where the monster grew up, played the piano (badly), was introduced to other animals, and ultimately, went insane.\nDirections from Play Room."
-  desc: TODO
+  intro: ".----------.\n| Playroom |\n'----------'\n\nIt appears to be some sort of playroom. Perhaps it's\nwhere the creature was raised.\n\nThere is a smashed PIANO in the center, with various other\nINSTRUMENTS scattered around. Various remains have been\nstrewn about, with the same scratches and gouges tearing\nthrough the walls.\n\nThe path to the south has been caved in."
+  desc: ".----------.\n| Playroom |\n'----------'\n\nThe play room.\n\nAll of the INSTRUMENTS have been destroyed and the walls\nare covered in dried blood and large scratches.\nDestroyed INSTRUMENTS are scattered around a broken PIANO."
 - !!python/object:room.Room
   name: Containment Room
   pos: !!python/object:position.Position
     x: 1
     y: 3
   visited: False
-  intro: ".--------------.\n| Containment  |\n'--------------'\n\nThe containment area. This is was put whenever it started acting out. It also doubled as its resting area.\nDirections from Containment."
-  desc: TODO
+  intro: ".--------------.\n| Containment  |\n'--------------'\n\nIt appears to be a containment area.The room is\nrelatively barren, perhaps this space was used for\nisolation.\n\nDried blood paints the area and suspicious\nINDENTS litter the walls. There appear to be BULLET HOLES\nall over, but you do see a CONTAINMENT UNIT you could\nuse in the case of an emergency.\n\nThe south path leads to “Preservation”, while the west\npath seemingly leads to the playroom."
+  desc: ".--------------.\n| Containment  |\n'--------------'\n\nA containment area.\n\nBetween the BULLET HOLES in the walls and INDENTS in the\nwalls makes you think something terrible happened here to\nmake it this decrepit. There is a small CONTAINMENT UNIT\nyou think you could easily fit in."
 - !!python/object:room.Room
   name: Sanitation Room
   pos: !!python/object:position.Position
@@ -140,16 +140,16 @@
     x: 0
     y: 4
   visited: False
-  intro: ".---------.\n| Testing |\n'---------'\n\nThe testing room. This is where the monster's abilities were tested, including its endurance and health. Needless to say, it wasn't its favourite room.\nDirections from Testing."
-  desc: TODO
+  intro: ".---------.\n| Testing |\n'---------'\n\nYou enter what appears to be a testing room. It looks\nlike this is where the creature's abilities were tested,\nincluding its endurance and health.\n\nNeedless to say, it probably wasn't its favorite room.\nThere appears to be CHEST CAVITY of some kind, and a GUN\nlying conspicuously on the nearby table.\n\nThe northern corridor has been smashed... What kind of\nstrength is needed to even accomplish such a feat, it\nlooks completely caved in..."
+  desc: ".---------.\n| Testing |\n'---------'\n\nThe testing room.\n\nWhat catches your eye is a decaying CHEST CAVITY, and a strange looking GUN."
 - !!python/object:room.Room
   name: Preservation Room
   pos: !!python/object:position.Position
     x: 1
     y: 4
   visited: False
-  intro: ".--------------.\n| Preservation |\n'--------------'\n\nThe perservation room, this place was used to nurse the monster back to health after any dangerous encounters. Or to make additional adjustments to its already mechnical body.\nDirections from Preservation."
-  desc: TODO
+  intro: ".--------------.\n| Preservation |\n'--------------'\n\nPreservation...? No, this is maybe closer to a clinic.\n\nThere are large MECHANICAL ARMS that look as if they were\nmeant to meld parts together. An EXAMINATION TABLE with belts\nand dried blood sit at the center.\n\nTo the east you see a broken sign that reads “Testing”."
+  desc: ".--------------.\n| Preservation |\n'--------------'\n\nThe preservation room. Broken MECHANICAL ARMS surround a single EXAMINATION TABLE in the center."
 - !!python/object:room.Room
   name: Toilets
   pos: !!python/object:position.Position
