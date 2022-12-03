@@ -20,6 +20,8 @@ For this project, I decided to create a horror-themed text adventure game using 
 
 This application is accessed by the player using the command line interface (CLI). It's hosted on Heroku and is displayed via the provided template JavaScript and HTML, which has not been altered in any way. There's no save-game function as this text adventure is intended to be played from start to finish in a single sitting or two, being easily finishable within 30 minutes or so. There multiple endings available, however, once the player figures out how to deal with what the game throws at them, replaying the game for the other endings will not be difficult or time consuming at all.
 
+## How to Play
+
 My vision for this game was for the player to have complete freedom within the game's world, and this is accomplished by four actions.
 
 1. "Move"
@@ -27,7 +29,13 @@ My vision for this game was for the player to have complete freedom within the g
 3. "Hide"
 4. "Recall" 
 
-The "Move" function is what truly frees the player up, as it allows them to choose which cardinal direction to move in and let's them explore the world on their own terms. They are, of course, limited by the map and any obstructions it may have. "Examine" allows the player to examine certain objects within each room to learn more about the room, and maybe even find items. The "Hide" action is the key method in how the player deals with the monster: by hiding. Each room has predetermined objects and locations to use to hide themselves. Of course, not all of these locations are good, and as such, they aren't recommended to the player. Lastly, "Recall" allows the player to recall what they remember of the room upon entering it for the first time. This allows for the player to not be bombarded by information upon revisiting a prior room.
+The "Move" function is what truly frees the player up, as it allows them to choose which cardinal direction to move in and let's them explore the world on their own terms. They are, of course, limited by the map and any obstructions it may have.
+
+"Examine" allows the player to examine certain objects within each room to learn more about the room, and maybe even find items.
+
+The "Hide" action is the key method in how the player deals with the monster: by hiding. Each room has predetermined objects and locations to use to hide themselves. Of course, not all of these locations are good, and as such, they aren't recommended to the player.
+
+Lastly, "Recall" allows the player to recall what they remember of the room upon entering it for the first time. This allows for the player to not be bombarded by information upon revisiting a prior room.
 
 ## Table of Contents
 
@@ -43,7 +51,7 @@ The "Move" function is what truly frees the player up, as it allows them to choo
     - [Colour Scheme](#colour-scheme)
     - [Map & Flowcharts](#map--flowcharts)
 4. [Code](#code)
-    - [Commits](#commits)
+    - [](#commits)
     - [Folder Structure](#folder-structure)
     - [Variables](#variables)
     - [Helper Functions](#helper-functions)
@@ -161,7 +169,11 @@ After the monster makes its appearance, it's after this point that the Investiga
 
 Overall, the narrative focuses on what went on within the facility, a deep dive into the monster and how it came to be, what the facility was experimenting, and their attempt of fusing flora and fauna. The scientists also performed tests on plants, which in turn, caused nature to bite back in its own way. The monster was created out of corporate greed and a desire to create an unstoppable force, kept secret to the governments of the world. Unfortunately, this didn't come to fruition, and the monster's development was halted short as its creator's excessive greed ended up overcoming the monster itself, causing it to spiral out of control. But maybe, just maybe, it still is a lonely creature that's looking for a reason to belong...
 
-The monster itself is very loosely inspired by Wendigos from Algonquian-speaking First Nations in North America. Wendigos tend to be very malevolent entities that are definited by their excessive greed, which as a concept fits the narrative perfectly. However, those in charge of the facility were unsatisified after creating an artificial Wendigo, deciding to create a being that consists of an unholy fusion of flora and fauna. A total and complete perversion of nature. As the core theme is greed and how it brings everything here, to this facility, where they are consumed by it. Even nature itself decides to fight back against it, slowly overtaking the facility, bit by bit. But maybe, just maybe, the Investigator will be able to end this cycle of never-ending avarice.
+The monster itself is very loosely inspired by Wendigos from Algonquian-speaking First Nations in North America. Wendigos tend to be very malevolent entities that are definited by their excessive greed, which as a concept fits the narrative perfectly. However, those in charge of the facility were unsatisified after creating an artificial Wendigo, deciding to create a being that consists of an unholy fusion of flora and fauna. A total and complete perversion of nature. As the core theme is greed and how it brings everything here, to this facility, where they are consumed by it. Even nature itself decides to fight back against it, slowly overtaking the facility, bit by bit. But maybe, just maybe, the Investigator will be able to end this cycle of never-ending avarice. 
+
+Below you may see Kate V.'s sketch rendition of our vision for the wendigo. It retain its usual deer skull combined with antlers, which are flowering due to the experimentation it was submitted to. Its exposed ribcage with four hearts is visible, however only two remain after the incident that occurred within the facility. It otherwise has an emanticated frame accompanied by lanky and lethal limbs.
+
+![Wendigo](docs/sketch-design.png)
 
 A lot of narrative elements within the facility are left intentionally vague, so as to not to provide the player with all the answers. After all, some mysteries are best left unsolved and up to the imagination of the audience.
 
@@ -215,13 +227,24 @@ In order to avoid the monster, it's important to remember where the good and bad
 
 ## Code
 
+This section covers the approach to coding this project, with any new approaches being detailed alongside the rationale for them.
+
 ### Commits
 
+- `git status` was used far more frequently to avoid committing anything I didn't intend to and this helped with keeping the commits down in size.
+- If any errors were made in the commit message, `git commit --amend` was used to edit it.
+- If a file was unintentionally added, `git restore --staged file` was used to rectify this.
+- If a commit couldn't be aptly summarised or was bigger than usual, `git commit -v` was used to stage commits for two reasons: 1) to see the visual comparison of the old code and the new code, and 2) to write a more detailed description under the commit message. 
+- The imperative mood was used throughout all messages and descriptions.
+- There were a handful of bigger commits and this was primarily due to the mass refactoring of code which took changes in multiple places. This did, however, make the code much easier to read and work with.
 
+All of the above allowed for more precise and correct version control.
 
 ### Folder Structure
 
+`run.py` was changed to `game.py` due to the nature of this project, and it was then spread into many more modules, helping organise the game in a manner that's easier to process and work with. These modules were then moved into the `src` (source) folder, which only holds them, making it much easier to navigate between the source code files amongst everything else. I noticed this was common practice when developing games and helps keep everything organised.
 
+The `.yml` files were also moved into their own folder, `avarice_yaml`, so as to adhere to the principle that led to the Python files being placed into the `src` folder.
 
 ### Variables
 
@@ -257,17 +280,17 @@ In order to avoid the monster, it's important to remember where the good and bad
 
 [PEP8 Code Institute Linter](https://pep8ci.herokuapp.com/) was used to validate Python code. No errors were found. 
 
-- Mention snakecase naming errors via PyLint and decision to ignore them for x, y coordinate variable names.
-
 ![Python Validation](docs/validation/html-validation.png)
+
+- While working on the project in GitPod, pylint detects a warning for attribute names "x" and "x" as they don't conform to snake_case naming style. This is a non-issue within the PEP8 and linter and as the map created for this project is a x, y coordinate map, "x" and "y" were chosen as the attribute names. "x-co" and "y-co" were entertained as alternative names but it made the code even more confusing to work with in addition to it being difficult to adhere to the 80 character limit.
 
 ### YAML Validation
 
-[YAML Lint](https://www.yamllint.com/) was used to validate YML code. No errors were found. 
+[YAML Lint](https://www.yamllint.com/) was used to validate YAML code. No errors were found. 
 
-- Errors were detected in GitPod, but they were attempted to be solved, etc. Link image. Explain what was done. it still works.
+![YAML Validation](docs/validation/css-validation.png)
 
-![CSS Validation](docs/validation/css-validation.png)
+- Errors were detected in GitPod, stating that there were "unresolved tags". This was researched and explored as much as possible, including reading more than a handful of Stack Overflow threads and open issues on GitHub. It appears that this could be resolved via the addition of custom-tags to the the `settings.json` file but unfortunately, even using a mixture of recommended custom tags, it wasn't possible to resolve these errors. Ultimately, the linter doesn't detect any issues and the code works exactly as intended, so these errors were ignored.
 
 [Back to top &uarr;](#avarice)
 <hr>
@@ -356,17 +379,17 @@ The play testers also provided some very helpful feedback:
 
 | Bug  	| Intended Outcome 	| Issue 	| Cause 	| Solution 	| Commit 	|
 |---	|---	|---	|---	|---	|---	|
-| #1 	| Player starts at the Observatory. 	| Player started at the Security Center. 	| Starting coordinates were set to (1,2). 	| Set the starting coordinates to (2,0). 	| [Commit 2ebce79](https://github.com/Ryael/avarice/commit/2ebce79799ae9b44ea3f13ff2c00dd23f40dfda1) 	|
-| #2 	| Player can only navigate to existing rooms within the world. 	| Player can go into "None" areas, where there are no rooms. 	| No check was implemented to see if the room direction being moved into had an existing room. 	| Add walls such that they prevent the player from falling off the map. `valid_move` checks the area the player is trying to move into to make sure it exists. 	| [Commit 9a072eb](https://github.com/Ryael/avarice/commit/9a072eb9e05671090164691f669f041d29396d91) 	|
-| #3 	| Player is able to move in all cardinal directions. 	| Player is only able to move south, all other directions print a message that says no valid path exists. 	| What was being checked via `valid_move` was the room coordinates, starting at (0,0). 	| Instead of room coordinates, check the player's move coordinates from the starting position. 	| [Commit 177ad5e](https://github.com/Ryael/avarice/commit/177ad5e532f311ae457551d69ae5a2ad1fe8c3e0) 	|
-| #4 	| `intro_text` is only printed upon a successful movement action, otherwise only the failed move text should be printed. 	| `intro_text` for every room is printed even after a failed move. 	| No default state for the room existing had been set. 	| Add `self_moved` and set it to `True`. If a room doesn't exist, then set it to `False`. Also add an if statement to `start_game` to make sure the `intro_text` is only printed when a valid move is made: `self.moved = True`. 	| [Commit d0bba8a](https://github.com/Ryael/avarice/commit/d0bba8a8ce25944e7ffdc90e523079d8980bf040) 	|
-| #5 	| Player can only access rooms that are directly linked to each other. 	| Player can move between rooms that aren't directly linked and are only separated by empty space. 	| No check was implemented to see if there was a valid path between any given rooms. 	| Paths were added with a check to see if there was a valid path between rooms, or if the path was either blocked or locked. 	| [Commit fa5a441](https://github.com/Ryael/avarice/commit/fa5a441c0fc9b158667bb5363fe8ec3e72cef790) 	|
-| #6 	| Player should be able to move through all open paths, but not through locked or blocked paths. 	| Player was able to move through locked and/or blocked paths.  	| If statement was set to `if path.block and path.lock`, but no path was both locked and blocked. Additional, `return` was incorrectly indented within in `def find_path()` at the very end. 	| Set the if statement to be `path.block or path.lock` and un-indent the `return` at the end of `def find_path()`. 	| [Commit e763e32](https://github.com/Ryael/avarice/commit/e763e32c75323e069b0aa78e20e80a1f4f8622ef) 	|
-| #7 	| Player can access Testing from Preservation. 	| Player can't access Testing from Preservation. 	| No path existed between these two rooms. 	| Add a path between these two rooms into the paths array. 	| [Commit ac8a458](https://github.com/Ryael/avarice/commit/ac8a458fe514476134845d23fed7abe1a60426f3) 	|
-| #8 	| `iadd` should return assigned and updated (x, y) coordinates to reflect the movement of the player. 	| `iadd` was not returning the assigned and updated (x, y) coordinates. 	| The updated (x, y) coordinates were not being returned. 	| Add `return self`. 	| [Commit 6011328](https://github.com/Ryael/avarice/commit/6011328dbf9d58716a4098c41b6d004db32b782d) 	|
-| #9 	| First question should repeat even if the input is invalid (neither yes nor no). 	| Invalid input during the first question causes the game to end. 	| No while loop. 	| Add a while loop. NOT FINISHED	| [Commit]() 	|
-| #10 	| When asked if the player wants a briefing, an invalid input should prompt the user for another input. 	| When asked if the player wants a briefing, an invalid input prints a statement saying that the input has to be a Yes or a No, however the briefing is still skipped and the game continues. 	| No while loop. 	| Add a while loop. NOT FINISHED	| [Commit]() 	|
-| #11 	| When the player inputs an invalid move action, the description of a room is not printed. 	| When the player inputs an invalid move action, the description of the move is printed. 	| No while loop to check. 	| Add a while loop. NOT FINISHED 	| [Commit]() 	|
+| #1 	| Player starts at the Observatory. 	| Player started at the Security Center. 	| Starting coordinates were set to (1,2). 	| Set the starting coordinates to (2,0). 	| [2ebce79](https://github.com/Ryael/avarice/commit/2ebce79799ae9b44ea3f13ff2c00dd23f40dfda1) 	|
+| #2 	| Player can only navigate to existing rooms within the world. 	| Player can go into "None" areas, where there are no rooms. 	| No check was implemented to see if the room direction being moved into had an existing room. 	| Add walls such that they prevent the player from falling off the map. `valid_move` checks the area the player is trying to move into to make sure it exists. 	| [9a072eb](https://github.com/Ryael/avarice/commit/9a072eb9e05671090164691f669f041d29396d91) 	|
+| #3 	| Player is able to move in all cardinal directions. 	| Player is only able to move south, all other directions print a message that says no valid path exists. 	| What was being checked via `valid_move` was the room coordinates, starting at (0,0). 	| Instead of room coordinates, check the player's move coordinates from the starting position. 	| [177ad5e](https://github.com/Ryael/avarice/commit/177ad5e532f311ae457551d69ae5a2ad1fe8c3e0) 	|
+| #4 	| `intro_text` is only printed upon a successful movement action, otherwise only the failed move text should be printed. 	| `intro_text` for every room is printed even after a failed move. 	| No default state for the room existing had been set. 	| Add `self_moved` and set it to `True`. If a room doesn't exist, then set it to `False`. Also add an if statement to `start_game` to make sure the `intro_text` is only printed when a valid move is made: `self.moved = True`. 	| [d0bba8a](https://github.com/Ryael/avarice/commit/d0bba8a8ce25944e7ffdc90e523079d8980bf040) 	|
+| #5 	| Player can only access rooms that are directly linked to each other. 	| Player can move between rooms that aren't directly linked and are only separated by empty space. 	| No check was implemented to see if there was a valid path between any given rooms. 	| Paths were added with a check to see if there was a valid path between rooms, or if the path was either blocked or locked. 	| [fa5a441](https://github.com/Ryael/avarice/commit/fa5a441c0fc9b158667bb5363fe8ec3e72cef790) 	|
+| #6 	| Player should be able to move through all open paths, but not through locked or blocked paths. 	| Player was able to move through locked and/or blocked paths.  	| If statement was set to `if path.block and path.lock`, but no path was both locked and blocked. Additional, `return` was incorrectly indented within in `def find_path()` at the very end. 	| Set the if statement to be `path.block or path.lock` and un-indent the `return` at the end of `def find_path()`. 	| [e763e32](https://github.com/Ryael/avarice/commit/e763e32c75323e069b0aa78e20e80a1f4f8622ef) 	|
+| #7 	| Player can access Testing from Preservation. 	| Player can't access Testing from Preservation. 	| No path existed between these two rooms. 	| Add a path between these two rooms into the paths array. 	| [ac8a458](https://github.com/Ryael/avarice/commit/ac8a458fe514476134845d23fed7abe1a60426f3) 	|
+| #8 	| `iadd` should return assigned and updated (x, y) coordinates to reflect the movement of the player. 	| `iadd` was not returning the assigned and updated (x, y) coordinates. 	| The updated (x, y) coordinates were not being returned. 	| Add `return self`. 	| [6011328](https://github.com/Ryael/avarice/commit/6011328dbf9d58716a4098c41b6d004db32b782d) 	|
+| #9 	| First question should repeat even if the input is invalid (neither yes nor no). 	| Invalid input during the first question causes the game to end. 	| No while loop. 	| Add a while loop. NOT FINISHED	| []() 	|
+| #10 	| When asked if the player wants a briefing, an invalid input should prompt the user for another input. 	| When asked if the player wants a briefing, an invalid input prints a statement saying that the input has to be a Yes or a No, however the briefing is still skipped and the game continues. 	| No while loop. 	| Add a while loop. NOT FINISHED	| []() 	|
+| #11 	| When the player inputs an invalid move action, the description of a room is not printed. 	| When the player inputs an invalid move action, the description of the move is printed. 	| No while loop to check. 	| Add a while loop. NOT FINISHED 	| []() 	|
 
 [Back to top &uarr;](#avarice)
 <hr>
@@ -377,26 +400,39 @@ The play testers also provided some very helpful feedback:
 
 2. Lore Expansion - Expanding on the vital information provided by the key items whenever the player examines them within their inventory is something I'd like to do ASAP. With this, information can be provided diegetically and organically to the player with regards to what transpired here as the game in its current state may leave the player with more questions than answers.
 
-3. Bigger Facility - I'd like to expand the facility to have more floors. This is precisely why the stairs are inaccessible. Multiple floors would allow for more rooms, more items, more interactions, and more ways to interact with the monster.
+3. Extra Modules - Instead of capitalising examinable items, I'd like to colour them in a different colour. This should be much easier on the eyes and hence easier to process for the players. Perhaps centering the text and having it use full width of the terminal could make for an easier and smoother experience, too. This would allow me to expand the writing and describe rooms in more detail.
 
-4. Monster AI - Expanding on the monster AI and giving the player more actions to be able to distract the monster whenever it acts as a roadblock in blocking a path would provide for a more suspenseful and difficult experience.
+4. Fitting & Responsive Environment - It is my vision to create a website that has the terminal sit in the middle and is responsive for certain mobile devices, perhaps by switching the amount of rows with the amount of columns. I'd also like to design the website that contains the game to feel like an old computer screen, adding an extra layer of immersion.
 
-5. Rotate the Map - It's difficult to randomise the location of the items due to the the importance of their containing locations, hence a simple rotation by +- 90° would disorientate players who were familiar with the map. Additionally, while items can't be randomised, perhaps it'll be easier to randomise sets of certain rooms that belong close to each other and how their paths connect.
+5. Bigger Facility - I'd like to expand the facility to have more floors. This is precisely why the stairs are inaccessible. Multiple floors would allow for more rooms, more items, more interactions, and more ways to interact with the monster.
 
-6. NPCs - NPCs weren't planned initially but it would be an interesting addition, as this could impact the ending achieved. Adding a rescuable NPC that the player can potentially kill by bringing the monster to them accidentally would add another layer of complexity and suspense. 
+6. Monster AI - Expanding on the monster AI and giving the player more actions to be able to distract the monster whenever it acts as a roadblock in blocking a path would provide for a more suspenseful and difficult experience.
+
+7. Rotate the Map - It's difficult to randomise the location of the items due to the the importance of their containing locations, hence a simple rotation by +- 90° would disorientate players who were familiar with the map. Additionally, while items can't be randomised, perhaps it'll be easier to randomise sets of certain rooms that belong close to each other and how their paths connect.
+
+8. NPCs - NPCs weren't planned initially but it would be an interesting addition, as this could impact the ending achieved. Adding a rescuable NPC that the player can potentially kill by bringing the monster to them accidentally would add another layer of complexity and suspense. 
 
 I'd like to revisit this project in the future after having learned more about Python, YAML, and game design in general in order to push this application to become as good as it can possibly be. It's something I thoroughly enjoyed working on and have grown quite a bit as a developer.
 
 ## Deployment
 
-This project was deployed to GitHub Pages using the following steps:
+This project was deployed to Heroku using the following steps:
 
-1. Log in to GitHub and locate the repository: [Memoria](https://github.com/Ryael/memoria).
-2. Locate the Settings button, and then click it.
-3. Scroll down to the Pages section, which is found under "Code and automation".
-4. Under "Source", click the dropdown called "None" and select "Master Branch".
-5. The page will then automatically refresh.
-6. Scroll back to the top of the page to locate the now published website link.
+1. Log in to Heroku, creating an account if necessary.
+2. Click the button labeled "New" from the dashboard, under the header in the top right corner.
+3. Enter a unique name for the application. For this project I combined the name of the application, "Avarice", with a hypen and "txt" due to to being a text-adventure (avarice-txt).
+4. You will then be asked for your region so select one that suits you the best.
+5. Once your name has a green tick beside it, showing that it's unique, and you've selected the correct region, you can then click the "Create App" button.
+6. From your newly created project page, click locate and click the "Settings" tab and then scroll to the "Config Vars" section.
+7. Click the button labeled "Reveal Config Vars" and enter "PORT" into the the "KEY" input field, then enter "8000" into the "VALUE" input field. Click the button labeled "Add" to add the Config Vars.
+8. On the same "Settings page", scroll further down to the "Buildpacks" section and click on the button labeled "Add buildpack".
+9. Type "Python" in the search bar and select it. Click "Save Changes". Repeat this again for "node.js". Ensure the Python buildpack is listed above the node.js buildpack. If it isn't, you can click on the Python buildpack and drag it upwards to change its position in the list.
+10. Navigate to the tabs at the very top of the "Settings" page and then click on the tab labeled "Deploy".
+11. Select GitHub as the method of deployment, confirming that you want to connect to GitHub when asked.
+12. Search for your repository name, and then click the button labeled "Connect" to link your repository.
+13. Lastly, scroll down to the bottom of the "Deploy" page to select your preferred deployment type.
+    - You can either choose "Enable Automatic Deploys", which will enable automatic deployment whenever you push updates to GitHub.
+    - Or you can choose to manually deploy the application whenever you choose by selecting the correct branch ("main", by default) from the drop-down menu and click on the button labeled "Deploy Branch".
 
 It can also be forked via the following steps:
 
@@ -460,6 +496,7 @@ It can also be forked via the following steps:
 - [Simon Waldron](https://github.com/saikez) - This project pushed me a lot and Simon was kind enough to be there for me every step of the way. Whenever I faltered and started feeling the most intense stockholm syndrome, he was adamant I would be able to finish this project and adhere to my vision. I cannot possibly thank him enough for his patience, time, advice, suggestions, and most of all, his eagerness to help me.
 - Lu C. - All of the writing within the game was done by her and she did an absolutely stellar job throughout. I'd like to thank her for her endless support and encouragement, especially when I felt overburnded with my vision for this project. Lu easily adhered to my narrative skeleton structure and produced fantastic results.
 - Rose S. - Rose was instrumental in helping me proofread this readme as well as the entirety of the game script. You've saved me so much time and hassle, after looking at it for so long I just can't spot errors any longer... so, thank you so much, Rose!
+- Kate V. - Kate very kindly provided an amazing sketch of the unnamed monster, which served a great help in the visualisation of it.
 - [Phillip Waldron](https://github.com/Philip-Waldron) - Phil helped me build my idea for this product from its infancy, subtly guiding me towards simpler approaches for my ideas. If not for him and his sage advice, I honestly think the scope of this project would have been a huge mistake and I wouldn't have been able to meet the deadline. Most of the concepts and ideas he brought up are ones I carried through into the final build. Thank you so much! It was genuinely super fun to spitball ideas with you.
 - [Justin Y.](https://github.com/Lichaes) - Last but certainly not least, Justin provided me with suggestions all throughout my development process to aid me in my approach to this project. He also play tested the game extensively, and without his irreplaceable help, the testing procedure would have taken so much longer.
 - My family and friends, who have been incredibly supportive and have been instrumental in keeping me motivated throughout this project. Thank you all so much! All of you who helped proofread, test, provide feedback on the game, code, and etc... I couldn't have done it without you all!
