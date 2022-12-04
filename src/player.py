@@ -48,7 +48,7 @@ class Player:
         """
         Adds an item to the player's inventory.
         """
-        self.inventory[item_id] = item
+        self.inventory.add_item(item_id, item)
 
 
 def valid_move(player, d_pos):
