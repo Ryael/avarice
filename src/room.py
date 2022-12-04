@@ -36,3 +36,9 @@ class Room:
         Returns description as a single string.
         """
         return build_nameplate(self.name) + build_str(self.desc)
+
+    def remove_item(self, item):
+        """
+        Adds an item to the player's inventory.
+        """
+        self.inventory.remove_item(item)

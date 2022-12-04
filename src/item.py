@@ -18,6 +18,7 @@ class Item:
     name: str
     desc: list = field(default_factory=list)
     room_desc: list = field(default_factory=list)
+    takeable: bool = False
 
     def description(self):
         """
@@ -30,3 +31,26 @@ class Item:
         Returns description as a single string.
         """
         return build_str(self.room_desc)
+
+    def take(self):
+        """
+        Take this item
+        """
+        if self.takeable:
+            return self
+
+        return None
+
+
+@dataclass
+class Container(Item):
+    """
+    A container for another item
+    """
+    contained_item: Item = field(default_factory=Item)
+
+    def take(self):
+        """
+        Take the item in the container
+        """
+        return self.contained_item

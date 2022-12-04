@@ -55,20 +55,25 @@ class Player:
         Examines an Item in the room or inventory
         """
         if item_name is None:
-            print("What did you want to examine?")
+            print("\nWhat did you want to examine?")
             return
 
         current_room_item = current_room.inventory.get_item(item_name)
         player_inventory_item = self.inventory.get_item(item_name)
 
         if current_room_item is not None:
-            print(current_room_item.description())
+            print("\n" + current_room_item.room_description())
+            taken_item = current_room_item.take()
+            if taken_item is not None:
+                self.add_item(taken_item)
+                current_room.remove_item(current_room_item)
+                print("You obtain the " + taken_item.name.upper() + ".")
             return
         if player_inventory_item is not None:
-            print(player_inventory_item.description())
+            print("\n" + player_inventory_item.description())
             return
 
-        print("You don't see that here.")
+        print("\nYou don't see that here.")
 
 
 def valid_move(player, d_pos):

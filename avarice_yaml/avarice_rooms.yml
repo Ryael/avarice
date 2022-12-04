@@ -284,20 +284,30 @@
     - seem as if they're meant to keep something in rather than
     - out. Something catches your eye sticking out from the
     - ground, and on closer inspection, you see that it is a
-    - HUMAN ARM.
+    - human arm that's grasping a KEYCARD.
   desc:
     - The central garden.
     - ""
     - It's blocked off by ELECTRIC FENCES and overgrown FLORA
-    - that blocks your paths. A HUMAN ARM sticks out
-    - conspicuously from under the floor.
+    - that blocks your paths. You see a KEYCARD peeking out from a human
+    - arm conspicuously from under the floor.
   inventory: !!python/object:inventory.Inventory
     items:
-      - !!python/object:item.Item
+      - !!python/object:item.Container
+        name: Human Arm
         desc:
-          - The keycard you found being held by a corpse. It looks
-          - like your ticket out of here.
-        name: Keycard
+          - It's a human arm.
+        room_desc:
+          - An undeniable human arm. Someone was buried here… a bit carelessly,
+          - however. You notice that their hand is clutching a keycard.
+        contained_item: !!python/object:item.Item
+          name: Keycard
+          desc:
+            - Could this be...? A KEYCARD! Just what you need to get out! But
+            - what will you do now... will you leave, or finish your task?
+          room_desc:
+            - This is a room description
+          takeable: True
 - !!python/object:room.Room
   name: Playroom
   pos: !!python/object:position.Position

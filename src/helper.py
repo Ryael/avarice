@@ -15,7 +15,7 @@ def p_t(text):
     The function name is abbreviated to permit for longer text strings.
     For clarity: "p_t" stands for print text.
     """
-    time.sleep(0.75)
+    # time.sleep(0.75)
     print(text)
 
 

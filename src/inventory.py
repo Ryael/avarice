@@ -20,13 +20,14 @@ class Inventory:
         """
         Adds an item to the dictionary
         """
-        self.items.append = item
+        self.items.append(item)
 
-    def remove_item(self, item_name):
+    def remove_item(self, item):
         """
         Removes and returns an Item from Inventory
         """
-        item = self.__find_item(item_name)
+        if isinstance(item, str):
+            item = self.__find_item(item)
         self.items.remove(item)
 
         return item
@@ -37,13 +38,21 @@ class Inventory:
         """
         return self.__find_item(item_name)
 
+    def is_empty(self):
+        """
+        Checks if inventory is empty
+        """
+        return True if len(self.items) == 0 else False
+
     def __find_item(self, item_name):
         """
         Finds an Item in own inventory
         """
         found_item = None
         for item in self.items:
-            if item.name[:6].lower() == item_name[:6].lower():
+            print(item.name)
+            print(item_name)
+            if item.name.lower()[:6] == item_name.lower()[:6]:
                 found_item = item
                 break
 
