@@ -51,3 +51,14 @@ def build_str(str_list):
         full_str += f'{line}\n'
 
     return full_str
+
+
+def build_nameplate(name):
+    """
+    Builds a nameplate for a string
+    """
+    nameplate = ".-" + ("-" * len(name)) + "-.\n"
+    nameplate += "| " + name + " |\n"
+    nameplate += "'-" + ("-" * len(name)) + "-'\n\n"
+
+    return nameplate
