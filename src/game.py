@@ -67,9 +67,9 @@ def start_game():
             current_room = world.room_at(player.pos)
             if player.moved:
                 if current_room.visited:
-                    p_t("\n" + current_room.description() + "\n")
+                    p_t("\n" + current_room.description())
                 else:
-                    p_t("\n" + current_room.introduction() + "\n")
+                    p_t("\n" + current_room.introduction())
                     current_room.visited = True
             # Assigns actions to the player.
             command = actions.get_player_command()
