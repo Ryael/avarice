@@ -7,7 +7,7 @@ This module contains the Path class.
 """
 
 from dataclasses import dataclass
-from room import Room
+from position import Position
 
 
 @dataclass
@@ -16,8 +16,8 @@ class Path:
     The core path for the map within the world.
     """
     desc: str
-    room1: Room
-    room2: Room
+    room1: Position
+    room2: Position
     locked: bool = False
     blocked: bool = False
 
