@@ -28,7 +28,7 @@
     x: 1
     y: 1
   visited: False
-  intro: ".-------.\n| Foyer |\n'-------'\n\n TODO"
+  intro: ".-------.\n| Foyer |\n'-------'\n\nYou arrive at the foyer.\n\nA large CHANDELIER lies on the ground. Noticing the\nentire length of the chain alongside it, you get the\nfeeling something was swinging on it. Behind it is a row\nof LOCKERS, one of which has its door swung open. Along\nthe walls are smashed WINDOWS, reinforced with metal bars.\n\nTo the west you see the main entrance for the facility.\nIt looks sealed shut and you realise\nthat you won't be able to leave without finding a key.\nIt's never that simple, is it... You hear a faint beeping\nsound coming from the south."
   desc: ".-------.\n| Foyer |\n'-------'\n\nThe central foyer. All of the WINDOWS have been boarded\noff, but one of the LOCKERS had been opened. The\nCHANDELIER remained destroyed under where it once hung."
 - !!python/object:room.Room
   name: Main Lobby
@@ -52,8 +52,8 @@
     x: 4
     y: 1
   visited: False
-  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nYou come across one of the two marked bathrooms.\n\nA row of bathroom STALLS seem to have sustained some\ndamage. Whether due to age or outside influence, it's\nunclear. What is clear, is the smell coming from them."
-  desc: ".------------.\n| Toilets #1 |\n'------------'\n\nOne of the marked bathrooms.\n\nA foul odor comes from some of the STALLS."
+  intro: ".------------.\n| Toilets #1 |\n'------------'\n\nYou come across one of the two marked bathrooms.\n\nA smashed MIRROR catches your attention. A row of bathroom\nSTALLS seem to have sustained some damage. Whether\ndue to age or outside influence, it's unclear. What is\nclear, is the smell coming from them."
+  desc: ".------------.\n| Toilets #1 |\n'------------'\n\nOne of the marked bathrooms.\n\nA foul odor comes from some of the STALLS. The MIRROR\nhas been smashed."
 - !!python/object:room.Room
   name: Security
   pos: !!python/object:position.Position
@@ -74,7 +74,7 @@
     y: 2
   visited: False
   intro: ".-------------.\n| Common Room |\n'-------------'\n\nYou wander into what appears to be some sort of common\nroom. Or, the remains of one, rather.\n\nThe first thing your eyes settle on are the scattered\nBONES—the distinct shape of human skulls. The floor and\nwalls are painted with dried blood, and gouged out with\nlarge scratch marks. A COUCH fell victim to whatever\nrampaged through here, torn and gutted like a fish.\nA large nearby TREE that seemed to have stretched into\nthe building blocks one of the exits, bearing the same\nlarge scratch marks.\n\nA horrible smell envelopes as you look up to see a sign\nreading “Sanitation” to the south. You're suddenly\noverwhelmed with dread."
-  desc: ".-------------.\n| Common Room |\n'-------------'\n\nThe remains of what once was the common room.\n\nHuman skulls and various BONES are scattered about.\nDried blood paints the floors and walls, and large\nscratch marks have destroyed one of the COUCHES. A\ndamaged TREE nblocks the eastern exit."
+  desc: ".-------------.\n| Common Room |\n'-------------'\n\nThe remains of what once was the common room.\n\nHuman skulls and various BONES are scattered about.\nDried blood paints the floors and walls, and large\nscratch marks have destroyed one of the COUCHES. A\ndamaged TREE blocks the eastern exit."
 - !!python/object:room.Room
   name: Labratory
   pos: !!python/object:position.Position
@@ -95,7 +95,7 @@
     y: 2
   visited: False
   intro: ".------------.\n| Greenhouse |\n'------------'\n\nYou find a greenhouse, surprisingly preserved.\n\nA variety of fruit and vegetables, as well as FOREIGN\nPLANTS, have been growing for a while. Calling it\novergrown would be an understatement; the room is all\nbut alive itself. Something tells you to not wander too\nclose to the FOLIAGE.\n\nThe west is blocked by overgrowth, the east leads to a\nroom labeled “Garden.” At first glance the path appears\nto be blocked, but you think you could squeeze through\nif you wanted to."
-  desc: ".------------.\n| Greenhouse |\n'------------'\n\nTODO"
+  desc: ".------------.\n| Greenhouse |\n'------------'\n\nThe overgrown greenhouse.\n\nLittered with fruits, vegetables, and FOREIGN PLANTS.\nThe FOLIAGE remains warily ominous."
 - !!python/object:room.Room
   name: Garden
   pos: !!python/object:position.Position
@@ -116,22 +116,22 @@
     y: 3
   visited: False
   intro: ".----------.\n| Playroom |\n'----------'\n\nIt appears to be some sort of playroom. Perhaps it's\nwhere the creature was raised.\n\nThere is a smashed PIANO in the center, with various other\nINSTRUMENTS scattered around. Various remains have been\nstrewn about, with the same scratches and gouges tearing\nthrough the walls.\n\nThe path to the south has been caved in."
-  desc: ".----------.\n| Playroom |\n'----------'\n\nThe play room.\n\nAll of the INSTRUMENTS have been destroyed and the walls\nare covered in dried blood and large scratches.\nDestroyed INSTRUMENTS are scattered around a broken PIANO."
+  desc: ".----------.\n| Playroom |\n'----------'\n\nThe playroom.\n\nDestroyed INSTRUMENTS are scattered around a broken PIANO,\nand the walls are covered in dried blood and large\nscratches."
 - !!python/object:room.Room
   name: Containment Room
   pos: !!python/object:position.Position
     x: 1
     y: 3
   visited: False
-  intro: ".--------------.\n| Containment  |\n'--------------'\n\nIt appears to be a containment area.The room is\nrelatively barren, perhaps this space was used for\nisolation.\n\nDried blood paints the area and suspicious\nINDENTS litter the walls. There appear to be BULLET HOLES\nall over, but you do see a CONTAINMENT UNIT you could\nuse in the case of an emergency.\n\nThe south path leads to “Preservation”, while the west\npath seemingly leads to the playroom."
-  desc: ".--------------.\n| Containment  |\n'--------------'\n\nA containment area.\n\nBetween the BULLET HOLES in the walls and INDENTS in the\nwalls makes you think something terrible happened here to\nmake it this decrepit. There is a small CONTAINMENT UNIT\nyou think you could easily fit in."
+  intro: ".--------------.\n| Containment  |\n'--------------'\n\nIt appears to be a containment area. The room is\nrelatively barren, perhaps this space was used for\nisolation.\n\nDried blood paints the area and suspicious\nINDENTS litter the walls. There appear to be BULLET HOLES\nall over, but you do see a CONTAINMENT UNIT you could\nuse in the case of an emergency.\n\nThe south path leads to “Preservation”, while the west\npath seemingly leads to the playroom."
+  desc: ".--------------.\n| Containment  |\n'--------------'\n\nA containment area.\n\nThe BULLET HOLES and INDENTS in the walls makes you think\nsomething terrible happened here to make it this\ndecrepit. There is a small CONTAINMENT UNIT you think\nyou could easily fit in."
 - !!python/object:room.Room
   name: Sanitation Room
   pos: !!python/object:position.Position
     x: 2
     y: 3
   visited: False
-  intro: ".------------.\n| Sanitation |\n'------------'\n\nIt appears to be some sort of sanitation room.\n\nA line of armored HAZMAT SUITS are strung up on a rack,\nmost of which bearing large tears. A row of small\nPERSONAL LOCKERS are lined up against one of the walls,\nnone of which appear to be opened. There is a large\nSTEEL DOOR that opens into a smaller room.\n\nTo the west is a bulky door with the sign “Sanitation”\nhanging above it, and to the east you see what seems to\nbe some sort of overgrown data storage room."
+  intro: ".------------.\n| Sanitation |\n'------------'\n\nIt appears to be some sort of sanitation room.\n\nA line of armored HAZMAT SUITS are strung up on a rack,\nmost of which bearing large tears. A row of small\nPERSONAL LOCKERS are lined up against one of the walls,\nnone of which appear to be opened. There is a large\nSTEEL DOOR that opens into a smaller room.\n\nTo the west is a bulky door with the sign “Containment”\nhanging above it, and to the east you see what seems to\nbe some sort of overgrown data storage room."
   desc: ".------------.\n| Sanitation |\n'------------'\n\nIt's the sanitation room.\n\nThe HAZMAT SUITS are lined up surprisingly orderly, save\nfor the huge tears in a number of them. There is a row\nof PERSONAL LOCKERS lined up against one of the walls, and a\nlarge STEEL DOOR on another."
 - !!python/object:room.Room
   name: Data Storage Room
@@ -147,7 +147,7 @@
     x: 4
     y: 3
   visited: False
-  intro: ".-----------.\n| Mainframe |\n'-----------'\n\nIs this...some sort of mainframe? It seems to power the\n entire facility.\n\nAmidst a graveyard of destroyed computers, there seems\nto be one that may actually be FUNCTIONAL,\nsurprisingly enough, spared from the natural and\nunnatural flora trying to reclaim its territory.\n\nTo the south is the second marked bathroom, the north\nis an area marked “Greenhouse”."
+  intro: ".-----------.\n| Mainframe |\n'-----------'\n\nIs this...some sort of mainframe? It seems to power the\nentire facility.\n\nAmidst a graveyard of destroyed computers, there seems\nto be one that may actually be FUNCTIONAL,\nsurprisingly enough, spared from the natural and\nunnatural flora trying to reclaim its territory.\n\nTo the south is the second marked bathroom, the north\nis an area marked “Greenhouse”."
   desc: ".-----------.\n| Mainframe |\n'-----------'\n\nThe remains of the mainframe.\n\nOne computer seems to remain FUNCTIONAL, you wonder if it\nwill turn on."
   inventory: !!python/object:inventory.Inventory 
     items:
@@ -160,8 +160,8 @@
     x: 0
     y: 4
   visited: False
-  intro: ".---------.\n| Testing |\n'---------'\n\nYou enter what appears to be a testing room. It looks\nlike this is where the creature's abilities were tested,\nincluding its endurance and health.\n\nNeedless to say, it probably wasn't its favorite room.\nThere appears to be CHEST CAVITY of some kind, and a GUN\nlying conspicuously on the nearby table.\n\nThe northern corridor has been smashed... What kind of\nstrength is needed to even accomplish such a feat, it\nlooks completely caved in..."
-  desc: ".---------.\n| Testing |\n'---------'\n\nThe testing room.\n\nWhat catches your eye is a decaying CHEST CAVITY, and a strange looking GUN."
+  intro: ".---------.\n| Testing |\n'---------'\n\nYou enter what appears to be a testing room. It looks\nlike this is where the creature's abilities were tested,\nincluding its endurance and health.\n\nNeedless to say, it probably wasn't its favorite room.\nThere appears to be a CHEST CAVITY of some kind, and a GUN\nlying conspicuously on the nearby table.\n\nThe northern corridor has been smashed... What kind of\nstrength is needed to even accomplish such a feat, it\nlooks completely caved in..."
+  desc: ".---------.\n| Testing |\n'---------'\n\nThe testing room.\n\nWhat catches your eye is a decaying CHEST CAVITY, and a\nstrange looking GUN."
   inventory: !!python/object:inventory.Inventory
     items:
       - developnent_records: !!python/object:item.Item
@@ -173,8 +173,8 @@
     x: 1
     y: 4
   visited: False
-  intro: ".--------------.\n| Preservation |\n'--------------'\n\nPreservation...? No, this is maybe closer to a clinic.\n\nThere are large MECHANICAL ARMS that look as if they were\nmeant to meld parts together. An EXAMINATION TABLE with belts\nand dried blood sit at the center.\n\nTo the east you see a broken sign that reads “Testing”."
-  desc: ".--------------.\n| Preservation |\n'--------------'\n\nThe preservation room. Broken MECHANICAL ARMS surround a single EXAMINATION TABLE in the center."
+  intro: ".--------------.\n| Preservation |\n'--------------'\n\nPreservation...? No, this is maybe closer to a clinic.\n\nThere are large MECHANICAL ARMS that look as if they were\nmeant to meld parts together. An EXAMINATION TABLE with belts\nand dried blood sit at the center.\n\nTo the west you see a broken sign that reads “Testing”."
+  desc: ".--------------.\n| Preservation |\n'--------------'\n\nThe preservation room. Broken MECHANICAL ARMS surround\na single EXAMINATION TABLE in the center."
 - !!python/object:room.Room
   name: Toilets
   pos: !!python/object:position.Position
