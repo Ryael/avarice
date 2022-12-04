@@ -50,10 +50,13 @@ class Inventory:
         """
         found_item = None
         for item in self.items:
-            print(item.name)
-            print(item_name)
-            if item.name.lower()[:6] == item_name.lower()[:6]:
-                found_item = item
-                break
+            if len(item.name) > 6 and len(item_name) > 6:
+                if item.name.lower()[:6] == item_name.lower()[:6]:
+                    found_item = item
+                    break
+            else:
+                if item.name.lower() == item_name.lower():
+                    found_item = item
+                    break
 
         return found_item

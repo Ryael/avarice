@@ -29,13 +29,42 @@ class Room:
         """
         Returns introduction as a single string.
         """
-        return build_nameplate(self.name) + build_str(self.intro)
+        return build_nameplate(self.name) + \
+            build_str(self.intro) + \
+            self.room_items()
 
     def description(self):
         """
         Returns description as a single string.
         """
-        return build_nameplate(self.name) + build_str(self.desc)
+        return build_nameplate(self.name) + \
+            build_str(self.desc) + \
+            self.room_items()
+
+    def room_items(self):
+        """
+        Returns a string containing the names of items in the room
+        """
+        if not hasattr(self, "inventory"):
+            return ""
+
+        if self.inventory.is_empty():
+            return ""
+
+        items_str = "\nYou see "
+        first_item = True
+        for item in self.inventory.items:
+            if not first_item:
+                items_str += "and "
+            if not item.name.lower()[-1] == "s":
+                if item.name.lower()[0] in ["a", "e", "i", "o", "u"]:
+                    items_str += "an "
+                else:
+                    items_str += "a "
+            items_str += item.name.upper() + " "
+            first_item = False
+
+        return items_str + "\n"
 
     def remove_item(self, item):
         """
