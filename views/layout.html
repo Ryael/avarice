@@ -8,10 +8,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
-    <title>Python Terminal by Code Institute</title>
+    <title>Avarice - A horror-themed text-adventure.</title>
     <style>
         body {
             font-family: Arial;
+        }
+
+        /*center the terminal and button*/
+        #main-container {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
         }
 
         /**
@@ -61,7 +70,7 @@
 
         .xterm .composition-view {
             /* TODO: Composition position got messed up somewhere */
-            background: #000;
+            background: #151515;;
             color: #FFF;
             display: none;
             position: absolute;
