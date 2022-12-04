@@ -6,20 +6,20 @@
   visited: False
   intro:
     - The large domed tower stands tall. From what you remember
-    - approaching it from outside, its age is apparent: decaying
+    - "approaching it from outside, its age is apparent: decaying"
     - brick and shattered windows, with nature attempting to
     - reclaim its lost territory as VINES crawl up its sides,
     - capturing it in its claws like a predator.
-    -
+    - ""
     - An old LADDER, your only apparent escape, seems tall
     - enough to reach none of the windows. It looks as if you
     - might be able to use it to escape.
-    -
+    - ""
     - You hear faint noises coming from the south. Best to
     - get a move on and investigate.
   desc:
     - The central observatory.
-    -
+    - ""
     - Various types of PLANTS have started to reclaim the
     - building as their own, and you wonder how long the
     - facility has been abandoned for them to have reached such
@@ -34,13 +34,13 @@
   intro:
     - A kitchen seems to have been installed. You wonder if it
     - was once a center of commerce.
-    -
+    - ""
     - Drawers have been stripped of various UTENSILS inside and
     - now lay scattered on the floor, and a number of the dining
     - tables have been flipped over.
   desc:
     - What's left of the kitchen.
-    -
+    - ""
     - UTENSILS are strewn about the floor and a number of the
     - tables have been flipped over.
 - !!python/object:room.Room
@@ -53,7 +53,8 @@
     - The main gate. Once sealed shut, now open.
     - You never thought you'd see the light of day after that harrowing
     - experience, yet here you are.
-  desc: "N/A"
+  desc:
+    - "N/A"
 - !!python/object:room.Room
   name: Foyer
   pos: !!python/object:position.Position
@@ -62,13 +63,13 @@
   visited: False
   intro:
     - You arrive at the foyer.
-    -
+    - ""
     - A large CHANDELIER lies on the ground. Noticing the
     - entire length of the chain alongside it, you get the
     - feeling something was swinging on it. Behind it is a row
     - of LOCKERS, one of which has its door swung open. Along
     - the walls are smashed WINDOWS, reinforced with metal bars.
-    -
+    - ""
     - To the west you see the main entrance for the facility.
     - It looks sealed shut and you realise
     - that you won't be able to leave without finding a key.
@@ -89,12 +90,12 @@
     - lobby, with various hallways and labeled doors lining
     - the walls. A massive staircase leads the way to the
     - second floor, but is entirely blocked off.
-    -
+    - ""
     - A RECEPTION DESK sits at the center, and you make
     - note of the crawlspace underneath. Large SCRATCH MARKS
     - and dried bloodstains on the walls and floor send a chill
     - down your spine...
-    -
+    - ""
     - To the south, you pick up trace sounds of wooden
     - scratching. Perhaps it'd be in your best interest to avoid
     - it for the time being. After all, there's still much to
@@ -102,7 +103,7 @@
   desc:
     - Numerous doors and halls that assumingely lead to other
     - areas of the facility line the walls.
-    -
+    - ""
     - A RECEPTION DESK sits at the center, and you make
     - note of the crawlspace underneath. Large SCRATCH MARKS
     - and dried bloodstains on the walls and floor send a
@@ -115,17 +116,17 @@
   visited: False
   intro:
     - A dormitory, presumably for the staff.
-    -
+    - ""
     - A number of bunk BEDS have been knocked over, while
     - others have been broken. Several of the BOOKSHELVES have
     - been knocked over. It looks as if it was caught in the
     - aftermath of some sort of rampage.
-    -
+    - ""
     - To the north you see a sign reading “Kitchen”, and
     - to the east you see a sign reading “Toilets.”
   desc:
     - The staff dormitory.
-    -
+    - ""
     - The BEDS have been knocked over, and BOOKSHELVES thrown
     - around.
 - !!python/object:room.Room
@@ -136,14 +137,14 @@
   visited: False
   intro:
     - You come across one of the two marked bathrooms.
-    -
+    - ""
     - A smashed MIRROR catches your attention. A row of bathroom
     - STALLS seem to have sustained some damage. Whether
     - due to age or outside influence, it's unclear. What is
     - clear, is the smell coming from them.
   desc:
     - One of the marked bathrooms.
-    -
+    - ""
     - A foul odor comes from some of the STALLS. The MIRROR
     - has been smashed.
 - !!python/object:room.Room
@@ -154,21 +155,21 @@
   visited: False
   intro:
     - You wander into what appears to be a security center.
-    -
+    - ""
     - A number of MONITORS line the walls and desks. If you
     - can find a way to restore power, you wonder if you'd be
     - able to see every room in the facility on these MONITORS.
     - There's a SMALL DESK at the middle of the camera monitorss,
     - with enough space to crawl underneath.
-    -
+    - ""
     - A massive METAL DOOR resides on the southern wall, with
     - a huge dent from an impact on the other side.
   desc:
     - The security center.
-    -
+    - ""
     - A row of camera MONITORS line the wall, with a SMALL DESK
     - at the center. It seems as if you can hide under it.
-    -
+    - ""
     - A large METAL DOOR seems to be locked.
   inventory: !!python/object:inventory.Inventory
     items:
@@ -185,7 +186,7 @@
   intro:
     - You wander into what appears to be some sort of common
     - room. Or, the remains of one, rather.
-    -
+    - ""
     - The first thing your eyes settle on are the scattered
     - BONES—the distinct shape of human skulls. The floor and
     - walls are painted with dried blood, and gouged out with
@@ -194,13 +195,13 @@
     - A large nearby TREE that seemed to have stretched into
     - the building blocks one of the exits, bearing the same
     - large scratch marks.
-    -
+    - ""
     - A horrible smell envelopes as you look up to see a sign
     - reading “Sanitation” to the south. You're suddenly
     - overwhelmed with dread.
   desc:
     - The remains of what once was the common room.
-    -
+    - ""
     - Human skulls and various BONES are scattered about.
     - Dried blood paints the floors and walls, and large
     - scratch marks have destroyed one of the COUCHES. A
@@ -215,21 +216,21 @@
     - You manage to find your way into a laboratory. It takes
     - you back to the days as a student, if those memories
     - were cloaked in a veil of dust and scattered debris.
-    -
+    - ""
     - On closer inspection, you notice what appear to be TEST
     - TUBES with varying specimens preserved. Some of the
     - DRAWERS have been haphazardly pried open, their contents
     - spilled onto the floor. An opaque FUME HOOD sits against
     - one of the walls, for chemicals—you find yourself inanely
     - thinking.
-    -
+    - ""
     - The east and south exits are blocked by a tree that begins
     - somewhere in the southwest of the room and terminates
     - towards the north east. Nature seems to behave strangely
     - here.
   desc:
     - The main lab.
-    -
+    - ""
     - Various specimens are preserved in TEST TUBES, and a
     - chemical station with a FUME HOOD sits against one of the
     - walls. Some of the DRAWERS have been pried open.
@@ -248,20 +249,20 @@
   visited: False
   intro:
     - You find a greenhouse, surprisingly preserved.
-    -
+    - ""
     - A variety of fruit and vegetables, as well as FOREIGN
     - PLANTS, have been growing for a while. Calling it
     - overgrown would be an understatement; the room is all
     - but alive itself. Something tells you to not wander too
     - close to the FOLIAGE.
-    -
+    - ""
     - The west is blocked by overgrowth, the east leads to a
     - room labeled “Garden.” At first glance the path appears
     - to be blocked, but you think you could squeeze through
     - if you wanted to.
   desc:
     - The overgrown greenhouse.
-    -
+    - ""
     - Littered with fruits, vegetables, and FOREIGN PLANTS.
     - The FOLIAGE remains warily ominous.
 - !!python/object:room.Room
@@ -273,7 +274,7 @@
   intro:
     - Is this an extension of the greenhouse? Its FLORA
     - feels more mature, and the word “garden” comes to mind.
-    -
+    - ""
     - Much of the FLORA is unrecognizable to you, neither
     - native to the surrounding area or anything you can call
     - in published records. There are ELECTRIC FENCES bordering
@@ -284,7 +285,7 @@
     - HUMAN ARM.
   desc:
     - The central garden.
-    -
+    - ""
     - It's blocked off by ELECTRIC FENCES and overgrown FLORA
     - that blocks your paths. A HUMAN ARM sticks out
     - conspicuously from under the floor.
@@ -304,16 +305,16 @@
   intro:
     - It appears to be some sort of playroom. Perhaps it's
     - where the creature was raised.
-    -
+    - ""
     - There is a smashed PIANO in the center, with various other
     - INSTRUMENTS scattered around. Various remains have been
     - strewn about, with the same scratches and gouges tearing
     - through the walls.
-    -
+    - ""
     - The path to the south has been caved in.
   desc:
     - The playroom.
-    -
+    - ""
     - Destroyed INSTRUMENTS are scattered around a broken PIANO,
     - and the walls are covered in dried blood and large
     - scratches.
@@ -327,17 +328,17 @@
     - It appears to be a containment area. The room is
     - relatively barren, perhaps this space was used for
     - isolation.
-    -
+    - ""
     - Dried blood paints the area and suspicious
     - INDENTS litter the walls. There appear to be BULLET HOLES
     - all over, but you do see a CONTAINMENT UNIT you could
     - use in the case of an emergency.
-    -
+    - ""
     - The south path leads to “Preservation”, while the west
     - path seemingly leads to the playroom.
   desc:
     - A containment area.
-    -
+    - ""
     - The BULLET HOLES and INDENTS in the walls makes you think
     - something terrible happened here to make it this
     - decrepit. There is a small CONTAINMENT UNIT you think
@@ -345,7 +346,8 @@
   events:
     - !!python/object:event.Event
       action: Use
-      desc: You unlock the door with the Keycard.
+      desc:
+        - You unlock the door with the Keycard.
       item: Keycard
 - !!python/object:room.Room
   name: Sanitation Room
@@ -355,19 +357,19 @@
   visited: False
   intro:
     - It appears to be some sort of sanitation room.
-    -
+    - ""
     - A line of armored HAZMAT SUITS are strung up on a rack,
     - most of which bearing large tears. A row of small
     - PERSONAL LOCKERS are lined up against one of the walls,
     - none of which appear to be opened. There is a large
     - STEEL DOOR that opens into a smaller room.
-    -
+    - ""
     - To the west is a bulky door with the sign “Containment”
     - hanging above it, and to the east you see what seems to
     - be some sort of overgrown data storage room.
   desc:
     - It's the sanitation room.
-    -
+    - ""
     - The HAZMAT SUITS are lined up surprisingly orderly, save
     - for the huge tears in a number of them. There is a row
     - of PERSONAL LOCKERS lined up against one of the walls, and a
@@ -383,17 +385,17 @@
     - documentation, various servers, all likely containing
     - evidence on what might've transpired here. Or, so you'd
     - hope.
-    -
+    - ""
     - A row of destroyed COMPUTERS remain on desks, and GREENERY
     - has already begun to reclaim the room as its own. It
     - doesn't seem as if there's any place you'd be able to
     - hide here.
-    -
+    - ""
     - To the east, you whirring and whizzing... you can only
     - assume the next room has more computers.
   desc:
     - What remains of a data storage room.
-    -
+    - ""
     - The COMPUTERS are smashed and useless, and GREENERY
     - has started to reclaim the area as its own.
 - !!python/object:room.Room
@@ -405,17 +407,17 @@
   intro:
     - Is this...some sort of mainframe? It seems to power the
     - entire facility.
-    -
+    - ""
     - Amidst a graveyard of destroyed computers, there seems
     - to be one that may actually be FUNCTIONAL,
     - surprisingly enough, spared from the natural and
     - unnatural flora trying to reclaim its territory.
-    -
+    - ""
     - To the south is the second marked bathroom, the north
     - is an area marked “Greenhouse”.
   desc:
     - The remains of the mainframe.
-    -
+    - ""
     - One computer seems to remain FUNCTIONAL, you wonder if it
     - will turn on.
   inventory: !!python/object:inventory.Inventory
@@ -435,17 +437,17 @@
     - You enter what appears to be a testing room. It looks
     - like this is where the creature's abilities were tested,
     - including its endurance and health.
-    -
+    - ""
     - Needless to say, it probably wasn't its favorite room.
     - There appears to be a CHEST CAVITY of some kind, and a GUN
     - lying conspicuously on the nearby table.
-    -
+    - ""
     - The northern corridor has been smashed... What kind of
     - strength is needed to even accomplish such a feat, it
     - looks completely caved in...
   desc:
     - The testing room.
-    -
+    - ""
     - What catches your eye is a decaying CHEST CAVITY, and a
     - strange looking GUN.
   inventory: !!python/object:inventory.Inventory
@@ -462,11 +464,11 @@
   visited: False
   intro:
     - Preservation...? No, this is maybe closer to a clinic.
-    -
+    - ""
     - There are large MECHANICAL ARMS that look as if they were
     - meant to meld parts together. An EXAMINATION TABLE with belts
     - and dried blood sit at the center.
-    -
+    - ""
     - To the west you see a broken sign that reads “Testing”.
   desc:
     - The preservation room. Broken MECHANICAL ARMS surround
@@ -479,14 +481,14 @@
   visited: False
   intro:
     - Another marked restroom.
-    -
+    - ""
     - Much like the other, the MIRROR has been smashed, but
     - surprisingly, several of the stall doors remain intact.
     - A large hole had been smashed into the WALL, leaving you
     - with a little crawl space that you may be able to fit in.
   desc:
     - One of the two marked restrooms.
-    -
+    - ""
     - The stalls remain more intact, and a hole in the WALL
     - provides room for a crawl space. The MIRROR has been
     - smashed.
