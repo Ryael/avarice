@@ -24,7 +24,7 @@ def start_game():
     """
     p_t(START_TITLE)
     # Lets the user decide if they want to play the game.
-    start_choice = get_str("Investigator, do you accept the task? (Y/N)\n")
+    start_choice = get_str("Investigator, do you accept the task? (Y/N):\n")
     if start_choice.lower()[0] == "y":
         p_t("\nThis task isn't for the faint of heart, but we appreciate")
         p_t("your help nonetheless.")
@@ -35,17 +35,17 @@ def start_game():
         p_t("Forgive my memory, I've dealt with a number of associates")
         p_t("lately.\n")
         player.name = get_str("Could you please state your name again?\n")
-        p_t(f"\nVery well, Inspector {player.name}. Let's begin.")
+        p_t(f"\nVery well, Inspector {player.name}. Let's begin.\n")
         # Lets the user decide if they want to view the intro scene.
-        intro_choice = get_str("\nShall we move onto the briefing? (Y/N):\n")
+        intro_choice = get_str("Shall we move onto the briefing? (Y/N):\n")
         if intro_choice.lower()[0] == "y":
-            p_t("Play intro scene")
+            p_t("\nPlay intro scene")
             p_t("This will describe the back story of the Investigator")
             p_t("Their motives, why they approached, who approached them")
             p_t("and ultimately what their goal is")
             p_t("This will lead directly to the start of the game.")
         elif intro_choice.lower()[0] == "n":
-            p_t("We'll get straight to it then...")
+            p_t("\nWe'll get straight to it then...")
         else:
             print("Please answer the question, yes or no will suffice.")
 
@@ -58,7 +58,7 @@ def start_game():
                 else:
                     p_t("\n" + current_room.intro + "\n")
                     current_room.visited = True
-            # Assigns movement actions to the player.
+            # Assigns actions to the player.
             command = actions.get_player_command()
             if command["action_type"] == 'MOVE':
                 direction = command["direction"]
