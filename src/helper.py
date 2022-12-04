@@ -20,7 +20,8 @@ def p_t(text):
 
 
 def get_str(question):
-    """Returns a non-empty string, input by the user.
+    """
+    Returns a non-empty string, input by the user.
     Runs a while loop, using the "question" parameter to seek user input.
     If an empty string is given (i.e. the user just presses ENTER),
     or if the user inputs only spaces, the loop will print an error message and
@@ -39,3 +40,14 @@ def get_str(question):
             print("Please input something rather than nothing.\n\n")
         else:
             return input_str
+
+
+def build_str(str_list):
+    """
+    Builds a single string from a list of strings.
+    """
+    full_str = ""
+    for line in str_list:
+        full_str += f'{line}\n'
+
+    return full_str
