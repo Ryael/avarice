@@ -175,10 +175,10 @@
     - A large METAL DOOR seems to be locked.
   inventory: !!python/object:inventory.Inventory
     items:
-      - cctv_footage: !!python/object:item.Item
-          desc:
-            - Records of the footage obtained from the Security Center.
-          name: CCTV Footage
+      - !!python/object:item.Item
+        desc:
+          - Records of the footage obtained from the Security Center.
+        name: CCTV Footage
 - !!python/object:room.Room
   name: Common Room
   pos: !!python/object:position.Position
@@ -238,11 +238,11 @@
     - walls. Some of the DRAWERS have been pried open.
   inventory: !!python/object:inventory.Inventory
     items:
-      - battery: !!python/object:item.Item
-          desc:
-            - A battery you could use to power the computer in the
-            - Security Center.
-          name: Battery
+      - !!python/object:item.Item
+        desc:
+          - A battery you could use to power the computer in the
+          - Security Center.
+        name: Battery
 - !!python/object:room.Room
   name: Greenhouse
   pos: !!python/object:position.Position
@@ -293,11 +293,11 @@
     - conspicuously from under the floor.
   inventory: !!python/object:inventory.Inventory
     items:
-      - keycard: !!python/object:item.Item
-          desc:
-            - The keycard you found being held by a corpse. It looks
-            - like your ticket out of here.
-          name: Keycard
+      - !!python/object:item.Item
+        desc:
+          - The keycard you found being held by a corpse. It looks
+          - like your ticket out of here.
+        name: Keycard
 - !!python/object:room.Room
   name: Playroom
   pos: !!python/object:position.Position
@@ -424,11 +424,11 @@
     - will turn on.
   inventory: !!python/object:inventory.Inventory
     items:
-      - research_documents: !!python/object:item.Item
-          desc:
-            - Detailed documentation covering the creation of the
-            - monster.
-          name: Research Documents
+      - !!python/object:item.Item
+        desc:
+          - Detailed documentation covering the creation of the
+          - monster.
+        name: Research Documents
 - !!python/object:room.Room
   name: Testing Room
   pos: !!python/object:position.Position
@@ -454,10 +454,10 @@
     - strange looking GUN.
   inventory: !!python/object:inventory.Inventory
     items:
-      - developnent_records: !!python/object:item.Item
-          desc:
-            - Records detailing the growth of the monster.
-          name: Keycard
+      - !!python/object:item.Item
+        desc:
+          - Records detailing the growth of the monster.
+        name: Keycard
 - !!python/object:room.Room
   name: Preservation Room
   pos: !!python/object:position.Position

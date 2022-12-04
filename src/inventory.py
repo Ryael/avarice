@@ -14,25 +14,37 @@ class Inventory:
     """
     Contains items in a dictionary
     """
-    items: dict = field(default_factory=dict)
+    items: list = field(default_factory=list)
 
-    def add_item(self, identifier, item):
+    def add_item(self, item):
         """
         Adds an item to the dictionary
         """
-        self.items[identifier] = item
+        self.items.append = item
 
-    def remove_item(self, identifier):
+    def remove_item(self, item_name):
         """
         Removes and returns an Item from Inventory
         """
-        item = self.items[identifier]
-        self.items[identifier] = None
+        item = self.__find_item(item_name)
+        self.items.remove(item)
 
         return item
 
-    def get_item(self, identifier):
+    def get_item(self, item_name):
         """
         returns an Item from Inventory
         """
-        return self.items[identifier]
+        return self.__find_item(item_name)
+
+    def __find_item(self, item_name):
+        """
+        Finds an Item in own inventory
+        """
+        found_item = None
+        for item in self.items:
+            if item.name[:6].lower() == item_name[:6].lower():
+                found_item = item
+                break
+
+        return found_item
