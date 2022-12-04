@@ -15,10 +15,12 @@ directions = {
     "w": Position(-1, 0)
 }
 
-action_move_n_list = ["go n", "go north", "move n", "move north", "n", "north"]
-action_move_s_list = ["go s", "go south", "move s", "move south", "s", "south"]
-action_move_w_list = ["go w", "go west", "move w", "move west", "w", "west"]
-action_move_e_list = ["go e", "go east", "move e", "move east", "e", "east"]
+move_north = ["north", "n"]
+move_east = ["east", "e"]
+move_south = ["south", "s"]
+move_west = ["west", "w"]
+move_actions = ["go", "move"] + move_north + move_east + move_south + move_west
+examine_actions = ["examine", "exam", "ex"]
 
 
 # Return {type: 'MOVE', dir: 'S'}
@@ -27,18 +29,25 @@ def get_player_command():
     Returns the player's action.
     """
     # Add validations here
-    command = input("\033[38;2;191;97;72mYour action: \033[0m")
+    command = input("\033[38;2;191;97;72mYour action: \033[0m").split(" ", 1)
+    action = command[0]
+    argument = None
+    if len(command) > 1:
+        argument = command[1].replace("  ", " ")
 
     # Move type
-    if command in action_move_n_list:
-        return {"action_type": 'MOVE', "direction": 'n'}
-    if command in action_move_s_list:
-        return {"action_type": 'MOVE', "direction": 's'}
-    if command in action_move_w_list:
-        return {"action_type": 'MOVE', "direction": 'w'}
-    if command in action_move_e_list:
-        return {"action_type": 'MOVE', "direction": 'e'}
+    if action in move_actions:
+        if action in move_north or argument in move_north:
+            return {"action_type": 'MOVE', "direction": 'n'}
+        if action in move_east or argument in move_east:
+            return {"action_type": 'MOVE', "direction": 'e'}
+        if action in move_south or argument in move_south:
+            return {"action_type": 'MOVE', "direction": 's'}
+        if action in move_west or argument in move_west:
+            return {"action_type": 'MOVE', "direction": 'w'}
 
     # Examine
-    if command in ["examine", "exam"]:
-        return {"action_type": 'EXAMINE'}
+    if action in examine_actions:
+        return {"action_type": 'EXAMINE', "item": argument}
+
+    return None
