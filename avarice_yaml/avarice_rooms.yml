@@ -36,7 +36,7 @@
     x: 2
     y: 1
   visited: False
-  intro: ".------------.\n| Main Lobby |\n'------------'\n\nYou stumble into what appears to be the facility's main\nlobby, with various hallways and labeled doors lining\nthe walls. A massive staircase leads the way to the\nsecond floor, but is entirely blocked off.\n\nA RECEPTION DESK sits at the center, and you make\nnote of the crawlspace underneath. Large SCRATCH MARKS\nand dried bloodstains on the walls and floor send a chill\ndown your spine...\n\n“Mechanical” echoes in the back of your mind as you're\nable to pick up trace sounds of metal grinding together.\nPerhaps it'd be in your best interest to avoid it for\nthe time being. After all, there's still much to explore."
+  intro: ".------------.\n| Main Lobby |\n'------------'\n\nYou stumble into what appears to be the facility's main\nlobby, with various hallways and labeled doors lining\nthe walls. A massive staircase leads the way to the\nsecond floor, but is entirely blocked off.\n\nA RECEPTION DESK sits at the center, and you make\nnote of the crawlspace underneath. Large SCRATCH MARKS\nand dried bloodstains on the walls and floor send a chill\ndown your spine...\n\nTo the south, you pick up trace sounds of wooden\nscratching. Perhaps it'd be in your best interest to avoid\nit for the time being. After all, there's still much to\nexplore."
   desc: ".------------.\n| Main Lobby |\n'------------'\n\nNumerous doors and halls that assumingely lead to other\nareas of the facility line the walls. \n\nA RECEPTION DESK sits at the center, and you make\nnote of the crawlspace underneath. Large SCRATCH MARKS\nand dried bloodstains on the walls and floor send a\nchill down your spine."
 - !!python/object:room.Room
   name: Dormitory
