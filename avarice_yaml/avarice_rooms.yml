@@ -125,6 +125,11 @@
   visited: False
   intro: ".--------------.\n| Containment  |\n'--------------'\n\nIt appears to be a containment area. The room is\nrelatively barren, perhaps this space was used for\nisolation.\n\nDried blood paints the area and suspicious\nINDENTS litter the walls. There appear to be BULLET HOLES\nall over, but you do see a CONTAINMENT UNIT you could\nuse in the case of an emergency.\n\nThe south path leads to “Preservation”, while the west\npath seemingly leads to the playroom."
   desc: ".--------------.\n| Containment  |\n'--------------'\n\nA containment area.\n\nThe BULLET HOLES and INDENTS in the walls makes you think\nsomething terrible happened here to make it this\ndecrepit. There is a small CONTAINMENT UNIT you think\nyou could easily fit in."
+  events:
+    - !!python/object:event.Event
+      action: Use
+      desc: You unlock the door with the Keycard.
+      item: Keycard
 - !!python/object:room.Room
   name: Sanitation Room
   pos: !!python/object:position.Position
