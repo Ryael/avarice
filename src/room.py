@@ -9,7 +9,6 @@ This module contains the Room class.
 from dataclasses import dataclass, field
 from inventory import Inventory
 from position import Position
-from event import Event
 
 
 @dataclass
