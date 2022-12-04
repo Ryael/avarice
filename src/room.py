@@ -9,6 +9,7 @@ This module contains the Room class.
 from dataclasses import dataclass, field
 from inventory import Inventory
 from position import Position
+from helper import build_str
 
 
 @dataclass
@@ -18,8 +19,20 @@ class Room:
     """
     pos: Position
     name: str
-    intro: str
-    desc: str
+    intro: list
+    desc: list
     inventory: Inventory = field(default_factory=Inventory)
     visited: bool = False
     events: list = field(default_factory=list)
+
+    def introduction(self):
+        """
+        Returns introduction as a single string.
+        """
+        return build_str(self.intro)
+
+    def description(self):
+        """
+        Returns description as a single string.
+        """
+        return build_str(self.desc)

@@ -7,6 +7,7 @@ This module contains the items present in the game as well as the inventory.
 """
 
 from dataclasses import dataclass
+from helper import build_str
 
 
 @dataclass
@@ -15,4 +16,10 @@ class Item:
     The base class for all items within the game.
     """
     name: str
-    desc: str
+    desc: list
+
+    def description(self):
+        """
+        Returns description as a single string.
+        """
+        return build_str(self.desc)
