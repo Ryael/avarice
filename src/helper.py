@@ -23,8 +23,8 @@ def get_str(question):
     """Returns a non-empty string, input by the user.
     Runs a while loop, using the "question" parameter to seek user input.
     If an empty string is given (i.e. the user just presses ENTER),
-    or if the user inputs only spaces,
-    the loop will print an error message and request input again.
+    or if the user inputs only spaces, the loop will print an error message and
+    request input again.
     Also removes extra whitespace from strings.
     Adapted from a function by Siobhán Mooney:
     https://github.com/Estelindis/double-agent
@@ -36,6 +36,6 @@ def get_str(question):
             input_str = ""
         if not input_str:
             time.sleep(0.75)
-            print("Please input something rather than nothing.\n")
+            print("Please input something rather than nothing.\n\n")
         else:
             return input_str
