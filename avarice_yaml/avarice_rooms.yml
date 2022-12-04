@@ -76,9 +76,11 @@
     - It's never that simple, is it... You hear a faint beeping
     - sound coming from the south.
   desc:
-    - The central foyer. All of the WINDOWS have been boarded
-    - off, but one of the LOCKERS had been opened. The
-    - CHANDELIER remained destroyed under where it once hung.
+    - The central foyer.
+    - ""
+    - All of the WINDOWS have been boarded off, but one of the
+    - LOCKERS had been opened. The CHANDELIER remained destroyed
+    - under where it once hung.
 - !!python/object:room.Room
   name: Main Lobby
   pos: !!python/object:position.Position
