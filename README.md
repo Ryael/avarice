@@ -53,7 +53,7 @@ Lastly, "Recall" allows the player to recall what they remember of the room upon
 4. [Code](#code)
     - [](#commits)
     - [Folder Structure](#folder-structure)
-    - [Variables](#variables)
+    - [Constants](#constants)
     - [Helper Functions](#helper-functions)
     - [Game Loop](#game-loop)
     - [Actions](#actions)
@@ -227,14 +227,14 @@ In order to avoid the monster, it's important to remember where the good and bad
 
 ## Code
 
-This section covers the approach to coding this project, with any new approaches being detailed alongside the rationale for them.
+This section covers the approach to coding this project, with any new approaches being detailed alongside the rationale for them. A mostly object-orientated programming approach was taken in this project, with a heavy reliance on classes and methods within them. A lot of classes that weren't being used? were later changed to dataclasses as this made them both easier to work with and more effective in general.
 
 ### Commits
 
 - `git status` was used far more frequently to avoid committing anything I didn't intend to and this helped with keeping the commits down in size.
 - If any errors were made in the commit message, `git commit --amend` was used to edit it.
 - If a file was unintentionally added, `git restore --staged file` was used to rectify this.
-- If a commit couldn't be aptly summarised or was bigger than usual, `git commit -v` was used to stage commits for two reasons: 1) to see the visual comparison of the old code and the new code, and 2) to write a more detailed description under the commit message. 
+- If a commit couldn't be aptly summarised or was bigger than usual, `git commit -v` was used to stage commits for two reasons: 1) to see the visual comparison of the old code and the new code, and 2) to write a more detailed description under the commit message. `git diff` also accomplished a similar need.
 - The imperative mood was used throughout all messages and descriptions.
 - There were a handful of bigger commits and this was primarily due to the mass refactoring of code which took changes in multiple places. This did, however, make the code much easier to read and work with.
 
@@ -246,29 +246,45 @@ All of the above allowed for more precise and correct version control.
 
 The `.yml` files were also moved into their own folder, `avarice_yaml`, so as to adhere to the principle that led to the Python files being placed into the `src` folder.
 
-### Variables
+`default.js` was edited as necessary in order to account for the change that `game.py` was no longer in the root folder for Heroku.
 
+### Constants
 
+All constants are located within the `constant.py` module. It holds all the relevant constants that use up a lot of lines and allow for easier editing of constants, as it's much easier to change them in one place than it is many other places.
+
+As it stands, `START_TITLE`, `END_TITLE`, and `GAME_OVER` are present within this file. All of the three aforementioned constants also have escape sequences within them and this allows those lines to not be over 80 characters. `STARTING_POSITION` is also present here incase the player's starting position is ever desired to be changed.
 
 ### Helper Functions
 
-
+Helper functions are located within `helper.py` and contain useful functions that are used in the game loop. `p_t()` is an abbreivated way of writing `print()` that also uses less characters and adds a slight delay to enhance readibility via `time.sleep()`. `get_str(question)` carries out a similar task but does more: primarily stripping any white-space from any input, printing an error message upon a blank input, and also adding an escape sequence in order to differentiate the questions towards the player versus the regular game text.
 
 ### Game Loop
 
+The game loop begins by printing the `START_TITLE` and inquiring if the player would like to proceed with the game, which only takes "Yes" or "No" answers. This, alongside all of the other Y/N questions within the game loop has been coded such that any answer starting with "y" is read as an affirmative answer, and any answer beginning with "n" is read as a negative answer. This is done so that players have room to answer with different answers like "yeah", "yea", "yep", "nah", "nope", and so on. This was a very popular choice with all the play testers. It also allows for typos.
 
+If the user responds with a negative answer, however, the game ends and the player is brought to the `END_TITLE` screen. The credits do not play here.
+
+If the user responded with a positive answer, the player's starting position is assigned via a constant and they are then asked for their name, which is then printed back to the terminal to acknowledge the selected name. Any sort of name is allowed, unless it is blank, in which case the question is asked again.
+
+The player is then asked if they want to view the briefing, which acts as the intro, after which point the player is spawned at the starting room and actions are assigned to them.
+
+The game proper begins at this point and the first tutorial plays, after which point the player is thrust into the game.
 
 ### Actions
 
-
+As mentioned before, there are four actions in this game: 1) Move, 2) Examine, 3) Hide, and 4) Recall.
 
 ### Map Design
 
+The world and the map of the facility began as a x, y coorindate plane and was structured as a 2D list or a list of lists. The x-plane represents the horizontal position of rooms and the y-plane represents the vertical position of rooms.
 
+It was first [created in Excel](docs/excel_map.png) in order to gain an understanding of how each room correlated to each other. A typical coordinate plate begins in in the bottom left corner, but in game design the y-axis is flipped such that the numbers increase upward instead of decreasing downwards. This is mainly to avoid dealing with negative coordinates, which can get overwhelming and confusing very easily.
+
+Paths were then added between the rooms, and it was during this process that I realised that this data could be displayed in a much more user-friendly manner. It was at this point that the rooms and paths were switched to `.yml` files.
 
 ### YAML
 
-
+serialisation and reserialisation of lists to make them more user-friendly. people can clone and edit the files to create their own world & games.
 
 ### Data Model
 
@@ -284,6 +300,8 @@ The `.yml` files were also moved into their own folder, `avarice_yaml`, so as to
 
 - While working on the project in GitPod, pylint detects a warning for attribute names "x" and "x" as they don't conform to snake_case naming style. This is a non-issue within the PEP8 and linter and as the map created for this project is a x, y coordinate map, "x" and "y" were chosen as the attribute names. "x-co" and "y-co" were entertained as alternative names but it made the code even more confusing to work with in addition to it being difficult to adhere to the 80 character limit.
 
+[X & y Snake Case Name Warning]()
+
 ### YAML Validation
 
 [YAML Lint](https://www.yamllint.com/) was used to validate YAML code. No errors were found. 
@@ -291,6 +309,8 @@ The `.yml` files were also moved into their own folder, `avarice_yaml`, so as to
 ![YAML Validation](docs/validation/css-validation.png)
 
 - Errors were detected in GitPod, stating that there were "unresolved tags". This was researched and explored as much as possible, including reading more than a handful of Stack Overflow threads and open issues on GitHub. It appears that this could be resolved via the addition of custom-tags to the the `settings.json` file but unfortunately, even using a mixture of recommended custom tags, it wasn't possible to resolve these errors. Ultimately, the linter doesn't detect any issues and the code works exactly as intended, so these errors were ignored.
+
+[Unresolved Tag Errors]()
 
 [Back to top &uarr;](#avarice)
 <hr>
@@ -474,7 +494,7 @@ It can also be forked via the following steps:
 - [Badgen](https://badgen.net/) - Used to generate live badge icons.
 - [Text Color Fader](http://patorjk.com/text-color-fader/) - Used to create gradients for the title text.
 - [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&h=0&v=0&f=ANSI%20Shadow&t=Avarice) - Used to generate the title text for the start and end of the game.
-- [ASCII Frames](https://texteditor.com/ascii-frames/) - Used to generate room name-plates.
+- [ASCII Frames](https://texteditor.com/ascii-frames/) - Used to generate room name-plates and for the credits.
 - [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) - Used to quickly and easily generate tables for the readme.
 - [Character Counter](https://www.character-counter.io/) - Used to quickly count the amount of character per line in order to create a consistent column of text throughout the game.
 - [PEP8 Code Institute Linter](https://pep8ci.herokuapp.com/) was used to validate Python code. 
@@ -498,7 +518,7 @@ It can also be forked via the following steps:
 - Rose S. - Rose was instrumental in helping me proofread this readme as well as the entirety of the game script. You've saved me so much time and hassle, after looking at it for so long I just can't spot errors any longer... so, thank you so much, Rose!
 - Kate V. - Kate very kindly provided an amazing sketch of the unnamed monster, which served a great help in the visualisation of it.
 - [Phillip Waldron](https://github.com/Philip-Waldron) - Phil helped me build my idea for this product from its infancy, subtly guiding me towards simpler approaches for my ideas. If not for him and his sage advice, I honestly think the scope of this project would have been a huge mistake and I wouldn't have been able to meet the deadline. Most of the concepts and ideas he brought up are ones I carried through into the final build. Thank you so much! It was genuinely super fun to spitball ideas with you.
-- [Justin Y.](https://github.com/Lichaes) - Last but certainly not least, Justin provided me with suggestions all throughout my development process to aid me in my approach to this project. He also play tested the game extensively, and without his irreplaceable help, the testing procedure would have taken so much longer.
+- [Justin Y.](https://github.com/Lichaes) - Last but certainly not least, Justin provided me with suggestions all throughout my development process to aid me in my approach to this project. He also play tested the game extensively, and without his irreplaceable help, the testing procedure would have taken so much longer. He also had a hand to play in writing the introductory, monster, and ending scenes.
 - My family and friends, who have been incredibly supportive and have been instrumental in keeping me motivated throughout this project. Thank you all so much! All of you who helped proofread, test, provide feedback on the game, code, and etc... I couldn't have done it without you all!
 - The Code Institute community on Slack - Easy, straightforward, and always willing to help and provide advice.
 - Love Sandwiches - Ultimately, it wasn't until we went through this project that I realised that this was something I could do. A lot of the website is loosely based on it, too.
