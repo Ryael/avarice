@@ -44,11 +44,31 @@ class Player:
         You find yourself unable to move in that direction.
         """)
 
-    def add_item(self, item_id, item):
+    def add_item(self, item):
         """
         Adds an item to the player's inventory.
         """
-        self.inventory.add_item(item_id, item)
+        self.inventory.add_item(item)
+
+    def examine(self, current_room, item_name):
+        """
+        Examines an Item in the room or inventory
+        """
+        if item_name is None:
+            print("What did you want to examine?")
+            return
+
+        current_room_item = current_room.inventory.get_item(item_name)
+        player_inventory_item = self.inventory.get_item(item_name)
+
+        if current_room_item is not None:
+            print(current_room_item.description())
+            return
+        if player_inventory_item is not None:
+            print(player_inventory_item.description())
+            return
+
+        print("You don't see that here.")
 
 
 def valid_move(player, d_pos):

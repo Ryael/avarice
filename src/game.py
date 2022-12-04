@@ -73,12 +73,14 @@ def start_game():
                     current_room.visited = True
             # Assigns actions to the player.
             command = actions.get_player_command()
-            if command["action_type"] == 'MOVE':
+            if command is None:
+                p_t("I don't understand that action.")
+            elif command["action_type"] == 'MOVE':
                 direction = command["direction"]
                 player.move(actions.directions[direction])
             elif command["action_type"] == 'EXAMINE':
-                # Do make related call
-                command = 1
+                examined_item = command["item"]
+                player.examine(current_room, examined_item)
 
     elif start_choice.lower()[0] == "n":
         p_t("\nPerhaps another person would be better suited.")
