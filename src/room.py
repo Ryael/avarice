@@ -9,7 +9,7 @@ This module contains the Room class.
 from dataclasses import dataclass, field
 from inventory import Inventory
 from position import Position
-from helper import build_str
+from helper import build_str, build_nameplate
 
 
 @dataclass
@@ -29,10 +29,10 @@ class Room:
         """
         Returns introduction as a single string.
         """
-        return build_str(self.intro)
+        return build_nameplate(self.name) + build_str(self.intro)
 
     def description(self):
         """
         Returns description as a single string.
         """
-        return build_str(self.desc)
+        return build_nameplate(self.name) + build_str(self.desc)
