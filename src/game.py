@@ -8,7 +8,8 @@ This module contains the game-loop.
 
 import actions
 import world
-from constant import START_POSITION, START_TITLE, END_TITLE
+from constant import START_POSITION, START_TITLE, END_TITLE, TUTORIAL_1
+from constant import INTRO_SCENE, GOOD_END, BAD_END, NEUTRAL_END, CREDITS
 from helper import p_t, get_str
 from position import Position
 
@@ -26,7 +27,8 @@ def start_game():
     p_t(START_TITLE)
     # Lets the user decide if they want to play the game.
     while True:
-        start_choice = get_str("Investigator, do you accept the task? (Y/N):\n")
+        start_choice = \
+            get_str("Investigator, do you accept the task? (Y/N):\n")
         if start_choice.lower()[0] == "y":
             p_t("\nThis task isn't for the faint of heart, but we appreciate")
             p_t("your help nonetheless.")
@@ -41,33 +43,18 @@ def start_game():
 
             # Lets the user decide if they want to view the intro scene.
             while True:
-                intro_choice = get_str("Shall we move onto the briefing? (Y/N):\n")
+                intro_choice = \
+                    get_str("Shall we move onto the briefing? (Y/N):\n")
                 if intro_choice.lower()[0] == "y":
-                    p_t("\nA few weeks past, you were approached by a mysterious")
-                    p_t("broker with great financial promise.")
-                    p_t("The end goal is left unclear as your are told only to gather")
-                    p_t("information from an abandoned research facility.")
-                    p_t("Your interest in the reward permits you to accept the task,")
-                    p_t("considering your strained marriage after the recent passing")
-                    p_t("of your daughter.")
-                    p_t("\nBelieving the money will provide a new start, you set out")
-                    p_t("to the facility.")
-                    p_t("\nUpon arriving at the designated location, you find it")
-                    p_t("completely run-down. Despite this, it seems the main")
-                    p_t("entryway is sealed off. Much of the building is covered in")
-                    p_t("plantlife. You notice a pipe leading upl eading up to a")
-                    p_t("window in the observatory tower, which you proceed to climb.")
-                    p_t("Seeing as the window is still locked, you wrap your jacket")
-                    p_t("around your arm and smash the glass. Your movements begin to")
-                    p_t("teeter the pipe, and as you scramble in through the window,")
-                    p_t("the pipe falls down.")
+                    p_t(INTRO_SCENE)
+                    p_t(TUTORIAL_1)
                     break
                 elif intro_choice.lower()[0] == "n":
                     p_t("\nWe'll get straight to it then...")
                     break
                 else:
-                    print("Please answer the question, yes or no will suffice.")
-
+                    print(
+                        "Please answer the question, yes or no will suffice.")
 
             # Spawns the player in the starting room.
             current_room = world.room_at(player.pos)
@@ -82,7 +69,8 @@ def start_game():
                 # Assigns actions to the player.
                 command = actions.get_player_command()
                 if command is None:
-                    p_t("I don't understand that action.")
+                    player.moved = False
+                    p_t("\nI don't understand that action.\n")
                 elif command["action_type"] == 'MOVE':
                     direction = command["direction"]
                     player.move(actions.directions[direction])
@@ -95,17 +83,23 @@ def start_game():
 
                 current_room = world.room_at(player.pos)
 
-            # End Game
+            # Game Endings
             if player.inventory.get_item("Research Documents") and \
                     player.inventory.get_item("Development Records") and \
                     player.inventory.get_item("Security Footage"):
-                p_t("Good End")
+                p_t(GOOD_END)
+                p_t(END_TITLE)
+                p_t(CREDITS)
             elif player.inventory.get_item("Research Documents") or \
                     player.inventory.get_item("Development Records") or \
                     player.inventory.get_item("Security Footage"):
-                p_t("Neutral End")
+                p_t(NEUTRAL_END)
+                p_t(END_TITLE)
+                p_t(CREDITS)
             else:
-                p_t("Bad End")
+                p_t(BAD_END)
+                p_t(END_TITLE)
+                p_t(CREDITS)
 
             break
         elif start_choice.lower()[0] == "n":
