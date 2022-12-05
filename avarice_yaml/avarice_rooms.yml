@@ -580,12 +580,6 @@
     - something terrible happened here to make it this
     - decrepit. There is a small CONTAINMENT UNIT you think
     - you could easily fit in.
-  events:
-    - !!python/object:event.Event
-      action: Use
-      desc:
-        - You unlock the door with the Keycard.
-      item: Keycard
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Item

@@ -24,7 +24,6 @@ class Room:
     desc: list
     inventory: Inventory = field(default_factory=Inventory)
     visited: bool = False
-    events: list = field(default_factory=list)
 
     def introduction(self):
         """
