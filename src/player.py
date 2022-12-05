@@ -37,7 +37,7 @@ class Player:
             elif path.locked:
                 if self.inventory.get_item(path.required_item) is not None:
                     path.locked = False
-                    print("\nYou unlock the path and proceed onward\n")
+                    print("\nYou unlock the path and proceed onward.")
                     self.pos += d_pos
                     self.moved = True
                     return
@@ -49,9 +49,7 @@ class Player:
                 return
 
         self.moved = False
-        print("""
-        You find yourself unable to move in that direction.
-        """)
+        print("You find yourself unable to move in that direction.")
 
     def add_item(self, item):
         """
