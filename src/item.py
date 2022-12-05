@@ -32,7 +32,7 @@ class Item:
         """
         return build_str(self.room_desc)
 
-    def take(self):
+    def take(self, _player_inventory):
         """
         Take this item
         """
@@ -48,9 +48,24 @@ class Container(Item):
     A container for another item
     """
     contained_item: Item = field(default_factory=Item)
+    required_item: str = None
+    required_item_desc: list = field(default_factory=list)
 
-    def take(self):
+    def take(self, player_inventory):
         """
         Take the item in the container
         """
-        return self.contained_item
+        if self.required_item is None:
+            return self.contained_item
+
+        if player_inventory.get_item(self.required_item) is not None:
+            return self.contained_item
+
+        print("\n" + self.required_item_description() + "\n")
+        return None
+
+    def required_item_description(self):
+        """
+        Returns a description of the required item
+        """
+        return build_str(self.required_item_desc)

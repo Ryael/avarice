@@ -64,11 +64,11 @@ class Player:
 
         if current_room_item is not None:
             print("\n" + current_room_item.room_description())
-            taken_item = current_room_item.take()
+            taken_item = current_room_item.take(self.inventory)
             if taken_item is not None:
                 self.add_item(taken_item)
                 current_room.remove_item(current_room_item)
-                print("You obtain the " + taken_item.name.upper() + ".")
+                print("You obtain the " + taken_item.name.upper() + ".\n")
             return
         if player_inventory_item is not None:
             print("\n" + player_inventory_item.description())
