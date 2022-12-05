@@ -25,6 +25,32 @@
     - facility has been abandoned for them to have reached such
     - growth. Beams of sunlight pour through the shattered
     - windows. You cast a glance at the LADDER.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Vines
+        desc:
+          - Trees and plant life.
+        room_desc:
+          - A variety of overgrown plants have already begun to overtake the
+          - facility; some you recognize as native to the surrounding
+          - environment, some foreign.
+      - !!python/object:item.Item
+        name: Plants
+        desc:
+          - Trees and plant life.
+        room_desc:
+          - A variety of overgrown plants have already begun to overtake the
+          - facility; some you recognize as native to the surrounding
+          - environment, some foreign.
+      - !!python/object:item.Item
+        name: Ladder
+        desc:
+          - A ladder.
+        room_desc:
+          - As you look up towards the window you came through... you wonder
+          - if you could use the ladder to climb out. You ultimately decided
+          - against it, as you have a task to accomplish.
 - !!python/object:room.Room
   name: Kitchen
   pos: !!python/object:position.Position
@@ -43,6 +69,23 @@
     - ""
     - UTENSILS are strewn about the floor and a number of the
     - tables have been flipped over.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Utensils
+        desc:
+          - Utensils.
+        room_desc:
+          - Various kinds of cutlery are scattered around. The thought that
+          - they may have been searching for knives cross your mind.
+      - !!python/object:item.Item
+        name: Tables
+        desc:
+          - Tables.
+        room_desc:
+          - A number of dining tables have been flipped onto their sides,
+          - some with large gouges in the surfaces. You may be able to hide
+          - behind them, but you feel as if you'd be partially exposed...
 - !!python/object:room.Room
   name: Main Gate
   pos: !!python/object:position.Position
@@ -81,6 +124,31 @@
     - All of the WINDOWS have been boarded off, but one of the
     - LOCKERS had been opened. The CHANDELIER remained destroyed
     - under where it once hung.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Windows
+        desc:
+          - Windows.
+        room_desc:
+          - The windows all appear to be barred. Broken glass is scattered
+          - around on the floor.
+      - !!python/object:item.Item
+        name: Lockers
+        desc:
+          - Lockers.
+        room_desc:
+          - It appears to be a set of lockers, likely for the previous staff
+          - members. One of them has been opened—it looks like you might be
+          - able to fit inside.
+      - !!python/object:item.Item
+        name: Chandelier
+        desc:
+          - Chandelier.
+        room_desc:
+          - A once-magnificent chandelier lays on the floor in shattered
+          - pieces. The chain that suspended it has been bent and broken,
+          - as if something was swinging on it.
 - !!python/object:room.Room
   name: Main Lobby
   pos: !!python/object:position.Position
@@ -110,6 +178,33 @@
     - note of the crawlspace underneath. Large SCRATCH MARKS
     - and dried bloodstains on the walls and floor send a
     - chill down your spine.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Reception Desk
+        desc:
+          - A reception desk.
+        room_desc:
+          - A large reception desk sits at the center of the room, with
+          - various papers and files scattered about the surface and floor.
+          - A chair is strewn about in pieces, broken and clearly unusable.
+          - Upon further inspection, the space underneath looks big enough
+          - for a person to hide in.
+      - !!python/object:item.Item
+        name: Scratch Marks
+        desc:
+          - Scratch marks.
+        room_desc:
+          - There are wide, jagged scratch marks boring into the walls around
+          - the lobby.
+      - !!python/object:item.Item
+        name: Dried blood
+        desc:
+          - Dried blood.
+        room_desc:
+          - As you take in the environment, the first thing that grabs your
+          - attention are the dark streaks of what look like dried blood
+          - painting the floors and walls. There are no bodies to be seen.
 - !!python/object:room.Room
   name: Dormitory
   pos: !!python/object:position.Position
@@ -131,6 +226,26 @@
     - ""
     - The BEDS have been knocked over, and BOOKSHELVES thrown
     - around.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Beds
+        desc:
+          - Beds.
+        room_desc:
+          - The bunk beds have been knocked over, and some appear to have
+          - been broken and stacked on top of each other as if to serve as
+          - a makeshift barricade. It looks as if there's enough room for
+          - you to crawl under one of them.
+      - !!python/object:item.Item
+        name: Bookshelves
+        desc:
+          - Bookshelves.
+        room_desc:
+          - A number of bookshelves have been thrown over, their contents
+          - spilled on the floor around them. You notice the books range
+          - from scientific documentaries on biological principles to
+          - mythological anthologies of various cultures.
 - !!python/object:room.Room
   name: Toilets
   pos: !!python/object:position.Position
@@ -149,6 +264,23 @@
     - ""
     - A foul odor comes from some of the STALLS. The MIRROR
     - has been smashed.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Stalls
+        desc:
+          - Stalls.
+        room_desc:
+          - A foul odor reeks from the bathroom stalls. One of the doors is
+          - crushed inwards, but you may be able to hide in the remaining
+          - intact stall.
+      - !!python/object:item.Item
+        name: Mirror
+        desc:
+          - Mirror.
+        room_desc:
+          - The mirror is shattered, revealing the decaying wall underneath.
+          - Broken glass is scattered across the sinks.
 - !!python/object:room.Room
   name: Security
   pos: !!python/object:position.Position
@@ -158,27 +290,29 @@
   intro:
     - You wander into what appears to be a security center.
     - ""
-    - A number of MONITORS line the walls and desks. If you
-    - can find a way to restore power, you wonder if you'd be
-    - able to see every room in the facility on these MONITORS.
-    - There's a SMALL DESK at the middle of the camera monitorss,
-    - with enough space to crawl underneath.
-    - ""
     - A massive METAL DOOR resides on the southern wall, with
     - a huge dent from an impact on the other side.
   desc:
     - The security center.
     - ""
-    - A row of camera MONITORS line the wall, with a SMALL DESK
-    - at the center. It seems as if you can hide under it.
-    - ""
-    - A large METAL DOOR seems to be locked.
+    - To the south you see a large METAL DOOR seems to be locked.
   inventory: !!python/object:inventory.Inventory
     items:
-      - !!python/object:item.Item
+      - !!python/object:item.Container
+        name: Security Monitors
         desc:
-          - Records of the footage obtained from the Security Center.
-        name: CCTV Footage
+          - A row of monitors. It looks like you can access the records,
+          - including past footage. Or, you would, but it looks like the
+          - computer is lacking power. Perhaps if you could find a battery
+          - of some sort...
+        contained_item: !!python/object:item.Item
+          name: Security Footage
+          desc:
+            - This footage contains everything that has transpired at this
+            - facility over the past few months.
+          room_desc:
+            - This is a room description
+          takeable: True
 - !!python/object:room.Room
   name: Common Room
   pos: !!python/object:position.Position
@@ -208,6 +342,31 @@
     - Dried blood paints the floors and walls, and large
     - scratch marks have destroyed one of the COUCHES. A
     - damaged TREE blocks the eastern exit.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Bones
+        desc:
+          - Bones.
+        room_desc:
+          - Bones… lots of bones. And the distinct shape of human skulls.
+          - You wonder if this is where most of the former employees ended up.
+      - !!python/object:item.Item
+        name: Couch
+        desc:
+          - Couch.
+        room_desc:
+          - A destroyed couch, gouged out with the same scratch marks.
+          - You can't hide under it, but you can fit behind it. Is hiding
+          - the in monster's own nest a good idea, you wonder to yourself...
+      - !!python/object:item.Item
+        name: Tree
+        desc:
+          - Tree.
+        room_desc:
+          - A large tree that appears to have grown into the building blocks
+          - the eastern exit. Its surface is shredded and clawed out, as if
+          - it was used as a scratching post.
 - !!python/object:room.Room
   name: Labratory
   pos: !!python/object:position.Position
@@ -219,13 +378,6 @@
     - you back to the days as a student, if those memories
     - were cloaked in a veil of dust and scattered debris.
     - ""
-    - On closer inspection, you notice what appear to be TEST
-    - TUBES with varying specimens preserved. Some of the
-    - DRAWERS have been haphazardly pried open, their contents
-    - spilled onto the floor. An opaque FUME HOOD sits against
-    - one of the walls, for chemicals—you find yourself inanely
-    - thinking.
-    - ""
     - The east and south exits are blocked by a tree that begins
     - somewhere in the southwest of the room and terminates
     - towards the north east. Nature seems to behave strangely
@@ -233,16 +385,33 @@
   desc:
     - The main lab.
     - ""
-    - Various specimens are preserved in TEST TUBES, and a
-    - chemical station with a FUME HOOD sits against one of the
-    - walls. Some of the DRAWERS have been pried open.
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Item
+        name: Fume Hood
         desc:
-          - A battery you could use to power the computer in the
-          - Security Center.
-        name: Battery
+          - It's the fume hood of a chemical station. Upon further inspection,
+          - it looks as if you might be able to fit inside and close it.
+      - !!python/object:item.Container
+        name: Drawers
+        desc:
+          - Most of the drawers have been opened and emptied, but a few have
+          - various documents sticking out. Was someone looking for something?
+          - Or perhaps hiding it? It looks like some sort of report detailing
+          - some sort of creature, but you can't make heads or tails of it.
+        contained_item: !!python/object:item.Item
+          name: Research Documents
+          desc:
+            - These files contain sensitive information but you can't make
+            - heads or tails of them.
+          room_desc:
+            - This is a room description
+          takeable: True
+      - !!python/object:item.Item
+        name: Test Tubes
+        desc:
+          - Some of the test tubes contain a preserved liquid. Upon closer
+          - inspection, you realize it's a deep red—reminiscent of blood.
 - !!python/object:room.Room
   name: Greenhouse
   pos: !!python/object:position.Position
@@ -267,6 +436,29 @@
     - ""
     - Littered with fruits, vegetables, and FOREIGN PLANTS.
     - The FOLIAGE remains warily ominous.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Shrub
+        desc:
+          - Shrub.
+        room_desc:
+          - The overgrowth covers a deep hole in the floor. You can definitely
+          - hide in this.
+      - !!python/object:item.Item
+        name: Foreign Plants
+        desc:
+          - Foreign Plants.
+        room_desc:
+          - Overgrown flora… Some of which you recognize as carnivorous
+          - species. Very large ones. Best to not get too close.
+      - !!python/object:item.Item
+        name: Foliage
+        desc:
+          - Foliage.
+        room_desc:
+          - There's a large variety of plants outside of vegetables.
+          - Were they testing on plants as well?
 - !!python/object:room.Room
   name: Garden
   pos: !!python/object:position.Position
@@ -277,20 +469,9 @@
     - Is this an extension of the greenhouse? Its FLORA
     - feels more mature, and the word “garden” comes to mind.
     - ""
-    - Much of the FLORA is unrecognizable to you, neither
-    - native to the surrounding area or anything you can call
-    - in published records. There are ELECTRIC FENCES bordering
-    - the perimeter—you wonder if they're live or not—and they
-    - seem as if they're meant to keep something in rather than
-    - out. Something catches your eye sticking out from the
-    - ground, and on closer inspection, you see that it is a
-    - human arm that's grasping a KEYCARD.
   desc:
     - The central garden.
     - ""
-    - It's blocked off by ELECTRIC FENCES and overgrown FLORA
-    - that blocks your paths. You see a KEYCARD peeking out from a human
-    - arm conspicuously from under the floor.
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Container
@@ -308,6 +489,23 @@
           room_desc:
             - This is a room description
           takeable: True
+      - !!python/object:item.Item
+        name: Electric Fences
+        desc:
+          - It's a an electric tipped fence.
+        room_desc:
+          - Electrip tipped fences. You realize they're meant to keep something
+          - in, not keep people from getting in. The tips still seem to be
+          - active.
+      - !!python/object:item.Item
+        name: Flora
+        desc:
+          - Trees and plant life.
+        room_desc:
+          - The trees and other plant life don't seem native to the area.
+          - You recognize these trees as the same species seen throughout other
+          - areas of the facility. You wonder what caused this species to be so
+          - invasive... and consuming.
 - !!python/object:room.Room
   name: Playroom
   pos: !!python/object:position.Position
@@ -330,6 +528,22 @@
     - Destroyed INSTRUMENTS are scattered around a broken PIANO,
     - and the walls are covered in dried blood and large
     - scratches.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Piano
+        desc:
+          - Piano.
+        room_desc:
+          - A rather impressive piano has been smashed to pieces.
+          - However, you still can fit inside.
+      - !!python/object:item.Item
+        name: Instruments
+        desc:
+          - Instruments.
+        room_desc:
+          - Various broken string instruments. Were they trying to
+          - teach it to play?
 - !!python/object:room.Room
   name: Containment Room
   pos: !!python/object:position.Position
@@ -361,6 +575,30 @@
       desc:
         - You unlock the door with the Keycard.
       item: Keycard
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Bullet Holes
+        desc:
+          - Bullet Holes.
+        room_desc:
+          - Bullet holes litter the walls. Some of the blood around the area
+          - has a purplish hue to it.
+      - !!python/object:item.Item
+        name: Indents
+        desc:
+          - Indents.
+        room_desc:
+          - The northern path has numerous human sized indents in it.
+          - Looks like some residents were slammed against the closed
+          - door repeatedly.
+      - !!python/object:item.Item
+        name: Containment Unit
+        desc:
+          - Containment Unit.
+        room_desc:
+          - A containment unit. You may be able to hide inside it,
+          - but you'd be completely visible to anyone and anything.
 - !!python/object:room.Room
   name: Sanitation Room
   pos: !!python/object:position.Position
@@ -386,6 +624,41 @@
     - for the huge tears in a number of them. There is a row
     - of PERSONAL LOCKERS lined up against one of the walls, and a
     - large STEEL DOOR on another.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Hazmat Suits
+        desc:
+          - Hazmat Suits.
+        room_desc:
+          - A row of armored hazmat suits on racks. Most of them are torn.
+          - You suspect whatever those reports entailed may have been the
+          - culprit. Better get what you came here for and get out as soon
+          - as possible.
+      - !!python/object:item.Item
+        name: Personal Lockers
+        desc:
+          - Personal Lockers.
+        room_desc:
+          - Rows of small personal lockers, but as you suspected, they're
+          - all locked.
+      - !!python/object:item.Item
+        name: Steel Door
+        desc:
+          - Steel Door.
+        room_desc:
+          - A large steel door blocks your way. However, it doesn't appear
+          - to be locked, so you are able to open it. You're overwhelmed by
+          - the smell of chemical cleaners. You feel as if that smell should
+          - keep you well hidden.
+      - !!python/object:item.Item
+        name: Tree
+        desc:
+          - Tree.
+        room_desc:
+          - A large tree that appears to have grown into the building blocks
+          - the eastern exit. Its surface is shredded and clawed out, as if
+          - it was used as a scratching post.
 - !!python/object:room.Room
   name: Data Storage Room
   pos: !!python/object:position.Position
@@ -410,6 +683,24 @@
     - ""
     - The COMPUTERS are smashed and useless, and GREENERY
     - has started to reclaim the area as its own.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Computers
+        desc:
+          - Computers.
+        room_desc:
+          - What remains of the computers. Most have been smashed, and you
+          - wonder what kind of critical information had died with them. It's
+          - almost as if they were deliberately destroyed.
+      - !!python/object:item.Item
+        name: Greenery
+        desc:
+          - Greenery.
+        room_desc:
+          - Vines and greenery spreading from the northern entryway. Is this
+          - nature healing, or is it reclaiming what was once its own? However
+          - it may be, the north passage is now inaccessible.
 - !!python/object:room.Room
   name: Mainframe Room
   pos: !!python/object:position.Position
@@ -420,25 +711,28 @@
     - Is this...some sort of mainframe? It seems to power the
     - entire facility.
     - ""
-    - Amidst a graveyard of destroyed computers, there seems
-    - to be one that may actually be FUNCTIONAL,
-    - surprisingly enough, spared from the natural and
-    - unnatural flora trying to reclaim its territory.
-    - ""
     - To the south is the second marked bathroom, the north
     - is an area marked “Greenhouse”.
   desc:
     - The remains of the mainframe.
     - ""
-    - One computer seems to remain FUNCTIONAL, you wonder if it
-    - will turn on.
   inventory: !!python/object:inventory.Inventory
     items:
-      - !!python/object:item.Item
+      - !!python/object:item.Container
+        name: Functional Computer
         desc:
-          - Detailed documentation covering the creation of the
-          - monster.
-        name: Research Documents
+          - One of the last remaining preserved computers, likely in the whole
+          - facility. You may be able to open the case and pull out a battery,
+          - and hopefully with no consequences... The machine whirrs and whines
+          - but ultimately continutes running.
+        contained_item: !!python/object:item.Item
+          name: Battery
+          desc:
+            - You carefully pull out the computer's battery, making sure not
+            - to snag any wires.
+          room_desc:
+            - This is a room description
+          takeable: True
 - !!python/object:room.Room
   name: Testing Room
   pos: !!python/object:position.Position
@@ -450,24 +744,37 @@
     - like this is where the creature's abilities were tested,
     - including its endurance and health.
     - ""
-    - Needless to say, it probably wasn't its favorite room.
-    - There appears to be a CHEST CAVITY of some kind, and a GUN
-    - lying conspicuously on the nearby table.
-    - ""
     - The northern corridor has been smashed... What kind of
     - strength is needed to even accomplish such a feat, it
     - looks completely caved in...
   desc:
     - The testing room.
     - ""
-    - What catches your eye is a decaying CHEST CAVITY, and a
-    - strange looking GUN.
   inventory: !!python/object:inventory.Inventory
     items:
-      - !!python/object:item.Item
+      - !!python/object:item.Container
+        name: Chest Cavity
         desc:
-          - Records detailing the growth of the monster.
-        name: Keycard
+          - It's a decaying chest cavity.
+        room_desc:
+          - The remains of a chest cavity... gruesome but closer inspection,
+          - you notice that something seems to be lodged inside. Close by are
+          - research files explaining the fusion of flora and fauna, as well
+          - as the goals and objectives of the projects that went on here.
+        contained_item: !!python/object:item.Item
+          name: Development Records
+          desc:
+            - These files look like they're exactly what you're looking for.
+          room_desc:
+            - This is a room description
+          takeable: True
+      - !!python/object:item.Item
+        name: Gun
+        desc:
+          - It's a handgun.
+        room_desc:
+          - A handgun. But no gunshells, or bullet holes.
+          - You wonder just what this handgun was used for.
 - !!python/object:room.Room
   name: Preservation Room
   pos: !!python/object:position.Position
@@ -485,6 +792,23 @@
   desc:
     - The preservation room. Broken MECHANICAL ARMS surround
     - a single EXAMINATION TABLE in the center.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Mechanical Arms
+        desc:
+          - Mechanical Arms.
+        room_desc:
+          - A set of mechanical arms. Broken now, but it looks like they
+          - were to meld parts together.
+      - !!python/object:item.Item
+        name: Examination Table
+        desc:
+          - Examination Table.
+        room_desc:
+          - An examination table with straps, covered in purple blood.
+          - You hope this isn't what it look like. Was it really that small...
+          - and was it augmented? Did it break out?
 - !!python/object:room.Room
   name: Toilets
   pos: !!python/object:position.Position
@@ -494,13 +818,23 @@
   intro:
     - Another marked restroom.
     - ""
-    - Much like the other, the MIRROR has been smashed, but
+    - Much like the other, the mirror has been smashed, but
     - surprisingly, several of the stall doors remain intact.
-    - A large hole had been smashed into the WALL, leaving you
+    - A large HOLE had been smashed into the wall, leaving you
     - with a little crawl space that you may be able to fit in.
   desc:
     - One of the two marked restrooms.
     - ""
-    - The stalls remain more intact, and a hole in the WALL
-    - provides room for a crawl space. The MIRROR has been
+    - The stalls remain more intact, and a HOLE in the wall
+    - provides room for a crawl space. The mirror has been
     - smashed.
+  inventory: !!python/object:inventory.Inventory
+    items:
+      - !!python/object:item.Item
+        name: Hole
+        desc:
+          - Hole.
+        room_desc:
+          - The wall has been smashed. The space in between is just big
+          - enough for you to fit through. You feel as if this spot might
+          - be safe.
