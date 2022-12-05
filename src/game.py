@@ -38,31 +38,35 @@ def start_game():
             p_t("lately.\n")
             player.name = get_str("Could you please state your name again?\n")
             p_t(f"\nVery well, Inspector {player.name}. Let's begin.\n")
+
             # Lets the user decide if they want to view the intro scene.
-            intro_choice = get_str("Shall we move onto the briefing? (Y/N):\n")
-            if intro_choice.lower()[0] == "y":
-                p_t("\nA few weeks past, you were approached by a mysterious")
-                p_t("broker with great financial promise.")
-                p_t("The end goal is left unclear as your are told only to gather")
-                p_t("information from an abandoned research facility.")
-                p_t("Your interest in the reward permits you to accept the task,")
-                p_t("considering your strained marriage after the recent passing")
-                p_t("of your daughter.")
-                p_t("\nBelieving the money will provide a new start, you set out")
-                p_t("to the facility.")
-                p_t("\nUpon arriving at the designated location, you find it")
-                p_t("completely run-down. Despite this, it seems the main")
-                p_t("entryway is sealed off. Much of the building is covered in")
-                p_t("plantlife. You notice a pipe leading upl eading up to a")
-                p_t("window in the observatory tower, which you proceed to climb.")
-                p_t("Seeing as the window is still locked, you wrap your jacket")
-                p_t("around your arm and smash the glass. Your movements begin to")
-                p_t("teeter the pipe, and as you scramble in through the window,")
-                p_t("the pipe falls down.")
-            elif intro_choice.lower()[0] == "n":
-                p_t("\nWe'll get straight to it then...")
-            else:
-                print("Please answer the question, yes or no will suffice.")
+            while True:
+                intro_choice = get_str("Shall we move onto the briefing? (Y/N):\n")
+                if intro_choice.lower()[0] == "y":
+                    p_t("\nA few weeks past, you were approached by a mysterious")
+                    p_t("broker with great financial promise.")
+                    p_t("The end goal is left unclear as your are told only to gather")
+                    p_t("information from an abandoned research facility.")
+                    p_t("Your interest in the reward permits you to accept the task,")
+                    p_t("considering your strained marriage after the recent passing")
+                    p_t("of your daughter.")
+                    p_t("\nBelieving the money will provide a new start, you set out")
+                    p_t("to the facility.")
+                    p_t("\nUpon arriving at the designated location, you find it")
+                    p_t("completely run-down. Despite this, it seems the main")
+                    p_t("entryway is sealed off. Much of the building is covered in")
+                    p_t("plantlife. You notice a pipe leading upl eading up to a")
+                    p_t("window in the observatory tower, which you proceed to climb.")
+                    p_t("Seeing as the window is still locked, you wrap your jacket")
+                    p_t("around your arm and smash the glass. Your movements begin to")
+                    p_t("teeter the pipe, and as you scramble in through the window,")
+                    p_t("the pipe falls down.")
+                    break
+                elif intro_choice.lower()[0] == "n":
+                    p_t("\nWe'll get straight to it then...")
+                    break
+                else:
+                    print("Please answer the question, yes or no will suffice.")
 
 
             # Spawns the player in the starting room.
