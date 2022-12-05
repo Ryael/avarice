@@ -44,7 +44,7 @@ class Room:
 
     def room_items(self):
         """
-        Returns a string containing the names of items in the room
+        Returns a string containing the names of items in the room.
         """
         if not hasattr(self, "inventory"):
             return ""

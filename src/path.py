@@ -25,7 +25,7 @@ class Path:
 
     def exists(self, pos, dest):
         """
-        Checks if room coordinated exist in this path
+        Checks if room coordinates exist in this path.
         """
         if (pos in [self.room1, self.room2] and
            dest in [self.room1, self.room2]):

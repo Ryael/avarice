@@ -13,7 +13,8 @@ def p_t(text):
     """
     Print a line of text.
     The function name is abbreviated to permit for longer text strings.
-    For clarity: "p_t" stands for print text.
+    For clarity: "p_t" stands for print text. It also adds a slight
+    delay to printed text.
     """
     time.sleep(0.75)
     print(text)
@@ -26,7 +27,8 @@ def get_str(question):
     If an empty string is given (i.e. the user just presses ENTER),
     or if the user inputs only spaces, the loop will print an error message and
     request input again.
-    Also removes extra whitespace from strings.
+    Also removes extra whitespace from strings, adds a delay, and adds colour
+    to the question.
     Adapted from a function by Siobhán Mooney:
     https://github.com/Estelindis/double-agent
     """
@@ -55,7 +57,7 @@ def build_str(str_list):
 
 def build_nameplate(name):
     """
-    Builds a nameplate for a string
+    Builds a nameplate for a string.
     """
     nameplate = ".-" + ("-" * len(name)) + "-.\n"
     nameplate += "| " + name + " |\n"

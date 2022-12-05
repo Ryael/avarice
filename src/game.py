@@ -23,6 +23,11 @@ def start_game():
     If they accept, they are asked to provide a name.
     The user is given a choice whether to view the intro,
     after which the game begins.
+    Actions are assigned to the user, and the criteria for
+    the endings is established.
+    When the user reaches the main gate, one of three
+    endings is displayed as well as the ending titles
+    and the credits.
     """
     p_t(START_TITLE)
     # Lets the user decide if they want to play the game.

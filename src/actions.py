@@ -29,14 +29,14 @@ def get_player_command():
     """
     Returns the player's action.
     """
-    # Add validations here
+    #
     command = input("\033[38;2;191;97;72mYour action: \033[0m").split(" ", 1)
     action = command[0]
     argument = None
     if len(command) > 1:
         argument = command[1].replace("  ", " ")
 
-    # Move type
+    # Move type action.
     if action in move_actions:
         if action in move_north or argument in move_north:
             return {"action_type": 'MOVE', "direction": 'n'}
@@ -47,10 +47,11 @@ def get_player_command():
         if action in move_west or argument in move_west:
             return {"action_type": 'MOVE', "direction": 'w'}
 
-    # Examine
+    # Examine action.
     if action in examine_actions:
         return {"action_type": 'EXAMINE', "item": argument}
 
+    # Recall action.
     if action in recall_actions:
         return {"action_type": 'RECALL'}
 

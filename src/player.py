@@ -59,7 +59,7 @@ class Player:
 
     def examine(self, current_room, item_name):
         """
-        Examines an Item in the room or inventory
+        Examines an Item in the room or inventory.
         """
         self.moved = False
         if item_name is None:

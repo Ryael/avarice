@@ -3,7 +3,8 @@ Project Portfolio 3 (Python): "Avarice"
 
 Developed and written by Andrey Belyakov, November 2022.
 Code is for a terminal of 80 characters wide and 24 rows high.
-This module contains the items present in the game as well as the inventory.
+This module contains the items present in the game as well as their
+containers.
 """
 
 from dataclasses import dataclass, field
@@ -34,7 +35,7 @@ class Item:
 
     def take(self, _player_inventory):
         """
-        Take this item
+        Lets the user take a takeable item.
         """
         if self.takeable:
             return self
@@ -45,7 +46,7 @@ class Item:
 @dataclass
 class Container(Item):
     """
-    A container for another item
+    A container for another item.
     """
     contained_item: Item = field(default_factory=Item)
     required_item: str = None
@@ -53,7 +54,7 @@ class Container(Item):
 
     def take(self, player_inventory):
         """
-        Take the item in the container
+        Lets the player take the item in the container.
         """
         if self.required_item is None:
             return self.contained_item
@@ -66,6 +67,6 @@ class Container(Item):
 
     def required_item_description(self):
         """
-        Returns a description of the required item
+        Returns a description of the required item.
         """
         return build_str(self.required_item_desc)
