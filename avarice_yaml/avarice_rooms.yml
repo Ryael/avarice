@@ -20,7 +20,7 @@
   desc:
     - The central observatory.
     - ""
-    - Various types of PLANTS have started to reclaim the
+    - Various types of VINES have started to reclaim the
     - building as their own, and you wonder how long the
     - facility has been abandoned for them to have reached such
     - growth. Beams of sunlight pour through the shattered
@@ -29,14 +29,6 @@
     items:
       - !!python/object:item.Item
         name: Vines
-        desc:
-          - Trees and plant life.
-        room_desc:
-          - A variety of overgrown plants have already begun to overtake the
-          - facility; some you recognize as native to the surrounding
-          - environment, some foreign.
-      - !!python/object:item.Item
-        name: Plants
         desc:
           - Trees and plant life.
         room_desc:
@@ -114,8 +106,9 @@
     - the walls are smashed WINDOWS, reinforced with metal bars.
     - ""
     - To the west you see the main entrance for the facility.
-    - It looks sealed shut and you realise
-    - that you won't be able to leave without finding a key.
+    - It looks sealed shut and you realise that you won't be
+    - able to leave without finding a key.
+    - ""
     - It's never that simple, is it... You hear a faint beeping
     - sound coming from the south.
   desc:
@@ -387,7 +380,6 @@
     - here.
   desc:
     - The main lab.
-    - ""
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Item
@@ -471,10 +463,8 @@
   intro:
     - Is this an extension of the greenhouse? Its FLORA
     - feels more mature, and the word “garden” comes to mind.
-    - ""
   desc:
     - The central garden.
-    - ""
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Container
@@ -718,7 +708,6 @@
     - is an area marked “Greenhouse”.
   desc:
     - The remains of the mainframe.
-    - ""
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Container
@@ -752,7 +741,6 @@
     - looks completely caved in...
   desc:
     - The testing room.
-    - ""
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Container
