@@ -12,8 +12,6 @@ Everyone plays games in this day and age. Consoles and gaming PCs are more commo
 
 I wanted to pay homage to the video games of the 1980s, which paved the way for action, adventure, and even horror games! The likes of "Zork" and "Spunky Spelunky" are what really inspired me to create a text adventure of my own. However, I wanted to create a horror themed text adventure inspired by the likes of the "Resident Evil", "Evil Within", and especially "Alien: Isolation". The idea was to have a potent adversary pursuing the player throughout the game as they attempt to accomplish their objective. This is inherently more difficult due to the lack of both visual and audio components, leading to the entire focus being shifted to the text! By that I mean the writing and its ability to establish a scene and create a foreboding atmosphere that lasts throughout the course of the game.
 
-![AmIResponsive Mock-up Image](docs/screenshots/responsive.png)
-
 This is my third milestone project as part of Code Institute's Diploma in <strong>Software Development (E-commerce Applications)</strong>.
 
 For this project, I decided to create a horror-themed text adventure game using Python. The key concept for this project is greed and this is wholly reflected in the game's title: "Avarice". The chosen monster is loosely based on a Wendigo from Algonquian-speaking First Nations in North America. Wendigos, amongst all mythical creatures, are the ones that best embody greed and gluttony. This is precisely why this game will explore the concept of greed and especially excessive and destructive greed in multiple aspects throughout.
@@ -22,20 +20,19 @@ This application is accessed by the player using the command line interface (CLI
 
 ## How to Play
 
-My vision for this game was for the player to have complete freedom within the game's world, and this is accomplished by four actions.
+My vision for this game was for the player to have complete freedom within the game's world, and this is accomplished by three actions.
 
 1. "Move"
 2. "Examine"
-3. "Hide"
 4. "Recall"
 
 The "Move" function is what truly provides freedom to the player, as it allows them to choose which primary direction to move in and permits them to explore the world on their own terms. They are, of course, limited by the map and any obstructions it may have.
 
 "Examine" allows the player to examine certain objects within each room to learn more about the room, and potentially find items.
 
-The "Hide" action is the key method in how the player deals with the monster: by hiding. Each room has predetermined objects and locations to use to hide themselves. Of course, not all of these locations are a wise choice, and as such, they aren't recommended to the player.
+The "Recall" allows the player to recall what they remember of the room upon entering it for the first time. This allows for the player to not be bombarded by information upon revisiting a prior room.
 
-Lastly, "Recall" allows the player to recall what they remember of the room upon entering it for the first time. This allows for the player to not be bombarded by information upon revisiting a prior room.
+The "Hide" action was planned to be the key method in how the player deals with the monster: by hiding. Each room has predetermined objects and locations to use to hide themselves. Of course, not all of these locations are a wise choice, and as such, they aren't recommended to the player. However, both the monster and hide functionality fell outside of the deadline due to the prioritisation of core gameplay mechanics.
 
 ## Table of Contents
 
@@ -45,24 +42,24 @@ Lastly, "Recall" allows the player to recall what they remember of the room upon
 2. [User Experience](#user-experience)
     - [Target Audience](#target-audience)
     - [User Stories](#user-stories)
-3. [Game Design](#game)
+3. [Game Design](#game-design)
     - [Narrative](#narrative)
     - [Typography](#typography)
     - [Colour Scheme](#colour-scheme)
     - [Map & Flowcharts](#map--flowcharts)
 4. [Code](#code)
-    - [](#commits)
+    - [Commits](#commits)
     - [Folder Structure](#folder-structure)
     - [Constants](#constants)
     - [Helper Functions](#helper-functions)
     - [Game Loop](#game-loop)
-    - [Actions](#actions)
+    - [Classes](#classes)
     - [Map Design](#map-design)
     - [YAML](#yaml)
     - [Data Model](#data-model)
 5. [Validation](#validation)
-    - [Python Validation](#html-validation)
-    - [YAML Validation](#css-validation)
+    - [Python Validation](#python-validation)
+    - [YAML Validation](#yaml-validation)
 6. [Testing](#testing)
     - [Play Testing](#play-testing)
     - [Testing User Stories](#testing-user-stories)
@@ -124,7 +121,7 @@ The aim of this project is:
 1. As a first-time player, I want to easily understand the main purpose of the game.
 2. As a first-time player, I want to learn how to navigate the map and interact with items.
 3. As a first-time player, I want to learn about the world and the lore.
-4. As a first-time player, I want to learn about the monster and how to deal with it.
+4. As a first-time player, I want to learn about the monster.
 5. As a first-time player, I want to know what the criteria for the different endings is.
 6. As a first-time player, I want to not be overwhelmed by text appearing on screen.
 7. As a first-time player, I want to be able to see previously displayed text within rooms.
@@ -157,13 +154,13 @@ The core direction of the narrative was inspired by the [SCP Foundation](https:/
 
 Upon arriving at the designated location, you find a completely run-down facility. Despite looking run-down, it seems sealed off from the inside and abandoned. As such, you find an entrance in the unbarred window on top of the observatory tower, at which point the game begins in earnest. Information is presented organically to the Investigator as they navigate through the facility, interact with objects, hide from the monster, all while trying to locate the key items necessary to uncover the secrets of this place and escape. Upon re-entering any room, a shorter summary is shown to prevent overwhelming the user with information and text.
 
-The key items are accompanied by some of the larger blurbs as they contain the most relevant information to the Investigator and their task. Acquiring the keycard allows the Investigator to leave at any point, otherwise two additional endings are available if the player gets some of the key items alongside the key or all of the key items and the key itself. Further endings were planned but unfortunately fell out of the scope due to the deadline.
+The key items are what the broker desires as they contain the most relevant information with regard to what happened at the facility. Acquiring the keycard allows the Investigator to leave at any point, otherwise two additional endings are available if the player gets some of the key items alongside the key or all of the key items and the key itself. Further endings were planned but unfortunately fell out of the scope due to the deadline.
 
-The tutorials are diegetic and help to expand on the Investigator's personality, while also explaining how to interact with the game. The player is asked for a name but this name is mostly to form a connection with the protagonist at the beginning of the game and place the player in the Investigator's relative shoes. Aside from this, the protagonist is not referred to by their given name but just as Investigator. Their gender and pronouns are also intentionally left ambiguous in order to let the player make that decision for themselves.
+The tutorial is diegetic and help to expand on the Investigator's personality, while also explaining how to interact with the game. The player is asked for a name but this name is mostly to form a connection with the protagonist at the beginning of the game and place the player in the Investigator's relative shoes. Aside from this, the protagonist is not referred to by their given name but just as Investigator. Their gender and pronouns are also intentionally left ambiguous in order to let the player make that decision for themselves.
 
 The player is able to piece the narrative together, piece by piece, as they progress through the facility. Each room comes with a brief albeit detailed description of the room, notable objects, and general directions. Examining the notable objects will provide an additional detailed description and sometimes even a key item. As such, players are encouraged to examine everything. This, in turn, provides another reason to learn as much as possible at the facility in a natural manner. It also explains which areas contain hiding spots, as not all hiding spots are made equal.
 
-Hiding spots of course, become relevant when the monster itself is encountered in the Common Room. At this point, the monster spots the Investigator and chases them. The Investigator is given limited turns to find to hide within a hiding spot they should have found earlier. If a hiding spot is bad, then the monster will be able to find the Investigator, killing them and bringing the game to a pre-mature end. The hiding spots themselves are designed to be more than just the main method of avoiding the monster; they also function as environmental story-telling for the room they're within.
+Hiding was a planned concept that unfortunately had to be scrapped in order for me to focus on establishing the core gameplay mechanic in the world exploration alongside interactable items and objects. Hiding spots were planned to become relevant when the monster itself was encountered in the Common Room. At that point, the monster spots the Investigator and chases them. The Investigator is given limited turns to find to hide within a hiding spot they should have found earlier. If a hiding spot is bad, then the monster will be able to find the Investigator, killing them and bringing the game to a pre-mature end. The hiding spots themselves are designed to be more than just the main method of avoiding the monster; they also function as environmental story-telling for the room they're within.
 
 After the monster makes its appearance, it's after this point that the Investigator can examine notable objects that will alert the monster to the location of the Investigator. Due to this, it's important to always move slowly and carefully, as well as remembering the nearest safe hiding spot which creates a sense of suspense.
 
@@ -220,7 +217,7 @@ Furthermore, a flowchart was created using this map in order to present one rout
 
 At this point, the player can leave to achieve the main ending of the game.
 
-In order to avoid the monster, it's important to remember where the good and bad hiding spots are.
+In order to avoid the monster, it's important to remember where the good and bad hiding spots are, but due to the fact that it was not implemented, there is no need to hide.
 
 [Back to top &uarr;](#avarice)
 <hr>
@@ -275,13 +272,21 @@ Once the player gets the keycard, they can trigger one of the three available en
 
 ### Classes
 
-As mentioned before, due to a heavily object-orientated programming approach being taken for this project, some classes were changed to being dataclasses.
+As mentioned before, due to a heavily object-orientated programming approach being taken for this project, some classes were changed to being dataclasses. This meant that any classes that just stored data didn't need to have initialisers written for them and were much better suited as dataclasses.
+
+The Inventory class is used to handle collections of items for the player and rooms within the game. It stores items in a List. Its associated methods allow for easy adding of an item to the dictionary, removing an item from the dictionary, returning an item from the inventory, and checking if the inventory is empty. It incorperates a private method for locating an item by name for the items list.
+
+The Item class is the base class for all examinable objects in the game. It contains a name as a string, desc as a list of strings, room_desc as a list of strings, as well as a takeable attribute as a boolean (False by default). The description() and room_description() methods make use of the helper module's build_str function to create a single line string from the desc and room_desc lists of strings. The difference between desc and room_desc is in where they're used. room_desc is a description of the item within a room such as where it is located and other details that involve the room. desc is a description specific to the item itself. Lists of strings are used to make the yaml files easily readable. The take() method returns the item itself.
+
+The Container class is a subclass of Item, and is used mostly to obscure key items in the game from immediate view. It adds contained_item which stores an Item and defaults to None, required_item that stores the name of an item, and required_item_desc which stores a list of strings. It also adds the required_item_description() method to return a description similar to Item and overrides the take() method to check for a required item, print the description if the player does not have the required item, and return the contained item if the player has the required item or none is required.
+
+The Path class is used to store pathways between rooms. Rooms sit beside each other on an x, y plane, but not all rooms are connected, which warrants this class. It includes a desc list of strings describing the path, room1 and room2 store the positions of the two connected rooms as Position objects, locked and blocked are booleans describing the state of the path with both defaulting to False, and required_item stores the name of an item required to unlock the path as a string. The exists() method is used to check if this instance of path is a connection between two rooms provided as pos and dest arguments, both of which are expected as Position objects. The description() method performs similar function to previously outlined description methods.
 
 ### Map Design
 
 The world and the map of the facility began as a x, y coorindate plane and was structured as a 2D list or a list of lists. The x-plane represents the horizontal position of rooms and the y-plane represents the vertical position of rooms.
 
-It was first [created in Excel](docs/excel_map.png) in order to gain an understanding of how each room correlated to each other. A typical coordinate plate begins in in the bottom left corner, but in game design the y-axis is flipped such that the numbers increase upward instead of decreasing downwards. This is mainly to avoid dealing with negative coordinates, which can get overwhelming and confusing very easily.
+It was first [created in Excel](docs/features/excel_map.png) in order to gain an understanding of how each room correlated to each other. A typical coordinate plate begins in in the bottom left corner, but in game design the y-axis is flipped such that the numbers increase upward instead of decreasing downwards. This is mainly to avoid dealing with negative coordinates, which can get overwhelming and confusing very easily.
 
 Paths were then added between the rooms, and it was during this process that I realised that this data could be displayed in a much more user-friendly manner. It was at this point that the rooms and paths were switched to `.yml` files.
 
@@ -301,21 +306,63 @@ In order to satisify this requirement, however, YAML was used to populate the ga
 
 [PEP8 Code Institute Linter](https://pep8ci.herokuapp.com/) was used to validate Python code. No errors were found.
 
-![Python Validation](docs/validation/html-validation.png)
+<details>
+    <summary>game.py Validation</summary>
+    <img src="docs/validation/game.png" alt="Validation of game.py">
+</details>
+<details>
+    <summary>helper.py Validation</summary>
+    <img src="docs/validation/helper.png" alt="Validation of helper.py">
+</details>
+<details>
+    <summary>inventory.py Validation</summary>
+    <img src="docs/validation/inventory.png" alt="Validation of inventory.py">
+</details>
+<details>
+    <summary>item.py Validation</summary>
+    <img src="docs/validation/item.png" alt="Validation of item.py">
+</details>
+<details>
+    <summary>path.py Validation</summary>
+    <img src="docs/validation/path.png" alt="Validation of path.py">
+</details>
+<details>
+    <summary>player.py Validation</summary>
+    <img src="docs/validation/player.png" alt="Validation of player.py">
+</details>
+<details>
+    <summary>position.py Validation</summary>
+    <img src="docs/validation/position.png" alt="Validation of position.py">
+</details>
+<details>
+    <summary>room.py Validation</summary>
+    <img src="docs/validation/room.png" alt="Validation of room.py">
+</details>
+<details>
+    <summary>world.py Validation</summary>
+    <img src="docs/validation/world.png" alt="Validation of world.py">
+</details>
 
-- While working on the project in GitPod, pylint detects a warning for attribute names "x" and "x" as they don't conform to snake_case naming style. This is a non-issue within the PEP8 and linter and as the map created for this project is a x, y coordinate map, "x" and "y" were chosen as the attribute names. "x-co" and "y-co" were entertained as alternative names but it made the code even more confusing to work with in addition to it being difficult to adhere to the 80-character limit.
+- While working on the project in GitPod, pylint detects a warning for attribute names "x" and "y" as they don't conform to snake_case naming style. This is a non-issue within the PEP8 and linter and as the map created for this project is a x, y coordinate map, "x" and "y" were chosen as the attribute names. "x-co" and "y-co" were entertained as alternative names but it made the code even more confusing to work with in addition to it being difficult to adhere to the 80-character limit.
 
-[X & y Snake Case Name Warning]()
+[X & Y Snake Case Name Warning](docs/validation/x_y_snake_case_warning.png)
 
 ### YAML Validation
 
 [YAML Lint](https://www.yamllint.com/) was used to validate YAML code. No errors were found.
 
-![YAML Validation](docs/validation/css-validation.png)
+<details>
+    <summary>avarice_paths.yml Validation</summary>
+    <img src="docs/validation/yaml_paths.png" alt="Validation of avarice_paths.yml">
+</details>
+<details>
+    <summary>avarice_rooms.yml Validation</summary>
+    <img src="docs/validation/yaml_rooms.png" alt="Validation of avarice_rooms.yml">
+</details>
 
 - Errors were detected in GitPod, stating that there were "unresolved tags". This was researched and explored as much as possible, including reading more than a handful of Stack Overflow threads and open issues on GitHub. It appears that this could be resolved via the addition of custom-tags to the the `settings.json` file but unfortunately, even using a mixture of recommended custom tags, it wasn't possible to resolve these errors. Ultimately, the linter doesn't detect any issues and the code works exactly as intended, so these errors were ignored.
 
-[Unresolved Tag Errors]()
+[Unresolved Tag Errors](docs/validation/unresolved_tag_error.png)
 
 [Back to top &uarr;](#avarice)
 <hr>
@@ -344,9 +391,9 @@ The play testers also provided some very helpful feedback:
     - Additionally, by examining certain items the player is able to learn even more.
     - Key items expand on this even further, often containing vital information.
 
-4. As a first-time player, I want to learn about the monster and how to deal with it.
-    - Upon entering the Common Room, which is unavoidable, the monster is introduced, and in doing so, the player is met with another diegetic tutorial that teaches them the Hide action.
-    - At this point, examining certain objects will make it clear that it's possible to hide near, behind, under, or inside of them.
+4. As a first-time player, I want to learn about the monster.
+    - Upon entering the Common Room, which is unavoidable, the the monster's lair is introduced. While the monster itself is not seen, the mess it left in its wake is.
+    - This helps to establish the foreboding atmosphere in that the monster is nearby... but not quite stalking the Investigator.
 
 5. As a first-time player, I want to know what the criteria for the different endings is.
     - By playing through the game and managing to escape, the player is informed of how successful they were during their investigation and how many (if any) of the key items they obtained.
@@ -382,7 +429,7 @@ The play testers also provided some very helpful feedback:
     - The game is written in the second person perspective, and aims to place the player in the shoes of the protagonist. Everything happens through the player's eyes.
 
 13. As the creator, I want to provide a clear explanation of the actions available to the user within the game.
-    - The game's use of multiple diegetic tutorials let the user be clearly aware of the actions that the game revolves around.
+    - The game's use of diegetic tutorial let the user be clearly aware of the actions that the game revolves around.
 
 14. As the creator, I want to provide feedback to the users that their inputs for actions are acknowledged.
     - Players' input is always printed back to the terminal, such that they are able to see what their previous inputs were.
@@ -390,10 +437,10 @@ The play testers also provided some very helpful feedback:
 
 15. As the creator, I want to provide users with different endings depending on how many objectives they've accomplished, encouraging them to try to seek out all the objectives.
     - One of three endings are available to the player depending on when they leave the facility and with how many of the key items.
-    - Each of the endings, while somewhat similar in that they all end with the player escaping, provide an interesting bit of lore regarding the mysteries in of the that protagonist and/or the monster.
+    - The neutral and bad endings, while somewhat similar in that they all end with the player escaping, provide the player with a reason to go back and attempt to get the good ending.
 
 16. As the creator, I want to provide players with a suspenseful and mysterious game that explores the monster and horror themes in a unique way.
-    - Through the use of the second person perspective during the narrative, the freedom of choosing whichever path the player likes, and the looming threat of chasing monster, the player feels suspense throughout the game.
+    - Through the use of the second person perspective during the narrative, the freedom of choosing whichever path the player likes, and the looming threat of the suspiciously absent monster, the player feels suspense throughout the game.
     - The exception to this is the beginning of the game, which is the figurative calm before the storm and establishes the overall atmosphere and world.
     - The monster is also portrayed less as an mindless and malevolent being and more as a complex albeit intimidating entity.
 
@@ -420,21 +467,23 @@ The play testers also provided some very helpful feedback:
 
 ## Future Updates
 
-1. Additional Endings - Initially, examining the ladder at the very beginning of the game was meant to prompt a silly and grim ending. Additional items were also considered to be included, which would have the player make a choice if they were to meet certain secret criteria before escaping. Once met, the path would split from this point on. One choice would have the player continuing playing the game after the ending, wherein they revisit the facility and are able to unlock an entirely different ending. The other choice would allow for a unique and secret ending scene depending if all the secret criteria was met. These endings and ideas were unfortunately cut from the base game due to the scope being too big.
+1. Monster & Hide Action - The monster and the hide action was planned to be part of the final build, but unfortunately due to some difficulties that arose closer to the deadline, these features fell outside of the scope due to the deadline. The code associated with these features was removed to prevent any errors but was mostly complete. The addition of these features wouldn't take much more time, but would require testing and adjustments so as to ensure the creation of a game that's both not too easy and not difficult. Adding the monster and its AI will also add an extra element of horror and suspense for the player.
 
-2. Lore Expansion - Expanding on the vital information provided by the key items whenever the player examines them within their inventory is something I'd like to do ASAP. With this, information can be provided diegetically and organically to the player with regards to what transpired here as the game in its current state may leave the player with more questions than answers.
+2. Additional Endings - Initially, examining the ladder at the very beginning of the game was meant to prompt a silly and grim ending. Additional items were also considered to be included, which would have the player make a choice if they were to meet certain secret criteria before escaping. Once met, the path would split from this point on. One choice would have the player continuing playing the game after the ending, wherein they revisit the facility and are able to unlock an entirely different ending. The other choice would allow for a unique and secret ending scene depending if all the secret criteria was met. These endings and ideas were unfortunately cut from the base game due to the scope being too big.
 
-3. Extra Modules - Instead of capitalising examinable items, I'd like to colour them in a different colour. This should be much easier on the eyes and hence easier to process for the players. Perhaps centering the text and having it use full width of the terminal could make for an easier and smoother experience, too. This would allow me to expand the writing and describe rooms in more detail.
+3. Lore Expansion - Expanding on the vital information provided by the key items whenever the player examines them within their inventory is something I'd like to do ASAP. With this, information can be provided diegetically and organically to the player with regards to what transpired here as the game in its current state may leave the player with more questions than answers.
 
-4. Fitting & Responsive Environment - It is my vision to create a website that has the terminal sit in the middle and is responsive for certain mobile devices, perhaps by switching the number of rows with the number of columns. I'd also like to design the website that contains the game to feel like an old computer screen, adding an extra layer of immersion.
+4. Extra Modules - Instead of capitalising examinable items, I'd like to colour them in a different colour. This should be much easier on the eyes and hence easier to process for the players. Perhaps centering the text and having it use full width of the terminal could make for an easier and smoother experience, too. This would allow me to expand the writing and describe rooms in more detail.
 
-5. Bigger Facility - I'd like to expand the facility to have more floors. This is precisely why the stairs are inaccessible. Multiple floors would allow for more rooms, more items, more interactions, and more ways to interact with the monster.
+5. Fitting & Responsive Environment - It is my vision to create a website that has the terminal sit in the middle and is responsive for certain mobile devices, perhaps by switching the number of rows with the number of columns. I'd also like to design the website that contains the game to feel like an old computer screen, adding an extra layer of immersion.
 
-6. Monster AI - Expanding on the monster AI and giving the player more actions to be able to distract the monster whenever it acts as a roadblock in blocking a path would provide for a more suspenseful and difficult experience.
+6. Bigger Facility - I'd like to expand the facility to have more floors. This is precisely why the stairs are inaccessible. Multiple floors would allow for more rooms, more items, more interactions, and more ways to interact with the monster.
 
-7. Rotate the Map - It's difficult to randomise the location of the items due to the the importance of their containing locations, hence a simple rotation by +- 90° would disorientate players who were familiar with the map. Additionally, while items can't be randomised, perhaps it'll be easier to randomise sets of certain rooms that belong close to each other and how their paths connect.
+7. Monster AI - Expanding on the monster AI and giving the player more actions to be able to distract the monster whenever it acts as a roadblock in blocking a path would provide for a more suspenseful and difficult experience.
 
-8. NPCs - NPCs weren't planned initially but it would be an interesting addition, as this could impact the ending achieved. Adding a rescuable NPC that the player can potentially kill by bringing the monster to them accidentally would add another layer of complexity and suspense.
+8. Rotate the Map - It's difficult to randomise the location of the items due to the the importance of their containing locations, hence a simple rotation by +- 90° would disorientate players who were familiar with the map. Additionally, while items can't be randomised, perhaps it'll be easier to randomise sets of certain rooms that belong close to each other and how their paths connect.
+
+9. NPCs - NPCs weren't planned initially but it would be an interesting addition, as this could impact the ending achieved. Adding a rescuable NPC that the player can potentially kill by bringing the monster to them accidentally would add another layer of complexity and suspense.
 
 I'd like to revisit this project in the future after having learned more about Python, YAML, and game design in general in order to push this application to become as good as it can possibly be. It's something I thoroughly enjoyed working on and have grown quite a bit as a developer.
 
@@ -483,6 +532,7 @@ It can also be forked via the following steps:
 - [PyYAML](https://pypi.org/project/PyYAML/) - PyYAML is a YAML parser and emitter for Python.
 - [Dataclasses](https://docs.python.org/3/library/dataclasses.html) - This module provides a decorator and functions for automatically adding generated special methods such as `__init__()` and `__repr__()` to user-defined classes.
 - [Time](https://docs.python.org/3/library/time.html) - This module provides various time-related functions.
+- [Inflect](https://pypi.org/project/inflect/) - This module correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words.
 
 ### Frameworks & Tools
 
