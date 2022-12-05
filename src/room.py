@@ -7,6 +7,7 @@ This module contains the Room class.
 """
 
 from dataclasses import dataclass, field
+import inflect
 from inventory import Inventory
 from position import Position
 from helper import build_str, build_nameplate
@@ -45,8 +46,6 @@ class Room:
         """
         Returns a string containing the names of items in the room
         """
-        import inflect
-
         if not hasattr(self, "inventory"):
             return ""
 
