@@ -21,6 +21,7 @@ class Path:
     room2: Position
     locked: bool = False
     blocked: bool = False
+    required_item: str = None
 
     def exists(self, pos, dest):
         """

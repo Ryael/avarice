@@ -32,8 +32,17 @@ class Player:
         path = valid_move(self, d_pos)
 
         if path is not None:
-            if path.blocked or path.locked:
-                print(path.desc)
+            if path.blocked:
+                print(path.description())
+            elif path.locked:
+                if self.inventory.get_item(path.required_item) is not None:
+                    path.locked = False
+                    print("\nYou unlock the path and proceed onward\n")
+                    self.pos += d_pos
+                    self.moved = True
+                    return
+                else:
+                    print(path.description())
             else:
                 self.pos += d_pos
                 self.moved = True

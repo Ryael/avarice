@@ -9,6 +9,7 @@
   desc:
     - Locked
   locked: true
+  required_item: Keycard
 - !!python/object:path.Path
   room1: !!python/object:position.Position
     x: 1
@@ -20,6 +21,7 @@
   desc:
     - Locked
   locked: true
+  required_item: Keycard
 - !!python/object:path.Path
   room1: !!python/object:position.Position
     x: 0
