@@ -274,13 +274,17 @@ Once the player gets the keycard, they can trigger one of the three available en
 
 As mentioned before, due to a heavily object-orientated programming approach being taken for this project, some classes were changed to being dataclasses. This meant that any classes that just stored data didn't need to have initialisers written for them and were much better suited as dataclasses.
 
-The Inventory class is used to handle collections of items for the player and rooms within the game. It stores items in a List. Its associated methods allow for easy adding of an item to the dictionary, removing an item from the dictionary, returning an item from the inventory, and checking if the inventory is empty. It incorperates a private method for locating an item by name for the items list.
+The `Inventory` class is used to handle collections of items for the player and rooms within the game. It stores items in a `List`. Its associated methods allow for easy adding of an item to the dictionary, removing an item from the dictionary, returning an item from the inventory, and checking if the inventory is empty. It incorperates a private method for locating an item by name for the `items` list.
 
-The Item class is the base class for all examinable objects in the game. It contains a name as a string, desc as a list of strings, room_desc as a list of strings, as well as a takeable attribute as a boolean (False by default). The description() and room_description() methods make use of the helper module's build_str function to create a single line string from the desc and room_desc lists of strings. The difference between desc and room_desc is in where they're used. room_desc is a description of the item within a room such as where it is located and other details that involve the room. desc is a description specific to the item itself. Lists of strings are used to make the yaml files easily readable. The take() method returns the item itself.
+The `Item` class is the base class for all examinable objects in the game. It contains a `name` as a string, `desc` as a list of strings, `room_desc` as a list of strings, as well as a `takeable` attribute as a boolean (`False` by default). The `description()` and `room_description()` methods make use of the `helper` module's `build_str` function to create a single line string from the `desc` and `room_desc` lists of strings. The difference between `desc` and `room_desc` is in where they're used. `room_desc` is a description of the item within a room such as where it is located and other details that involve the room. `desc` is a description specific to the item itself. Lists of strings are used to make the yaml files easily readable. The `take()` method returns the item itself.
 
-The Container class is a subclass of Item, and is used mostly to obscure key items in the game from immediate view. It adds contained_item which stores an Item and defaults to None, required_item that stores the name of an item, and required_item_desc which stores a list of strings. It also adds the required_item_description() method to return a description similar to Item and overrides the take() method to check for a required item, print the description if the player does not have the required item, and return the contained item if the player has the required item or none is required.
+The `Container` class is a subclass of `Item`, and is used mostly to obscure key items in the game from immediate view. It adds `contained_item` which stores an `Item` and defaults to `None`, `required_item` that stores the name of an item, and `required_item_desc` which stores a list of strings. It also adds the `required_item_description()` method to return a description similar to `Item` and overrides the `take()` method to check for a required item, print the description if the player does not have the required item, and return the contained item if the player has the required item or none is required.
 
-The Path class is used to store pathways between rooms. Rooms sit beside each other on an x, y plane, but not all rooms are connected, which warrants this class. It includes a desc list of strings describing the path, room1 and room2 store the positions of the two connected rooms as Position objects, locked and blocked are booleans describing the state of the path with both defaulting to False, and required_item stores the name of an item required to unlock the path as a string. The exists() method is used to check if this instance of path is a connection between two rooms provided as pos and dest arguments, both of which are expected as Position objects. The description() method performs similar function to previously outlined description methods.
+The `Path` class is used to store pathways between rooms. Rooms sit beside each other on an `x, y` plane, but not all rooms are connected, which warrants this class. It includes a `desc` list of strings describing the path, `room1` and `room2` store the positions of the two connected rooms as `Position` objects, `locked` and `blocked` are booleans describing the state of the path with both defaulting to False, and `required_item` stores the name of an item required to unlock the path as a string. The `exists()` method is used to check if this instance of path is a connection between two rooms provided as `pos` and `dest` arguments, both of which are expected as `Position` objects. The `description()` method performs similar function to previously outlined description methods.
+
+The `Player` class stores information about the player. `pos` stores the players position on the map as a `Position` object, `inventory` stores an `Inventory` object used to manage the players collected items, and `moved` represents whether or not the player moved in the last action through a boolean that defaults to `True`. `player.moved` is used to determine whether or not to display a `room`'s description in the main game loop, as when the player takes an action other than moving a description should not be printed. The `add_item()` method is a shortcut to the players `inventory.add_item()` method. `examine()` handles investigating an object, printing its description, and picking up collectable items and adding them to the playeers inventory. `move()` calls another function `valid_move()` within the player module to check a paths existence, then checks whether a path is blocked, locked, and whather or not the player has a key for a path, and finally moves the player to the next room on the path.
+
+The `Position` class is a simple data structure for handling 2D positional information. It contains `x` and `y` coordinates as integers, and has methods to handle addition, in place addition, and comparison to another `Position` object.
 
 ### Map Design
 
@@ -307,60 +311,60 @@ In order to satisify this requirement, however, YAML was used to populate the ga
 [PEP8 Code Institute Linter](https://pep8ci.herokuapp.com/) was used to validate Python code. No errors were found.
 
 <details>
-    <summary>game.py Validation</summary>
+    <summary>game.py</summary>
     <img src="docs/validation/game.png" alt="Validation of game.py">
 </details>
 <details>
-    <summary>helper.py Validation</summary>
+    <summary>helper.py</summary>
     <img src="docs/validation/helper.png" alt="Validation of helper.py">
 </details>
 <details>
-    <summary>inventory.py Validation</summary>
+    <summary>inventory.py</summary>
     <img src="docs/validation/inventory.png" alt="Validation of inventory.py">
 </details>
 <details>
-    <summary>item.py Validation</summary>
+    <summary>item.py</summary>
     <img src="docs/validation/item.png" alt="Validation of item.py">
 </details>
 <details>
-    <summary>path.py Validation</summary>
+    <summary>path.py</summary>
     <img src="docs/validation/path.png" alt="Validation of path.py">
 </details>
 <details>
-    <summary>player.py Validation</summary>
+    <summary>player.py</summary>
     <img src="docs/validation/player.png" alt="Validation of player.py">
 </details>
 <details>
-    <summary>position.py Validation</summary>
+    <summary>position.py</summary>
     <img src="docs/validation/position.png" alt="Validation of position.py">
 </details>
 <details>
-    <summary>room.py Validation</summary>
+    <summary>room.py</summary>
     <img src="docs/validation/room.png" alt="Validation of room.py">
 </details>
 <details>
-    <summary>world.py Validation</summary>
+    <summary>world.py</summary>
     <img src="docs/validation/world.png" alt="Validation of world.py">
 </details>
 
-- While working on the project in GitPod, pylint detects a warning for attribute names "x" and "y" as they don't conform to snake_case naming style. This is a non-issue within the PEP8 and linter and as the map created for this project is a x, y coordinate map, "x" and "y" were chosen as the attribute names. "x-co" and "y-co" were entertained as alternative names but it made the code even more confusing to work with in addition to it being difficult to adhere to the 80-character limit.
+While working on the project in GitPod, pylint detects a warning for attribute names "x" and "y" as they don't conform to snake_case naming style. This is a non-issue within the PEP8 and linter and as the map created for this project is a x, y coordinate map, "x" and "y" were chosen as the attribute names. "x-co" and "y-co" were entertained as alternative names but it made the code even more confusing to work with in addition to it being difficult to adhere to the 80-character limit.
 
-[X & Y Snake Case Name Warning](docs/validation/x_y_snake_case_warning.png)
+[x & y Snake Case Name Warning](docs/validation/x_y_snake_case_warning.png)
 
 ### YAML Validation
 
 [YAML Lint](https://www.yamllint.com/) was used to validate YAML code. No errors were found.
 
 <details>
-    <summary>avarice_paths.yml Validation</summary>
+    <summary>avarice_paths.yml</summary>
     <img src="docs/validation/yaml_paths.png" alt="Validation of avarice_paths.yml">
 </details>
 <details>
-    <summary>avarice_rooms.yml Validation</summary>
+    <summary>avarice_rooms.yml</summary>
     <img src="docs/validation/yaml_rooms.png" alt="Validation of avarice_rooms.yml">
 </details>
 
-- Errors were detected in GitPod, stating that there were "unresolved tags". This was researched and explored as much as possible, including reading more than a handful of Stack Overflow threads and open issues on GitHub. It appears that this could be resolved via the addition of custom-tags to the the `settings.json` file but unfortunately, even using a mixture of recommended custom tags, it wasn't possible to resolve these errors. Ultimately, the linter doesn't detect any issues and the code works exactly as intended, so these errors were ignored.
+Errors were detected in GitPod, stating that there were "unresolved tags". This was researched and explored as much as possible, including reading more than a handful of Stack Overflow threads and open issues on GitHub. It appears that this could be resolved via the addition of custom-tags to the the `settings.json` file but unfortunately, even using a mixture of recommended custom tags, it wasn't possible to resolve these errors. Ultimately, the linter doesn't detect any issues and the code works exactly as intended, so these errors were ignored.
 
 [Unresolved Tag Errors](docs/validation/unresolved_tag_error.png)
 
