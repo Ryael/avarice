@@ -54,6 +54,7 @@ class Player:
         """
         Examines an Item in the room or inventory
         """
+        self.moved = False
         if item_name is None:
             print("\nWhat did you want to examine?")
             return
@@ -73,7 +74,7 @@ class Player:
             print("\n" + player_inventory_item.description())
             return
 
-        print("\nYou don't see that here.")
+        print("\nYou don't see that here.\n")
 
 
 def valid_move(player, d_pos):
