@@ -300,11 +300,14 @@
     items:
       - !!python/object:item.Container
         name: Security Monitors
-        desc:
+        room_desc:
           - A row of monitors. It looks like you can access the records,
           - including past footage. Or, you would, but it looks like the
           - computer is lacking power. Perhaps if you could find a battery
           - of some sort...
+        required_item: Battery
+        required_item_desc:
+          - Some description of why you need a battery lol
         contained_item: !!python/object:item.Item
           name: Security Footage
           desc:
@@ -394,7 +397,7 @@
           - it looks as if you might be able to fit inside and close it.
       - !!python/object:item.Container
         name: Drawers
-        desc:
+        room_desc:
           - Most of the drawers have been opened and emptied, but a few have
           - various documents sticking out. Was someone looking for something?
           - Or perhaps hiding it? It looks like some sort of report detailing
@@ -720,7 +723,7 @@
     items:
       - !!python/object:item.Container
         name: Functional Computer
-        desc:
+        room_desc:
           - One of the last remaining preserved computers, likely in the whole
           - facility. You may be able to open the case and pull out a battery,
           - and hopefully with no consequences... The machine whirrs and whines
