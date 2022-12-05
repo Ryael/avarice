@@ -29,7 +29,8 @@ def get_player_command():
     """
     Returns the player's action.
     """
-    #
+    # Takes player input and splits it between the command word and the
+    # arguments for the command.
     command = input("\033[38;2;191;97;72mYour action: \033[0m").split(" ", 1)
     action = command[0]
     argument = None
