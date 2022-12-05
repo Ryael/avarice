@@ -13,7 +13,7 @@ from dataclasses import dataclass
 @dataclass
 class Position:
     """
-    Core class for position management
+    Core class for position management.
     """
     x: int
     y: int

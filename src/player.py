@@ -27,7 +27,8 @@ class Player:
         are from math and represent changes in x and y values. This method
         accepts a change in the x and/or y directions. It moves the player
         if the path exists, and doesn't if the path doesn't exist. It also
-        checks if the path is either blocked or locked.
+        checks if the path is either blocked or locked. If the player has
+        the keycard, they are able to unlock any locked paths.
         """
         path = valid_move(self, d_pos)
 
