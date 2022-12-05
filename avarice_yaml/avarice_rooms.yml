@@ -283,12 +283,12 @@
   intro:
     - You wander into what appears to be a security center.
     - ""
-    - A massive METAL DOOR resides on the southern wall, with
+    - A massive metal door resides on the southern wall, with
     - a huge dent from an impact on the other side.
   desc:
     - The security center.
     - ""
-    - To the south you see a large METAL DOOR seems to be locked.
+    - To the south you see a large metal door seems to be locked.
   inventory: !!python/object:inventory.Inventory
     items:
       - !!python/object:item.Container
@@ -296,11 +296,10 @@
         room_desc:
           - A row of monitors. It looks like you can access the records,
           - including past footage. Or, you would, but it looks like the
-          - computer is lacking power. Perhaps if you could find a battery
-          - of some sort...
+          - computer is lacking power.
         required_item: Battery
         required_item_desc:
-          - Some description of why you need a battery lol
+          - Perhaps if you could find a battery of some sort...
         contained_item: !!python/object:item.Item
           name: Security Footage
           desc:
@@ -309,6 +308,21 @@
           room_desc:
             - This is a room description
           takeable: True
+      - !!python/object:item.Item
+        name: Small Desk
+        desc:
+          - Small Desk.
+        room_desc:
+          - A small desk at the center under the monitors. Upon further
+          - inspection, you can fit underneath.
+      - !!python/object:item.Item
+        name: Metal Door
+        desc:
+          - Metal Door.
+        room_desc:
+          - A large, metallic double door. Some huge force left an indent
+          - from the other side. It looks as if you need a key card to
+          - open it.
 - !!python/object:room.Room
   name: Common Room
   pos: !!python/object:position.Position
@@ -385,6 +399,8 @@
       - !!python/object:item.Item
         name: Fume Hood
         desc:
+          - It's a fume hood.
+        room_desc:
           - It's the fume hood of a chemical station. Upon further inspection,
           - it looks as if you might be able to fit inside and close it.
       - !!python/object:item.Container
@@ -405,6 +421,8 @@
       - !!python/object:item.Item
         name: Test Tubes
         desc:
+          - Some test tubes.
+        room_desc:
           - Some of the test tubes contain a preserved liquid. Upon closer
           - inspection, you realize it's a deep red—reminiscent of blood.
 - !!python/object:room.Room
