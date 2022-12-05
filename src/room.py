@@ -61,7 +61,7 @@ class Room:
 
         items_str += inf.join(item_names)
 
-        return items_str + " stand out to you here.\n"
+        return items_str + " is all that stands out to you here.\n"
 
     def remove_item(self, item):
         """
