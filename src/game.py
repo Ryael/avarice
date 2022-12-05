@@ -53,8 +53,9 @@ def start_game():
                     p_t("\nWe'll get straight to it then...")
                     break
                 else:
-                    print(
-                        "Please answer the question, yes or no will suffice.")
+                    print("""\n
+                        "Please answer the question, yes or no will suffice.
+                        \n""")
 
             # Spawns the player in the starting room.
             current_room = world.room_at(player.pos)
