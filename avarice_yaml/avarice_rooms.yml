@@ -375,7 +375,7 @@
           - Tree.
         room_desc:
           - A large tree that appears to have grown into the building blocks
-          - the eastern exit. Its surface is shredded and clawed out, as if
+          - the western exit. Its surface is shredded and clawed out, as if
           - it was used as a scratching post.
 - !!python/object:room.Room
   name: Labratory
@@ -662,14 +662,6 @@
           - to be locked, so you are able to open it. You're overwhelmed by
           - the smell of chemical cleaners. You feel as if that smell should
           - keep you well hidden.
-      - !!python/object:item.Item
-        name: Tree
-        desc:
-          - Tree.
-        room_desc:
-          - A large tree that appears to have grown into the building blocks
-          - the eastern exit. Its surface is shredded and clawed out, as if
-          - it was used as a scratching post.
 - !!python/object:room.Room
   name: Data Storage Room
   pos: !!python/object:position.Position
