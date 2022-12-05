@@ -47,8 +47,7 @@ window in the observatory tower, which you proceed to climb.
 Seeing as the window is still locked, you wrap your jacket
 around your arm and smash the glass. Your movements begin to
 teeter the pipe, and as you scramble in through the window,
-the pipe falls down.
-""")
+the pipe falls down.""")
 
 TUTORIAL_1 = ("""\033[38;2;191;97;72m
 .----------.\n| Tutorial |\n'----------'\033[0m\n
@@ -73,32 +72,25 @@ Move\n
 given area, you can use \033[38;2;191;97;72m"Recall"\033[0m to jog your memory.
 - \033[38;2;191;97;72m"r"\033[0m, too.
 \033[0m\nHint: Look for capitalised objects, items, and areas to
-interact with.
-""")
+interact with.""")
 
-BAD_END = ("""
-Your legs carry you out of the building at full speed. You
-think of nothing but to get away from that horrifying monster.
-In the end, you came out empty handed, having completely
-forgotten why you came into the building in the first place.
-""")
+BAD_END = ("""Your legs carry you out of the building at full
+speed. You think of nothing but to get away from that horrifying
+monster. In the end, you came out empty handed, having completely
+forgotten why you came into the building in the first place.""")
 
-NEUTRAL_END = ("""
-You manage to sneak out through the main gate, having achieved
-some of your objectives. You're glad to be able to breathe fresh
-air again. However, you can't seem to shake the feeling that you
-missed something.
-""")
+NEUTRAL_END = ("""You manage to sneak out through the main gate,
+having achieved some of your objectives. You're glad to be able
+to breathe fresh air again. However, you can't seem to shake the
+feeling that you missed something.""")
 
-GOOD_END = ("""
-You manage to sneak out through the main gate, ensuring it remains
-locked afterwards. Documentation in hand, you're confident that
-you've solved the building's mysteries. You head straight to the
-broker in hopes of them fulfilling their end of the bargain.
-""")
+GOOD_END = ("""You manage to sneak out through the main gate,
+ensuring it remains locked afterwards. Documentation in hand,
+you're confident that you've solved the building's mysteries.
+You head straight to the broker in hopes of them fulfilling
+their end of the bargain.""")
 
-CREDITS = ("""
-Thank you for playing the game!\n
+CREDITS = ("""Thank you for playing the game!\n
 We hope you enjoyed it!\n
 \033[38;2;191;97;72m.-----------.\n| Developer |\n'-----------'\033[0m\n
 Ryael (aka Andrey B.)\n
@@ -108,6 +100,4 @@ Ryael (aka Andrey B.)\n
 \033[0m
 Simon W., Akshat Garg
 Phillip W., Rose S.
-Justin Y.
-""")
-print(GOOD_END)
+Justin Y.""")
