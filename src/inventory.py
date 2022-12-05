@@ -50,7 +50,7 @@ class Inventory:
         """
         found_item = None
         for item in self.items:
-            if len(item.name) > 6 and len(item_name) > 6:
+            if len(item.name) >= 6 and len(item_name) >= 6:
                 if item.name.lower()[:6] == item_name.lower()[:6]:
                     found_item = item
                     break
