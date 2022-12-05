@@ -45,26 +45,24 @@ class Room:
         """
         Returns a string containing the names of items in the room
         """
+        import inflect
+
         if not hasattr(self, "inventory"):
             return ""
 
         if self.inventory.is_empty():
             return ""
 
-        items_str = "\nYou see "
-        first_item = True
-        for item in self.inventory.items:
-            if not first_item:
-                items_str += "and "
-            if not item.name.lower()[-1] == "s":
-                if item.name.lower()[0] in ["a", "e", "i", "o", "u"]:
-                    items_str += "an "
-                else:
-                    items_str += "a "
-            items_str += item.name.upper() + " "
-            first_item = False
+        inf = inflect.engine()
+        items_str = "\nThe "
+        item_names = []
 
-        return items_str + "\n"
+        for item in self.inventory.items:
+            item_names.append(item.name.upper())
+
+        items_str += inf.join(item_names)
+
+        return items_str + " stand out to you here.\n"
 
     def remove_item(self, item):
         """
