@@ -49,7 +49,7 @@ class Player:
                 return
 
         self.moved = False
-        print("You find yourself unable to move in that direction.")
+        print("You find yourself unable to move in that direction.\n")
 
     def add_item(self, item):
         """

@@ -74,17 +74,17 @@ given area, you can use \033[38;2;191;97;72m"Recall"\033[0m to jog your memory.
 \033[0m\nHint: Look for capitalised objects, items, and areas to
 interact with.""")
 
-BAD_END = ("""Your legs carry you out of the building at full
+BAD_END = ("""\nYour legs carry you out of the building at full
 speed. You think of nothing but to get away from that horrifying
 monster. In the end, you came out empty handed, having completely
 forgotten why you came into the building in the first place.""")
 
-NEUTRAL_END = ("""You manage to sneak out through the main gate,
+NEUTRAL_END = ("""\nYou manage to sneak out through the main gate,
 having achieved some of your objectives. You're glad to be able
 to breathe fresh air again. However, you can't seem to shake the
 feeling that you missed something.""")
 
-GOOD_END = ("""You manage to sneak out through the main gate,
+GOOD_END = ("""\nYou manage to sneak out through the main gate,
 ensuring it remains locked afterwards. Documentation in hand,
 you're confident that you've solved the building's mysteries.
 You head straight to the broker in hopes of them fulfilling

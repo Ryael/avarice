@@ -7,7 +7,7 @@
     y: 1
   blocked: false
   desc:
-    - Sealed shut, you won't get through without a key.
+    - "\nSealed shut, you won't get through without a key."
   locked: true
   required_item: Keycard
 - !!python/object:path.Path
@@ -19,7 +19,7 @@
     y: 3
   blocked: false
   desc:
-    - Sealed shut, you won't get through without a key.
+    - "\nSealed shut, you won't get through without a key."
   locked: true
   required_item: Keycard
 - !!python/object:path.Path
@@ -31,7 +31,7 @@
     y: 4
   blocked: true
   desc:
-    - That path's completely blocked.\n
+    - "\nThat path's completely blocked."
   locked: false
 - !!python/object:path.Path
   room1: !!python/object:position.Position
@@ -42,7 +42,7 @@
     y: 3
   blocked: true
   desc:
-    - That path's completely blocked.\n
+    - "\nThat path's completely blocked."
   locked: false
 - !!python/object:path.Path
   room1: !!python/object:position.Position
@@ -53,7 +53,7 @@
     y: 2
   blocked: true
   desc:
-    - That path's completely blocked.\n
+    - "\nThat path's completely blocked."
   locked: false
 - !!python/object:path.Path
   room1: !!python/object:position.Position
@@ -64,7 +64,7 @@
     y: 2
   blocked: true
   desc:
-    - That path's completely blocked.\n
+    - "\nThat path's completely blocked."
   locked: false
 - !!python/object:path.Path
   room1: !!python/object:position.Position
