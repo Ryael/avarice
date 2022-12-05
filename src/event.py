@@ -8,6 +8,7 @@ This module contains all the events.
 
 from dataclasses import dataclass
 from helper import build_str
+from item import Item
 
 
 @dataclass
@@ -17,7 +18,8 @@ class Event:
     """
     action: str
     desc: list
-    item: str = None
+    item_required: str = None
+    item_gained: Item = None
 
     def description(self):
         """
