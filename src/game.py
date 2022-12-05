@@ -81,6 +81,9 @@ def start_game():
             elif command["action_type"] == 'EXAMINE':
                 examined_item = command["item"]
                 player.examine(current_room, examined_item)
+            elif command["action_type"] == 'RECALL':
+                player.moved = False
+                p_t("\n" + current_room.introduction())
 
     elif start_choice.lower()[0] == "n":
         p_t("\nPerhaps another person would be better suited.")

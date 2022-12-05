@@ -21,6 +21,7 @@ move_south = ["south", "s"]
 move_west = ["west", "w"]
 move_actions = ["go", "move"] + move_north + move_east + move_south + move_west
 examine_actions = ["examine", "exam", "ex"]
+recall_actions = ["recall", "r"]
 
 
 # Return {type: 'MOVE', dir: 'S'}
@@ -49,5 +50,8 @@ def get_player_command():
     # Examine
     if action in examine_actions:
         return {"action_type": 'EXAMINE', "item": argument}
+
+    if action in recall_actions:
+        return {"action_type": 'RECALL'}
 
     return None
