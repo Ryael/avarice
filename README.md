@@ -34,6 +34,8 @@ The "Recall" allows the player to recall what they remember of the room upon ent
 
 The "Hide" action was planned to be the key method in how the player deals with the monster: by hiding. Each room has predetermined objects and locations to use to hide themselves. Of course, not all of these locations are a wise choice, and as such, they aren't recommended to the player. However, both the monster and hide functionality fell outside of the deadline due to the prioritisation of core gameplay mechanics.
 
+A tutorial plays during the briefing of the game, so new players are encouraged to not skip that when asked.
+
 ## Table of Contents
 
 1. [Project Goals](#project-goals)
@@ -46,7 +48,7 @@ The "Hide" action was planned to be the key method in how the player deals with 
     - [Narrative](#narrative)
     - [Typography](#typography)
     - [Colour Scheme](#colour-scheme)
-    - [Map & Flowcharts](#map--flowcharts)
+    - [Map & Flowchart](#map--flowchart)
 4. [Code](#code)
     - [Commits](#commits)
     - [Folder Structure](#folder-structure)
@@ -209,11 +211,12 @@ The map shows the starting area relative to the rest of the facility, the room t
 
 Furthermore, a flowchart was created using this map in order to present one route that a player may take in order to complete the game. Please note that this flowchart only shows one of many combinations of routes that the player can take and doesn't take the player alerting the monster into account. This path explores the entirety of the map and covers the route one would take to acquire all items in order to achieve the most complete ending.
 
-1. Examine the CCTV monitors within the Security Center. The player will realise they need a battery to power the devices in order to obtain the CCTV footage.
+1. Examine the security monitors within the Security Center. The player will realise they need a battery to power the devices in order to obtain the security footage.
 2. Examine the drawers within the Research Lab. The player will find research documents on the monster within.
-3. Examine last functional computer within the Mainframe. The player will be able to get a battery to power the CCTV devices within the Security Center.
+3. Examine last functional computer within the Mainframe. The player will be able to get a battery to power the security devices within the Security Center.
 4. Examine the hand sticking out of the dirt grave in the Garden. This will grant the player the keycard, allowing them to open any locked doors.
 5. Examine the chest-cavity within Testing. This will grant the player the Development Records on the monster.
+6. Examine the security monitors within the Security Center with the battery on them.
 
 At this point, the player can leave to achieve the main ending of the game.
 
@@ -286,6 +289,8 @@ The `Player` class stores information about the player. `pos` stores the players
 
 The `Position` class is a simple data structure for handling 2D positional information. It contains `x` and `y` coordinates as integers, and has methods to handle addition, in place addition, and comparison to another `Position` object.
 
+The `Room` class stores information about the various rooms on the map. The `pos` attribute contains a `Position` object to mark the location of the room in the game world, `name` stores the name of the room as a string, `intro` is a list of strings describing in detail the room when it is first visited, `desc` is a list of strings describing the room on subsequent visits, `inventory` holds the interactable objects within the room and defaults to an empty `Inventory` instance, and the `visited` attribute denotes whether or not a room has been visited and defaults to `False`. The `introduction()` and `description()` make use of helper functions from the `helper.py` module to build a nameplate, the relevant description, and a list of interactable objects in the rooom, and returns all of that as a string. `room_items()` is used to return a string of item names from the room's `inventory`, formatted as uppercase and using the `inflect` module to join together the list of names correctly as a string. `remove_item()` is a shortcut to the room's `inventory.remove()` method.
+
 ### Map Design
 
 The world and the map of the facility began as a x, y coorindate plane and was structured as a 2D list or a list of lists. The x-plane represents the horizontal position of rooms and the y-plane represents the vertical position of rooms.
@@ -357,11 +362,11 @@ While working on the project in GitPod, pylint detects a warning for attribute n
 
 <details>
     <summary>avarice_paths.yml</summary>
-    <img src="docs/validation/yaml_paths.png" alt="Validation of avarice_paths.yml">
+    <img src="docs/validation/yaml_path.png" alt="Validation of avarice_paths.yml">
 </details>
 <details>
     <summary>avarice_rooms.yml</summary>
-    <img src="docs/validation/yaml_rooms.png" alt="Validation of avarice_rooms.yml">
+    <img src="docs/validation/yaml_room.png" alt="Validation of avarice_rooms.yml">
 </details>
 
 Errors were detected in GitPod, stating that there were "unresolved tags". This was researched and explored as much as possible, including reading more than a handful of Stack Overflow threads and open issues on GitHub. It appears that this could be resolved via the addition of custom-tags to the the `settings.json` file but unfortunately, even using a mixture of recommended custom tags, it wasn't possible to resolve these errors. Ultimately, the linter doesn't detect any issues and the code works exactly as intended, so these errors were ignored.
@@ -465,6 +470,8 @@ The play testers also provided some very helpful feedback:
 | #8 	| `iadd` should return assigned and updated (x, y) coordinates to reflect the movement of the player. 	| `iadd` was not returning the assigned and updated (x, y) coordinates. 	| The updated (x, y) coordinates were not being returned. 	| Add `return self`. 	| [6011328](https://github.com/Ryael/avarice/commit/6011328dbf9d58716a4098c41b6d004db32b782d) 	|
 | #9 	| First question should repeat even if the input is invalid (neither yes nor no). 	| Invalid input during the first question causes the game to end. 	| No `while` loop to check for invalid inputs. 	| Add a `while True` loop.	| [7b5249c](https://github.com/Ryael/avarice/commit/7b5249c7984fdb7c3030983d79429429c15713ec) 	|
 | #10 	| When asked if the player wants a briefing, an invalid input should prompt the user for another input. 	| When asked if the player wants a briefing, an invalid input prints a statement saying that the input has to be a Yes or a No, however the briefing is still skipped and the game continues. 	| No `while` loop to check for invalid inputs. 	| Add a `while True` loop. 	| [b77eb2e](https://github.com/Ryael/avarice/commit/b77eb2e07a894516c0010a55f70e7e7c79d0616e) 	|
+
+No other bugs were found at the time of submission.
 
 [Back to top &uarr;](#avarice)
 <hr>
